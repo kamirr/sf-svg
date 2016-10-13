@@ -35,11 +35,6 @@ int main()
 	curve2.setPointCount(2048);
 	curve2.update();
 
-	sf::CircleShape cs;
-	cs.setFillColor({255, 255, 255});
-	cs.setOrigin({6.f, 6.f});
-	cs.setRadius(6.f);
-
 	auto iterations = 0u;
 	for(;app.isOpen(); ++iterations)
 	{
@@ -51,15 +46,8 @@ int main()
 
 		app.clear({20, 20, 20});
 
-		auto val1 = std::sin(timer.getElapsedTime().asSeconds()) + 1;
-		if(val1 < 1)
-			cs.setPosition(curve1.getPoint(val1));
-		else
-			cs.setPosition(curve1.getPoint(val1 - 1.f));
-
 		app.draw(curve2);
 		app.draw(curve1);
-		app.draw(cs);
 
 		app.display();
 	}
