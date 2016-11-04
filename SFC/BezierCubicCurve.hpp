@@ -31,8 +31,8 @@ namespace sfc
 		BezierCubicCurve(const sf::Vector2f&, const sf::Vector2f&, const sf::Vector2f&, const sf::Vector2f&, DrawMode = NORMAL);
 
 		/* Virtual methods */
-		virtual Line2<float> getHelperLine(const float);
-		virtual sf::Vector2f getPoint(const float);
+		virtual Line2<float> getHelperLine(const float) const;
+		virtual sf::Vector2f getPoint(std::size_t) const;
 		virtual void update();
 
 		/* Class-definied API */

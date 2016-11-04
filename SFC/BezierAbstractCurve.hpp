@@ -1,7 +1,7 @@
 #ifndef BEZIERABSTRACTCURVE_H
 #define BEZIERABSTRACTCURVE_H
 
-#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/Shape.hpp>
 #include "VertexVector.hpp"
 #include "SfasBase.hpp"
 
@@ -15,8 +15,8 @@
 */
 namespace sfc
 {
-class BezierAbstractCurve
-: public sf::Drawable
+class BezierAbstractCurve:
+public sf::Shape
 {
 protected:
 	VertexVector<sf::LinesStrip> m_vertices;
@@ -32,9 +32,13 @@ protected:
 
 public:
 	/* Purely abstract methods */
-	virtual Line2<float> getHelperLine(const float) = 0;
-	virtual sf::Vector2f getPoint(const float) = 0;
+	virtual Line2<float> getHelperLine(const float) const = 0;
 	virtual void update() = 0;
+
+	/* Definied abstract methods */
+	virtual std::size_t getPointCount() const;
+	virtual ~BezierAbstractCurve()
+	{ }
 
 	/* Definied methods */
 	void setColor(const sf::Color&);
@@ -44,8 +48,6 @@ public:
 	float getNormalizedLengthLimit();
 
 	void setPointCount(const std::size_t);
-	std::size_t getPointCount();
-
 	void move(sf::Vector2f);
 };
 }

@@ -67,7 +67,7 @@ namespace sfc
 		this->m_endControl = endControl;
 	}
 
-	Line2<float> BezierCubicCurve::getHelperLine(const float normalized)
+	Line2<float> BezierCubicCurve::getHelperLine(const float normalized) const
 	{
 		auto loopedLine1Point = this->m_begin + (this->m_beginControl - this->m_begin) * normalized;
 		auto loopedLine1Vector = (this->m_beginControl + (this->m_endControl - this->m_beginControl) * normalized) - loopedLine1Point;
@@ -81,8 +81,10 @@ namespace sfc
 		return Line2<float>(tmpLinePoint1, tmpLineVector, sf::Color(255, 0, 0));
 	}
 
-	sf::Vector2f BezierCubicCurve::getPoint(const float normalized)
+	sf::Vector2f BezierCubicCurve::getPoint(std::size_t index) const
 	{
+		auto normalized = static_cast<float>(index) / this->m_pointCount;
+
 		auto line = getHelperLine(normalized);
 		return (line.point + line.vector * normalized);
 	}

@@ -64,7 +64,7 @@ namespace sfc
 		this->m_end = end;
 	}
 
-	Line2<float> BezierSquareCurve::getHelperLine(const float normalized)
+	Line2<float> BezierSquareCurve::getHelperLine(const float normalized) const
 	{
 		auto tmpLinePoint1 = this->m_begin + (this->m_controlPoint - this->m_begin) * normalized;
 		auto tmpLinePoint2 = this->m_controlPoint + (this->m_end - this->m_controlPoint) * normalized;
@@ -72,8 +72,10 @@ namespace sfc
 
 		return Line2<float>(tmpLinePoint1, tmpLineVector);
 	}
-	sf::Vector2f BezierSquareCurve::getPoint(const float normalized)
+	sf::Vector2f BezierSquareCurve::getPoint(std::size_t index) const
 	{
+		auto normalized = static_cast<float>(index) / this->m_pointCount;
+
 		auto line = getHelperLine(normalized);
 		return (line.point + line.vector * normalized);
 	}

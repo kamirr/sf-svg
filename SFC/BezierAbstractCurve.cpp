@@ -24,7 +24,7 @@ namespace sfc
 	{
 		this->m_pointCount = count;
 	}
-	std::size_t BezierAbstractCurve::getPointCount()
+	std::size_t BezierAbstractCurve::getPointCount() const
 	{
 		return this->m_pointCount;
 	}
