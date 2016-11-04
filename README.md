@@ -2,12 +2,12 @@
 SFML-based library to draw curves.
 
 ## What it does:
-- Provides interface for Bézier curves;
+- Classes inherit sf::Shape;
 - Implements Square- and Cubic curves;
+- Provides interface for Bézier curves;
 - Provides debug-friendly features like "helper lines" etc.
 
 ## What it doesn't do (yet):
-- Classes do not inherit sf::Shape;
 - Curves other than Bézier ones;
 - Any other shape;
 
