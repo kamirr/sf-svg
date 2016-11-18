@@ -18,31 +18,44 @@ int main() {
 	/* Create window */
 	sf::RenderWindow app(sf::VideoMode(600, 600), "app", sf::Style::Default, settings);
 
+	/* Vector to store pointers to shapes */
 	std::vector<sf::Shape*> shapes;
 
+	/* Create bezier curve */
 	sfc::BezierCubicCurve c1(
 	{200, 50}, {350, 500},
 	{50, 50}, {50, 550},
 	sfc::DEBUG);
+
+	/* Push it's address to vector */
 	shapes.push_back(&c1);
 
+	/* Configure curve */
 	c1.setNormalizedLengthLimit(1.f);
 	c1.setPointCount(2048);
 	c1.update();
 
+	/* Create second bezier curve */
 	sfc::BezierCubicCurve c2(
 	{350, 500}, {200, 50},
 	{500, 475}, {400, 50},
 	sfc::DEBUG);
+
+	/* Push it's address to vector */
 	shapes.push_back(&c2);
 
+	/* Configure it */
 	c2.setNormalizedLengthLimit(1.f);
 	c2.setPointCount(2048);
 	c2.update();
 
+	/* Create some circle shape */
 	sf::CircleShape cs(20, 50);
+
+	/* Push it's address to the same vector */
 	shapes.push_back(&cs);
 
+	/* Set position of circle */
 	cs.setPosition(150, 90);
 
 	/* Main loop */
