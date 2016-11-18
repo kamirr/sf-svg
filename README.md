@@ -7,9 +7,9 @@ SFML-based library to draw curves.
 - Provides interface for Bézier curves;
 - Provides debug-friendly features like "helper lines" etc.
 
-## What it doesn't do (yet):
+## What it lacks (yet):
 - Curves other than Bézier ones;
-- Any other shape;
+- Documentation.
 
 ## Usage:
 Copy SFC directory to your project and use like any other .cpp/.hpp files.
