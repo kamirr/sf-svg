@@ -10,59 +10,40 @@
 #include <memory>
 #include <cmath>
 
-/* Functions converting sf::Shape ptrs to more specific ones */
-std::shared_ptr<sfc::BezierAbstractCurve> shapeToCurve(std::shared_ptr<sf::Shape> ptr) {
-	return std::dynamic_pointer_cast<sfc::BezierAbstractCurve>(ptr);
-}
-std::shared_ptr<sf::CircleShape> shapeToCircle(std::shared_ptr<sf::Shape> ptr) {
-	return std::dynamic_pointer_cast<sf::CircleShape>(ptr);
-}
-
 int main() {
 	/* Enable antialiasing (optional) */
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 4;
-	settings.attributeFlags = sf::ContextSettings::Debug;
 
 	/* Create window */
 	sf::RenderWindow app(sf::VideoMode(600, 600), "app", sf::Style::Default, settings);
 
-	/* Vector storing shared_ptrs to any sf::Shape */
-	std::vector<std::shared_ptr<sf::Shape>> shapes;
+	std::vector<sf::Shape*> shapes;
 
-	/* Push back BezierCubicCurve shared ptr */
-	shapes.push_back(
-	std::make_shared<sfc::BezierCubicCurve>(sfc::BezierCubicCurve(
+	sfc::BezierCubicCurve c1(
 	{200, 50}, {350, 500},
 	{50, 50}, {50, 550},
-	sfc::DEBUG)));
+	sfc::DEBUG);
+	shapes.push_back(&c1);
 
-	/* Dynamically cast sf::Shape* to
-	 * sf::AbstractBezierCurve*, so those functions could be used */
-	(*shapeToCurve(shapes[0])).setNormalizedLengthLimit(1.f);
-	(*shapeToCurve(shapes[0])).setPointCount(2048);
-	(*shapeToCurve(shapes[0])).update();
+	c1.setNormalizedLengthLimit(1.f);
+	c1.setPointCount(2048);
+	c1.update();
 
-	/* Push back another BezierCubicCurve shared ptr */
-	shapes.push_back(
-	std::make_shared<sfc::BezierCubicCurve>(
-	sfc::BezierCubicCurve(
+	sfc::BezierCubicCurve c2(
 	{350, 500}, {200, 50},
 	{500, 475}, {400, 50},
-	sfc::DEBUG)));
+	sfc::DEBUG);
+	shapes.push_back(&c2);
 
-	/* And again dynamically cast sf::Shape* to
-	 * sf::AbstractBezierCurve*, so those functions could be used */
-	(*shapeToCurve(shapes[1])).setNormalizedLengthLimit(1.f);
-	(*shapeToCurve(shapes[1])).setPointCount(2048);
-	(*shapeToCurve(shapes[1])).update();
+	c2.setNormalizedLengthLimit(1.f);
+	c2.setPointCount(2048);
+	c2.update();
 
-	/* Push another class that inherits sf::Shape */
-	shapes.push_back(std::make_shared<sf::CircleShape>(sf::CircleShape(20, 50)));
+	sf::CircleShape cs(20, 50);
+	shapes.push_back(&cs);
 
-	/* Any sf::Shape has this function, but
-	 * those can't work while using curves */
-	(*shapes[2]).setPosition(150, 90);
+	cs.setPosition(150, 90);
 
 	/* Main loop */
 	while(app.isOpen()) {
