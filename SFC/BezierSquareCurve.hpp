@@ -8,11 +8,9 @@
 
 #include "BezierAbstractCurve.hpp"
 
-namespace sfc
-{
+namespace sfc {
 	class BezierSquareCurve
-	: public BezierAbstractCurve
-	{
+	: public BezierAbstractCurve {
 	private:
 		sf::Vertex m_debugLines[4];
 		sf::Vector2f m_controlPoint;

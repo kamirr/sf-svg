@@ -7,11 +7,9 @@
 #define BEZIERCUBICCURVE_HPP
 #include "BezierAbstractCurve.hpp"
 
-namespace sfc
-{
+namespace sfc {
 	class BezierCubicCurve
-	: public BezierAbstractCurve
-	{
+	: public BezierAbstractCurve {
 	private:
 		sf::Vertex debugLines[6];
 

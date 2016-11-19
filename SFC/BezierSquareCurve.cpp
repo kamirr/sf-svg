@@ -5,13 +5,11 @@
 
 #include "BezierSquareCurve.hpp"
 
-namespace sfc
-{
+namespace sfc {
 	/*
 		Private
 	*/
-	void BezierSquareCurve::draw(sf::RenderTarget &target, sf::RenderStates states) const
-	{
+	void BezierSquareCurve::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 		if(this->m_mode == DEBUG)
 			target.draw(this->m_debugLines, 4, sf::LinesStrip);
 		target.draw(this->m_vertices, states);
@@ -24,8 +22,7 @@ namespace sfc
 	std::vector<sf::Vector2f> &vector,
 	const size_t numSegments,
 	const float limitCurve,
-	sf::Vertex *debugLines)
-	{
+	sf::Vertex *debugLines) {
 		vector.clear();
 
 		if (!numSegments) // Any points at all?
@@ -34,8 +31,7 @@ namespace sfc
 		for(float progress = 0.f; progress <= (numSegments + 1) * limitCurve; progress += limitCurve)
 			vector.push_back(this->getPoint(progress / (this->m_pointCount + 1)));
 
-		if(debugLines)
-		{
+		if(debugLines) {
 			debugLines[0] = {this->m_begin, sf::Color(0, 255, 0)};
 			debugLines[1] = {this->m_controlPoint, sf::Color(0, 255, 0)};
 			debugLines[2] = {this->m_controlPoint, sf::Color(0, 255, 0)};
@@ -46,8 +42,7 @@ namespace sfc
 	/*
 		Public
 	*/
-	BezierSquareCurve::BezierSquareCurve()
-	{
+	BezierSquareCurve::BezierSquareCurve() {
 		this->m_color = {255, 255, 255};
 		this->m_limitCurve = 1.f;
 		this->m_pointCount = 32;
@@ -56,8 +51,7 @@ namespace sfc
 	BezierSquareCurve::BezierSquareCurve(const sf::Vector2f &start,
 	const sf::Vector2f &end,
 	const sf::Vector2f &controlPoint,
-	DrawMode mode)
-	{
+	DrawMode mode) {
 		this->m_color = {255, 255, 255};
 		this->m_limitCurve = 1.f;
 		this->m_pointCount = 32;
@@ -69,26 +63,22 @@ namespace sfc
 		this->m_end = end;
 	}
 
-	Line2<float> BezierSquareCurve::getHelperLine(const float normalized) const
-	{
+	Line2<float> BezierSquareCurve::getHelperLine(const float normalized) const {
 		auto tmpLinePoint1 = this->m_begin + (this->m_controlPoint - this->m_begin) * normalized;
 		auto tmpLinePoint2 = this->m_controlPoint + (this->m_end - this->m_controlPoint) * normalized;
 		auto tmpLineVector = tmpLinePoint2 - tmpLinePoint1;
 
 		return Line2<float>(tmpLinePoint1, tmpLineVector);
 	}
-	sf::Vector2f BezierSquareCurve::getPoint(std::size_t index) const
-	{
+	sf::Vector2f BezierSquareCurve::getPoint(std::size_t index) const {
 		auto normalized = static_cast<float>(index) / this->m_pointCount;
 
 		auto line = getHelperLine(normalized);
 		return (line.point + line.vector * normalized);
 	}
 
-	void BezierSquareCurve::setPointPosition(BezierSquareCurve::PointType point, sf::Vector2f pos)
-	{
-		switch (point)
-		{
+	void BezierSquareCurve::setPointPosition(BezierSquareCurve::PointType point, sf::Vector2f pos) {
+		switch (point) {
 		case CONTROL:
 			this->m_controlPoint = pos;
 			break;
@@ -100,10 +90,8 @@ namespace sfc
 			break;
 		}
 	}
-	sf::Vector2f BezierSquareCurve::getPointPosition(BezierSquareCurve::PointType point)
-	{
-		switch (point)
-		{
+	sf::Vector2f BezierSquareCurve::getPointPosition(BezierSquareCurve::PointType point) {
+		switch (point) {
 		case CONTROL:
 			return this->m_controlPoint;
 		case BEGIN:
@@ -115,8 +103,7 @@ namespace sfc
 		}
 	}
 
-	void BezierSquareCurve::update()
-	{
+	void BezierSquareCurve::update() {
 		std::vector<sf::Vector2f> points;
 		calculateSquare(
 		points,

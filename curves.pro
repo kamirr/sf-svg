@@ -16,5 +16,5 @@ HEADERS += \
 	SFC/BezierCubicCurve.hpp \
 	SFC/BezierCurve.hpp \
 	SFC/BezierSquareCurve.hpp \
-	SFC/SfasBase.hpp \
-	SFC/VertexVector.hpp
+	SFC/VertexVector.hpp \
+    SFC/Base.hpp
