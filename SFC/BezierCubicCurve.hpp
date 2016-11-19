@@ -1,3 +1,8 @@
+/* =========================================================== *
+ * SF-Curves (c) Kamil Koczurek | koczurekk@gmail.com          *
+ * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
+ * =========================================================== */
+
 #ifndef BEZIERCUBICCURVE_HPP
 #define BEZIERCUBICCURVE_HPP
 #include "BezierAbstractCurve.hpp"

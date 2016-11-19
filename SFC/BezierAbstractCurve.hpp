@@ -1,10 +1,10 @@
-#ifndef BEZIERABSTRACTCURVE_H
-#define BEZIERABSTRACTCURVE_H
+/* =========================================================== *
+ * SF-Curves (c) Kamil Koczurek | koczurekk@gmail.com          *
+ * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
+ * =========================================================== */
 
-#include <SFML/Graphics/Shape.hpp>
-#include "VertexVector.hpp"
-#include "SfasBase.hpp"
-
+//! @file
+//! BezierAbstractCurve declaration and partial implementation.
 /*! \mainpage SF-Curves
  *
  * \section About
@@ -22,6 +22,13 @@
  * - Provides interface for Bézier curves;
  * - Provides debug-friendly features like "helper lines" etc.
  */
+
+#ifndef BEZIERABSTRACTCURVE_H
+#define BEZIERABSTRACTCURVE_H
+
+#include <SFML/Graphics/Shape.hpp>
+#include "VertexVector.hpp"
+#include "SfasBase.hpp"
 
 /*
  * Abstract class!

@@ -1,5 +1,11 @@
+/* =========================================================== *
+ * SF-Curves (c) Kamil Koczurek | koczurekk@gmail.com          *
+ * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
+ * =========================================================== */
+
 #ifndef BEZIERSQUARECURVE_H
 #define BEZIERSQUARECURVE_H
+
 #include "BezierAbstractCurve.hpp"
 
 namespace sfc
