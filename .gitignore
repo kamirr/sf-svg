@@ -1,5 +1,7 @@
 # C++ objects and libs
 
+Doxygen/
+
 *.slo
 *.lo
 *.o
