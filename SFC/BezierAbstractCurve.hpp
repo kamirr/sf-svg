@@ -5,6 +5,24 @@
 #include "VertexVector.hpp"
 #include "SfasBase.hpp"
 
+/*! \mainpage SF-Curves
+ *
+ * \section About
+ * SFML-related library adding Bezier curves (Cubic and Square) and API allowing writing new compatibile classes.
+ *
+ * \section Installation
+ * Copy SFC directory (separated compilation will be available… soon).
+ *
+ * \section Usage
+ * Add all files to project and include needed headers.
+ *
+ * \section Features
+ * - Classes inherit sf::Shape;
+ * - Implements Square- and Cubic curves;
+ * - Provides interface for Bézier curves;
+ * - Provides debug-friendly features like "helper lines" etc.
+ */
+
 /*
  * Abstract class!
  * Do not define methods!
