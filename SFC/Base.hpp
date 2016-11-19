@@ -71,7 +71,7 @@ namespace sfc {
 		//! \param [in] color – color of the line, white by default
 		//!
 		//! Creates line using given parameters.
-		Line2(sf::Vector2<T> point, sf::Vector2<T> vector, sf::Color color = {255, 255, 255}) {
+		Line2(const sf::Vector2<T> point, const sf::Vector2<T> vector, const sf::Color color = sf::Color::White) {
 			this->point = point;
 			this->vector = vector;
 			this->color = color;
