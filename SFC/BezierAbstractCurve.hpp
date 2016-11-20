@@ -81,6 +81,8 @@ namespace sfc {
 	public:
 		//! \brief Get last line used to draw a curve
 		//!
+		//! \param [in] normalized – progress of drawing curve in range [0, 1]
+		//!
 		//! Other helper lines are ignored, this function returns the one, on which "pencil" is placed.
 		virtual Line2<float> getHelperLine(const float) const = 0;
 
@@ -107,6 +109,8 @@ namespace sfc {
 
 		//! \brief Sets color
 		//!
+		//! \param [in] color – New color
+		//!
 		//! Use to set color of curve's vertices.
 		//! \code{.cpp}
 		//! curve.setColor({255, 20, 20}); //Red
@@ -117,6 +121,8 @@ namespace sfc {
 		sf::Color getColor();
 
 		//! \brief Set part of curve to be drawn
+		//!
+		//! \param [in] normalized – part of curve to be drawn in range [0, 1]
 		//!
 		//! \code{.cpp}
 		//! curve.setNormalizedLengthLimit(.5f); //Draw 50% of the curve
@@ -129,6 +135,8 @@ namespace sfc {
 		float getNormalizedLengthLimit();
 
 		//! \brief Set amount of points to draw curve
+		//!
+		//! \param [in] count – Amount of points to use
 		//!
 		//! \code{.cpp}
 		//! curve1.setPointCount(6); //Ugly one
