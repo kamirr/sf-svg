@@ -12,7 +12,7 @@ SFML-based library to draw curves.
 - Some parts of documentation.
 
 ## Documentation
-You can find docs [here](https://koczurekk.github.io/QSFML/).<br />
+You can find docs [here](https://koczurekk.github.io/SF-Curves/).<br />
 Generated using doxygen, It's not good-looking, but I don't have time to change doxygen's .css files.
 
 ## Usage:
