@@ -19,7 +19,7 @@ namespace sfc {
 
 	//! \brief Way to draw curves.
 	//!
-	//! NORMAL – Just draw curce
+	//! NORMAL – Just draw cuvce
 	//! DEBUG – Draw also helper lines etc.
 	enum DrawMode {
 		NORMAL,
