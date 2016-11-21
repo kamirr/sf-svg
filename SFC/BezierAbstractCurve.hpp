@@ -101,6 +101,11 @@ namespace sfc {
 		//! \brief Returns point count
 		virtual std::size_t getPointCount() const;
 
+		//! \brief Get n-th point of curve
+		//!
+		//! \param [in] index – point index
+		virtual sf::Vector2f getPoint(std::size_t) const = 0;
+
 		//! \brief Virtual destructor
 		//!
 		//! Does nothing expect of ensuring that destructors of inherited classes will be called.
