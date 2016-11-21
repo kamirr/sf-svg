@@ -14,7 +14,7 @@ namespace sfc {
 	template<sf::PrimitiveType TPrimitive>
 	struct VertexVector
 	: public std::vector<sf::Vertex>,
-	public sf::Drawable {
+	  public sf::Drawable {
 		using std::vector<sf::Vertex>::vector;
 
 		virtual void draw(sf::RenderTarget& mRenderTarget, sf::RenderStates mRenderStates) const {
