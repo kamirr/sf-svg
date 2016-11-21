@@ -41,11 +41,18 @@ namespace sfc {
 	public:
 		//! \brief Point type enum
 		//!
-		//! Used to easly set/get points with one function –setPointPosition / getPointPosition.
+		//! Used to easly set/get points with one function – setPointPosition / getPointPosition.
 		enum PointType {
+			//! \brief First control point
 			BEGIN_CONTROL,
+
+			//! \brief Second control point
 			END_CONTROL,
+
+			//! \brief Beginning of the curve
 			BEGIN,
+
+			//! \brief End of the curve
 			END
 		};
 
