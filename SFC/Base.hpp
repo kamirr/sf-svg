@@ -18,11 +18,11 @@
 namespace sfc {
 
 	//! \brief Way to draw curves.
-	//!
-	//! NORMAL – Just draw cuvce
-	//! DEBUG – Draw also helper lines etc.
 	enum DrawMode {
+		//! \brief Just draw the curve
 		NORMAL,
+
+		//! \brief Draw also helper lines etc.
 		DEBUG
 	};
 
