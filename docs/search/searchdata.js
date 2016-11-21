@@ -4,9 +4,9 @@ var indexSectionsWithContent =
   1: "blv",
   2: "s",
   3: "b",
-  4: "glmsu~",
+  4: "bcglmsu~",
   5: "cmpv",
-  6: "d",
+  6: "dp",
   7: "s"
 };
 

@@ -105,7 +105,7 @@ Inheritance diagram for sfc::BezierAbstractCurve:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsfc_1_1BezierAbstractCurve__inherit__graph.png" border="0" usemap="#sfc_1_1BezierAbstractCurve_inherit__map" alt="Inheritance graph"/></div>
 <map name="sfc_1_1BezierAbstractCurve_inherit__map" id="sfc_1_1BezierAbstractCurve_inherit__map">
-<area shape="rect" id="node3" href="classsfc_1_1BezierCubicCurve.html" title="sfc::BezierCubicCurve" alt="" coords="5,155,160,181"/>
+<area shape="rect" id="node3" href="classsfc_1_1BezierCubicCurve.html" title="Bezier cubic curve representation. " alt="" coords="5,155,160,181"/>
 <area shape="rect" id="node4" href="classsfc_1_1BezierSquareCurve.html" title="sfc::BezierSquareCurve" alt="" coords="185,155,346,181"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -122,6 +122,9 @@ Public Member Functions</h2></td></tr>
 virtual std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1BezierAbstractCurve.html#a0b0989b2587daf77d1029bf9f5b1224d">getPointCount</a> () const </td></tr>
 <tr class="memdesc:a0b0989b2587daf77d1029bf9f5b1224d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns point count. <br /></td></tr>
 <tr class="separator:a0b0989b2587daf77d1029bf9f5b1224d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe2070cd97405130dafd1aa9b94fe058"><td class="memItemLeft" align="right" valign="top">virtual sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1BezierAbstractCurve.html#abe2070cd97405130dafd1aa9b94fe058">getPoint</a> (std::size_t) const =0</td></tr>
+<tr class="memdesc:abe2070cd97405130dafd1aa9b94fe058"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get n-th point of curve.  <a href="#abe2070cd97405130dafd1aa9b94fe058">More...</a><br /></td></tr>
+<tr class="separator:abe2070cd97405130dafd1aa9b94fe058"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58850e4b8631a64e95b0df46766e6c05"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1BezierAbstractCurve.html#a58850e4b8631a64e95b0df46766e6c05">~BezierAbstractCurve</a> ()</td></tr>
 <tr class="memdesc:a58850e4b8631a64e95b0df46766e6c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <a href="#a58850e4b8631a64e95b0df46766e6c05">More...</a><br /></td></tr>
 <tr class="separator:a58850e4b8631a64e95b0df46766e6c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -258,6 +261,40 @@ sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 <p>Get part of curve to be drawn. </p>
 <p>Take a look at <a class="el" href="classsfc_1_1BezierAbstractCurve.html#a380fd5285efca843e79a6c8321f1279c" title="Set part of curve to be drawn. ">setNormalizedLengthLimit()</a> and m_limitCurve. </p>
+
+</div>
+</div>
+<a class="anchor" id="abe2070cd97405130dafd1aa9b94fe058"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual sf::Vector2f sfc::BezierAbstractCurve::getPoint </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get n-th point of curve. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>– point index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classsfc_1_1BezierCubicCurve.html#a5f9e6e9f4b4849c1d864ba7db93a7927">sfc::BezierCubicCurve</a>, and <a class="el" href="classsfc_1_1BezierSquareCurve.html#a0e6c3e046ce802c7aa2570a76b8d5f36">sfc::BezierSquareCurve</a>.</p>
 
 </div>
 </div>

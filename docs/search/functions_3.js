@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['setcolor',['setColor',['../classsfc_1_1BezierAbstractCurve.html#a17f999353272ca22c98a2fa0767c7e86',1,'sfc::BezierAbstractCurve']]],
-  ['setnormalizedlengthlimit',['setNormalizedLengthLimit',['../classsfc_1_1BezierAbstractCurve.html#a380fd5285efca843e79a6c8321f1279c',1,'sfc::BezierAbstractCurve']]],
-  ['setpointcount',['setPointCount',['../classsfc_1_1BezierAbstractCurve.html#a4a7076ca168be83b9be03b2d8b8dbdf9',1,'sfc::BezierAbstractCurve']]]
+  ['length',['length',['../structsfc_1_1Line2.html#a2c69501b2b3a41cbede049b922178864',1,'sfc::Line2']]],
+  ['line2',['Line2',['../structsfc_1_1Line2.html#ad0452675e8f8085ef71829ad6b42a7f1',1,'sfc::Line2::Line2()'],['../structsfc_1_1Line2.html#a75a22445c2ddad187f5fec39e060349d',1,'sfc::Line2::Line2(const sf::Vector2&lt; T &gt; point, const sf::Vector2&lt; T &gt; vector, const sf::Color color=sf::Color::White)']]]
 ];

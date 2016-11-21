@@ -121,8 +121,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4b7a8f387a2abd62501e7a367bc8e553"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structsfc_1_1Line2.html">Line2</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1BezierSquareCurve.html#a4b7a8f387a2abd62501e7a367bc8e553">getHelperLine</a> (const float) const </td></tr>
 <tr class="memdesc:a4b7a8f387a2abd62501e7a367bc8e553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get last line used to draw a curve.  <a href="#a4b7a8f387a2abd62501e7a367bc8e553">More...</a><br /></td></tr>
 <tr class="separator:a4b7a8f387a2abd62501e7a367bc8e553"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e6c3e046ce802c7aa2570a76b8d5f36"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e6c3e046ce802c7aa2570a76b8d5f36"></a>
-virtual sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><b>getPoint</b> (std::size_t) const </td></tr>
+<tr class="memitem:a0e6c3e046ce802c7aa2570a76b8d5f36"><td class="memItemLeft" align="right" valign="top">virtual sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1BezierSquareCurve.html#a0e6c3e046ce802c7aa2570a76b8d5f36">getPoint</a> (std::size_t) const </td></tr>
+<tr class="memdesc:a0e6c3e046ce802c7aa2570a76b8d5f36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get n-th point of curve.  <a href="#a0e6c3e046ce802c7aa2570a76b8d5f36">More...</a><br /></td></tr>
 <tr class="separator:a0e6c3e046ce802c7aa2570a76b8d5f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a184fbe417749d60c8763c24d91045df1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1BezierSquareCurve.html#a184fbe417749d60c8763c24d91045df1">update</a> ()</td></tr>
 <tr class="memdesc:a184fbe417749d60c8763c24d91045df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates vertices.  <a href="#a184fbe417749d60c8763c24d91045df1">More...</a><br /></td></tr>
@@ -231,6 +231,40 @@ sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>Other helper lines are ignored, this function returns the one, on which "pencil" is placed. </p>
 
 <p>Implements <a class="el" href="classsfc_1_1BezierAbstractCurve.html#a6fa435aff9329d9017aa67c1d001e08f">sfc::BezierAbstractCurve</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e6c3e046ce802c7aa2570a76b8d5f36"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f sfc::BezierSquareCurve::getPoint </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get n-th point of curve. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>– point index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classsfc_1_1BezierAbstractCurve.html#abe2070cd97405130dafd1aa9b94fe058">sfc::BezierAbstractCurve</a>.</p>
 
 </div>
 </div>
