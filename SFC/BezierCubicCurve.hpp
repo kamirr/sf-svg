@@ -27,6 +27,7 @@ namespace sfc {
 		virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
 
 	protected:
+		/* Commented in base class */
 		virtual void calculateVeritces(std::vector<sf::Vector2f>&, const size_t, const float, sf::Vertex*);
 
 	public:
