@@ -19,7 +19,7 @@ namespace sfc {
 	/*
 		Protected
 	*/
-	void BezierCubicCurve::calculateCubic(
+	void BezierCubicCurve::calculateVeritces(
 	std::vector<sf::Vector2f> &vector,
 	const size_t numSegments,
 	const float limitCurve,
@@ -88,7 +88,7 @@ namespace sfc {
 
 	void BezierCubicCurve::update() {
 		std::vector<sf::Vector2f> points;
-		calculateCubic(
+		calculateVeritces(
 		points,
 		this->m_pointCount,
 		this->m_limitCurve,

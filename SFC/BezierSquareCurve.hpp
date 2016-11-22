@@ -33,7 +33,7 @@ namespace sfc {
 		//!
 		//! Calculates all (cubic) curve-related things like vertices positions / helper lines etc.
 		//! Not a big deal, use only if you really want to inherit BezierCubicCurve.
-		void calculateSquare(std::vector<sf::Vector2f>&, const size_t, const float, sf::Vertex*);
+		virtual void calculateVeritces(std::vector<sf::Vector2f>&, const size_t, const float, sf::Vertex*);
 
 	public:
 		//! \brief Point type enum

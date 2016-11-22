@@ -112,6 +112,8 @@ namespace sfc {
 		virtual ~BezierAbstractCurve()
 		{ }
 
+		virtual void calculateVeritces(std::vector<sf::Vector2f>&, const size_t, const float, sf::Vertex*) = 0;
+
 		//! \brief Sets color
 		//!
 		//! \param [in] color – New color
