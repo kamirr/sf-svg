@@ -66,7 +66,7 @@ namespace sfc {
 		//! \param [in] start – beginning of the curve
 		//! \param [in] end – end of the curve
 		//! \param [in] startControl – first control point
-		//! \param [in] endContril – second control point
+		//! \param [in] endControl – second control point
 		//!
 		//! Sets point count to 32 and color to white.
 		//! Calls calculateCubic with proper args.
