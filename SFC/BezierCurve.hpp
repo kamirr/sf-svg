@@ -3,6 +3,9 @@
  * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
  * =========================================================== */
 
+//! @file
+//! Single file to include all curve-related header files
+
 #ifndef BEZIERCURVE_H
 #define BEZIERCURVE_H
 
