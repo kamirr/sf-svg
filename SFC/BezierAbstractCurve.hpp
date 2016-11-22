@@ -112,7 +112,16 @@ namespace sfc {
 		virtual ~BezierAbstractCurve()
 		{ }
 
-		virtual void calculateVeritces(std::vector<sf::Vector2f>&, const size_t, const float, sf::Vertex*) = 0;
+		//! \brief Calculate points on cuve
+		//!
+		//! \param [out] vector – vector to store vertices
+		//! \param [in]  numSegments – aka point count
+		//! \param [in]  limitCurve – part of curve to be drawn, range [0, 1]
+		//! \param [out] debugLines – vertex array, used to store and draw helper lines
+		//!
+		//! Calculates all curve-related things like vertices positions / helper lines etc.
+		//! Not a big deal, use only if you really want to inherit BezierCubicCurve.
+		virtual void calculateVeritces(std::vector<sf::Vector2f>& vector, const size_t numSegments, const float limitCurve, sf::Vertex* debugLines) = 0;
 
 		//! \brief Sets color
 		//!

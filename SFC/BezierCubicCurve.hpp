@@ -27,15 +27,6 @@ namespace sfc {
 		virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
 
 	protected:
-		//! \brief Calculate points on cuve
-		//!
-		//! \param [out] vector – vector to store vertices
-		//! \param [in]  numSegments – aka point count
-		//! \param [in]  limitCurve – part of curve to be drawn, range [0, 1]
-		//! \param [out]  debugLines – vertex array, used to store and draw helper lines
-		//!
-		//! Calculates all (cubic) curve-related things like vertices positions / helper lines etc.
-		//! Not a big deal, use only if you really want to inherit BezierCubicCurve.
 		virtual void calculateVeritces(std::vector<sf::Vector2f>&, const size_t, const float, sf::Vertex*);
 
 	public:
