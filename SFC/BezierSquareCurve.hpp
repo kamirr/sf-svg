@@ -9,6 +9,12 @@
 #include "BezierAbstractCurve.hpp"
 
 namespace sfc {
+	//! \class BezierSquareCurve
+	//!
+	//! \brief Bezier square curve representation
+	//!
+	//! Can be drawn, inherits BezierAbstractCurve. <br />
+	//! Use to draw/calculate simple curves.
 	class BezierSquareCurve
 	: public BezierAbstractCurve {
 	private:
@@ -18,26 +24,67 @@ namespace sfc {
 		virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
 
 	protected:
+		//! \brief Calculate points on cuve
+		//!
+		//! \param [out] vector – vector to store vertices
+		//! \param [in]  numSegments – aka point count
+		//! \param [in]  limitCurve – part of curve to be drawn, range [0, 1]
+		//! \param [out] debugLines – vertex array, used to store and draw helper lines
+		//!
+		//! Calculates all (cubic) curve-related things like vertices positions / helper lines etc.
+		//! Not a big deal, use only if you really want to inherit BezierCubicCurve.
 		void calculateSquare(std::vector<sf::Vector2f>&, const size_t, const float, sf::Vertex*);
 
 	public:
+		//! \brief Point type enum
+		//!
+		//! Used to easly set/get points with one function – setPointPosition / getPointPosition.
 		enum PointType {
+			//! \brief Control point (handle)
 			CONTROL,
+
+			//! \brief Beginning of the curve
 			BEGIN,
+
+			//! \brief End of the curve
 			END
 		};
 
-		/* Constructors */
+		//! \brief Default constructor
+		//!
+		//! Sets point count to 32 and color to white.
 		BezierSquareCurve();
+
+		//! \brief Specialized constructor
+		//!
+		//! \param [in] start – beginning of the curve
+		//! \param [in] end – end of the curve
+		//! \param [in] controlPoint – second control point
+		//!
+		//! Sets point count to 32 and color to white.
+		//! Calls calculateCubic with proper args.
 		BezierSquareCurve(const sf::Vector2f&, const sf::Vector2f&, const sf::Vector2f&, DrawMode = NORMAL);
 
-		/* Virtual methods */
+		/* Commented in base class */
 		virtual Line2<float> getHelperLine(const float) const;
+
+		/* Commented in base class */
 		virtual sf::Vector2f getPoint(std::size_t) const;
+
+		/* Commented in base class */
 		virtual void update();
 
-		/* Class-definied API */
+		//! \brief Sets position of selected point
+		//!
+		//! \param [in] point – point type (PointType enum)
+		//! \param [in] pos – new position
 		void setPointPosition(PointType, sf::Vector2f);
+
+		//! \brief Gets position of selected point
+		//!
+		//! \param [in] point – point type (PointType enum)
+		//!
+		//! \returns sf::Vector2f (position)
 		sf::Vector2f getPointPosition(PointType);
 	};
 }
