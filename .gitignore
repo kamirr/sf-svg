@@ -1,6 +1,7 @@
 # C++ objects and libs
 
 Doxygen/
+build-shared/
 
 *.slo
 *.lo
