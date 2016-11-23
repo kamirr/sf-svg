@@ -106,7 +106,7 @@ Inheritance diagram for sfc::BezierAbstractCurve:</div>
 <div class="center"><img src="classsfc_1_1BezierAbstractCurve__inherit__graph.png" border="0" usemap="#sfc_1_1BezierAbstractCurve_inherit__map" alt="Inheritance graph"/></div>
 <map name="sfc_1_1BezierAbstractCurve_inherit__map" id="sfc_1_1BezierAbstractCurve_inherit__map">
 <area shape="rect" id="node3" href="classsfc_1_1BezierCubicCurve.html" title="Bezier cubic curve representation. " alt="" coords="5,155,160,181"/>
-<area shape="rect" id="node4" href="classsfc_1_1BezierSquareCurve.html" title="sfc::BezierSquareCurve" alt="" coords="185,155,346,181"/>
+<area shape="rect" id="node4" href="classsfc_1_1BezierSquareCurve.html" title="Bezier square curve representation. " alt="" coords="185,155,346,181"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -128,6 +128,9 @@ virtual std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class=
 <tr class="memitem:a58850e4b8631a64e95b0df46766e6c05"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1BezierAbstractCurve.html#a58850e4b8631a64e95b0df46766e6c05">~BezierAbstractCurve</a> ()</td></tr>
 <tr class="memdesc:a58850e4b8631a64e95b0df46766e6c05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <a href="#a58850e4b8631a64e95b0df46766e6c05">More...</a><br /></td></tr>
 <tr class="separator:a58850e4b8631a64e95b0df46766e6c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f5215b24b376b90f8f3e4d386e28359"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1BezierAbstractCurve.html#a4f5215b24b376b90f8f3e4d386e28359">calculateVeritces</a> (std::vector&lt; sf::Vector2f &gt; &amp;vector, const size_t numSegments, const float limitCurve, sf::Vertex *debugLines)=0</td></tr>
+<tr class="memdesc:a4f5215b24b376b90f8f3e4d386e28359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate points on cuve.  <a href="#a4f5215b24b376b90f8f3e4d386e28359">More...</a><br /></td></tr>
+<tr class="separator:a4f5215b24b376b90f8f3e4d386e28359"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17f999353272ca22c98a2fa0767c7e86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1BezierAbstractCurve.html#a17f999353272ca22c98a2fa0767c7e86">setColor</a> (const sf::Color &amp;)</td></tr>
 <tr class="memdesc:a17f999353272ca22c98a2fa0767c7e86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets color.  <a href="#a17f999353272ca22c98a2fa0767c7e86">More...</a><br /></td></tr>
 <tr class="separator:a17f999353272ca22c98a2fa0767c7e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -211,6 +214,66 @@ sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a4f5215b24b376b90f8f3e4d386e28359"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void sfc::BezierAbstractCurve::calculateVeritces </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; sf::Vector2f &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>numSegments</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>limitCurve</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vertex *&#160;</td>
+          <td class="paramname"><em>debugLines</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate points on cuve. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">vector</td><td>– vector to store vertices </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">numSegments</td><td>– aka point count </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">limitCurve</td><td>– part of curve to be drawn, range [0, 1] </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">debugLines</td><td>– vertex array, used to store and draw helper lines</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Calculates all curve-related things like vertices positions / helper lines etc. Not a big deal, use only if you really want to inherit <a class="el" href="classsfc_1_1BezierCubicCurve.html" title="Bezier cubic curve representation. ">BezierCubicCurve</a>. </p>
+
+<p>Implemented in <a class="el" href="classsfc_1_1BezierCubicCurve.html#a4c67e6ce2975b107809cfe0f5e932df2">sfc::BezierCubicCurve</a>, and <a class="el" href="classsfc_1_1BezierSquareCurve.html#a9bbe4dcb832b9a47836fe4a893bba9bf">sfc::BezierSquareCurve</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a6fa435aff9329d9017aa67c1d001e08f"></a>
 <div class="memitem">
 <div class="memproto">

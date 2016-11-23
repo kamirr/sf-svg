@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node2" href="$structsfc_1_1Line2.html" title="2D line " alt="" coords="141,5,252,32"/>
-<area shape="rect" id="node3" href="$structsfc_1_1VertexVector.html" title="sfc::VertexVector\&lt;\l TPrimitive \&gt;" alt="" coords="131,122,263,163"/>
+<area shape="rect" id="node3" href="$structsfc_1_1VertexVector.html" title="Drawable std::vector&lt;sf::Vertex&gt; " alt="" coords="131,122,263,163"/>
 <area shape="rect" id="node4" href="$structsfc_1_1VertexVector.html" title="sfc::VertexVector\&lt;\l sf::LinesStrip \&gt;" alt="" coords="131,57,263,98"/>
 </map>
