@@ -4,6 +4,7 @@
  * =========================================================== */
 
 #include "BezierSquareCurve.hpp"
+#include <iostream>
 
 namespace sfc {
 	/*
@@ -12,6 +13,7 @@ namespace sfc {
 	void BezierSquareCurve::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 		if(this->m_mode == DEBUG)
 			target.draw(this->m_debugLines, 4, sf::LinesStrip);
+
 		target.draw(this->m_vertices, states);
 	}
 
@@ -112,7 +114,7 @@ namespace sfc {
 		this->m_mode == NORMAL ? nullptr : this->m_debugLines);
 
 		this->m_vertices.clear();
-		for (auto i = 0u; i < points.size(); ++i)
-			this->m_vertices.push_back({points[i], this->m_color});
+		for (const auto point: points)
+			this->m_vertices.push_back({point, this->m_color});
 	}
 }

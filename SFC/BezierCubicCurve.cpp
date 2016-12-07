@@ -4,6 +4,7 @@
  * =========================================================== */
 
 #include "BezierCubicCurve.hpp"
+#include <iostream>
 
 namespace sfc {
 	/*
@@ -29,8 +30,8 @@ namespace sfc {
 		if (!numSegments) // Any points at all?
 			return;
 
-		for(float progress = limitCurve; progress < (numSegments + 1) * limitCurve; progress += limitCurve)
-			vector.push_back(this->getPoint(progress  / (numSegments + 1)));
+		for(auto i = 0u; i < getPointCount() && float(i) / getPointCount() <= limitCurve; ++i)
+			vector.push_back(this->getPoint(i));
 
 		if(debugLines) {
 			debugLines[0] = {this->m_begin, sf::Color(0, 255, 0)};
@@ -94,9 +95,11 @@ namespace sfc {
 		this->m_limitCurve,
 		this->m_mode == DEBUG ? debugLines : nullptr);
 
+		std::cout << points.size() << std::endl;
+
 		this->m_vertices.clear();
-		for (auto i = 0u; i < points.size(); ++i)
-			this->m_vertices.push_back({points[i], this->m_color});
+		for (auto& point: points)
+			this->m_vertices.push_back({point, this->m_color});
 	}
 
 	void BezierCubicCurve::setPointPosition(BezierCubicCurve::PointType point, sf::Vector2f pos) {

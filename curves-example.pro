@@ -6,7 +6,9 @@ CONFIG -= qt
 SOURCES += example.cpp \
 	SFC/BezierAbstractCurve.cpp \
 	SFC/BezierCubicCurve.cpp \
-	SFC/BezierSquareCurve.cpp
+	SFC/BezierSquareCurve.cpp \
+    SFC/Svg.cpp \
+    SFC/nanosvg.cpp
 
 QMAKE_CXXFLAGS += -std=c++11 -Wno-narrowing
 LIBS += -lsfml-graphics -lsfml-window -lsfml-system
@@ -17,4 +19,6 @@ HEADERS += \
 	SFC/BezierCurve.hpp \
 	SFC/BezierSquareCurve.hpp \
 	SFC/VertexVector.hpp \
-    SFC/Base.hpp
+    SFC/Base.hpp \
+    SFC/nanosvg.hpp \
+    SFC/Svg.hpp
