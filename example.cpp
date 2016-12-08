@@ -20,18 +20,23 @@ int main() {
 	sf::RenderWindow app(sf::VideoMode(800, 600), "app", sf::Style::Default, settings);
 
 	sfc::SVGImage img;
-	img.open("nano.svg");
+	img.open("nano.svg", 120);
 
+	auto i = 0u;
 	while(app.isOpen()) {
 		/* Handle events */
 		for(sf::Event ev; app.pollEvent(ev);) {
-			if(ev.type == sf::Event::Closed)
+			if(ev.type == sf::Event::Closed) {
 				app.close();
+			} else if(ev.type == sf::Event::MouseButtonPressed) {
+				++i;
+			}
 		}
 
 		/* Clear window */
 		app.clear({20, 20, 20});
 
+		/* Draw SVG file */
 		app.draw(img);
 
 		/* Display */
