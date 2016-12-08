@@ -1,5 +1,5 @@
 TEMPLATE = lib
-TARGET = sfcurves
+TARGET = sfsvg
 
 CONFIG += console c++11
 CONFIG -= app_bundle
@@ -16,7 +16,8 @@ SOURCES += example.cpp \
 	SFC/BezierCubicCurve.cpp \
 	SFC/BezierSquareCurve.cpp \
     SFC/Svg.cpp \
-    SFC/nanosvg.cpp
+    SFC/nanosvg.cpp \
+    SFC/nanosvgrastr.cpp
 
 HEADERS += \
 	SFC/BezierAbstractCurve.hpp \
@@ -27,4 +28,5 @@ HEADERS += \
     SFC/Base.hpp \
     SFC/nanosvg.hpp \
     SFC/Svg.hpp \
-    SFC/debug.hpp
+    SFC/debug.hpp \
+    SFC/nanosvgrastr.hpp
