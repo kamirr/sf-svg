@@ -1,8 +1,12 @@
-#ifndef DEBUG_HPP
-#define DEBUG_HPP
-
+/* =========================================================== *
+ * sf-svg (c) Kamil Koczurek | koczurekk@gmail.com          *
+ * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
+ * =========================================================== */
 //! @file
 //! Some debug files implementation
+
+#ifndef DEBUG_HPP
+#define DEBUG_HPP
 
 #include <SFML/System/Vector2.hpp>
 #include <iostream>

@@ -1,12 +1,17 @@
-#ifndef SVG_HPP
-#define SVG_HPP
-
+/* =========================================================== *
+ * sf-svg (c) Kamil Koczurek | koczurekk@gmail.com          *
+ * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
+ * =========================================================== */
 //! \file
 //! SVGImage class declaration
+
+#ifndef SVG_HPP
+#define SVG_HPP
 
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/Graphics/Drawable.hpp>
+#include <iostream>
 #include <string>
 #include <vector>
 #include <memory>
@@ -23,7 +28,7 @@ namespace sfc {
 	class SVGImage
 	: public sf::Drawable {
 		std::vector<std::shared_ptr<BezierCubicCurve>> curves;
-		NSVGimage* image;
+		nsvg::NSVGimage* image;
 
 		virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
 

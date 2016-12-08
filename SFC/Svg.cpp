@@ -1,5 +1,10 @@
+/* =========================================================== *
+ * sf-svg (c) Kamil Koczurek | koczurekk@gmail.com          *
+ * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
+ * =========================================================== */
 //! @file
 //! SVGImage implementation
+
 #include "Svg.hpp"
 
 namespace sfc {
@@ -15,7 +20,7 @@ namespace sfc {
 		if(this->image)
 			nsvgDelete(this->image);
 
-		this->image = nsvgParseFromFile(file.c_str(), "px", dpi);
+		this->image = nsvg::nsvgParseFromFile(file.c_str(), "px", dpi);
 
 		if(this->image == NULL)
 			this->image = nullptr;

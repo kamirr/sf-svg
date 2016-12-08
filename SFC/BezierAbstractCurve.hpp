@@ -1,5 +1,5 @@
 /* =========================================================== *
- * SF-Curves (c) Kamil Koczurek | koczurekk@gmail.com          *
+ * sf-svg (c) Kamil Koczurek | koczurekk@gmail.com          *
  * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
  * =========================================================== */
 
@@ -7,7 +7,7 @@
 //! BezierAbstractCurve declaration and partial implementation.
 
 
-/*! \mainpage SF-Curves
+/*! \mainpage sf-svg
  *
  * \section About
  * SFML-related library adding Bezier curves (Cubic and Square) and API allowing writing new compatibile classes.

@@ -1,9 +1,9 @@
 /* =========================================================== *
- * SF-Curves (c) Kamil Koczurek | koczurekk@gmail.com          *
+ * sf-svg (c) Kamil Koczurek | koczurekk@gmail.com          *
  * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
  * =========================================================== */
 //! @file
-//! Base header used by (probably) all SF-Curves classes.
+//! Base header used by (probably) all sf-svg classes.
 
 #ifndef SFAS_BASE_HPP
 #define SFAS_BASE_HPP
@@ -14,7 +14,7 @@
 #include <SFML/Graphics/Vertex.hpp>
 #include <SFML/System/Vector2.hpp>
 
-//! \brief Namespace that contains all SF-Curves method, classes, enums etc.
+//! \brief Namespace that contains all sf-svg method, classes, enums etc.
 namespace sfc {
 
 	//! \brief Way to draw curves.
@@ -30,7 +30,7 @@ namespace sfc {
 	//!
 	//! \brief 2D line
 	//!
-	//! was written to be used in SF-Curves back-end, but actually can be used in any project that uses SFML.
+	//! was written to be used in sf-svg back-end, but actually can be used in any project that uses SFML.
 	//! Line is defined as a pair of point and a vector (offset). Because of this, such code:
 	//!
 	//! \code{.cpp}
