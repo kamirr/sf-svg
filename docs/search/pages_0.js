@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sf_2dcurves',['SF-Curves',['../index.html',1,'']]]
+  ['sf_2dsvg',['sf-svg',['../index.html',1,'']]]
 ];
