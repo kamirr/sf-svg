@@ -2,14 +2,14 @@
 SFML-based library to draw .svg files and Bézier Curves.
 
 ## What it does:
-- SVG files support;
+- SVG files loading / drawing;
+- SVG rasterization;
+- Implements Square- and Cubic Bézier curves;
 - Curves inherit sf::Shape;
 - Provides interface for Bézier curves;
-- Implements Square- and Cubic Bézier curves;
 - Provides debug-friendly features like "helper lines" etc.
 
 ## What it lacks (yet):
-- SVG rasterization;
 - Loading SVG from memory/stream;
 
 ## Documentation
@@ -25,4 +25,4 @@ $ qmake curves-shared.pro
 $ make
 ```
 ### Installation & usage
-Copy SFC headers to /usr/include/SFC or to any other path supported on your OS. Then copy .so files wherever you want to and remember to pass linker option -lsfcurves.
+Copy SFC headers to /usr/include/SFC or to any other path supported on your OS. Then copy .so/.dll files wherever you want to and remember to pass linker option -lsfsvg.
