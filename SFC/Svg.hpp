@@ -15,6 +15,7 @@
 namespace sfc {
 	class SVGImage
 	: public sf::Drawable {
+	public:
 		std::vector<std::shared_ptr<BezierCubicCurve>> curves;
 		NSVGimage* image;
 

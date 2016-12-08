@@ -30,11 +30,11 @@ namespace sfc {
 					float* p = &path->pts[i * 2];
 
 					sf::Vector2f begin    = { p[0], p[1] };
-					sf::Vector2f end      = { p[2], p[3] };
-					sf::Vector2f control1 = { p[4], p[5] };
-					sf::Vector2f control2 = { p[6], p[7] };
+					sf::Vector2f ctrl1    = { p[2], p[3] };
+					sf::Vector2f ctrl2    = { p[4], p[5] };
+					sf::Vector2f end     = { p[6], p[7] };
 
-					this->curves.push_back(std::make_shared<BezierCubicCurve>(begin, control1, end, control2));
+					this->curves.push_back(std::make_shared<BezierCubicCurve>(begin, end, ctrl1, ctrl2));
 					(*this->curves.back()).setNormalizedLengthLimit(1.f);
 					(*this->curves.back()).setPointCount(2048);
 					(*this->curves.back()).update();
