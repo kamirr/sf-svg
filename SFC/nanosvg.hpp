@@ -4,7 +4,6 @@
  * No license-related aspects are affected.         *
  * Kamil Koczurek | koczurekk@gmail.com             *
  * ================================================ */
-
 /* ================================================================================= *
  * Copyright (c) 2013-14 Mikko Mononen memon@inside.org                              *
  *                                                                                   *
@@ -46,12 +45,15 @@
 #include <stdio.h>
 #include <math.h>
 
+//! \namespace nsvg
+//!
+//! \brief Nanosvg++ namespace
 namespace nsvg {
-	enum NSVGpaintType {
-		NSVG_PAINT_NONE = 0,
-		NSVG_PAINT_COLOR = 1,
-		NSVG_PAINT_LINEAR_GRADIENT = 2,
-		NSVG_PAINT_RADIAL_GRADIENT = 3,
+	enum class NSVGpaintType {
+		NONE = 0,
+		COLOR = 1,
+		LINEAR_GRADIENT = 2,
+		RADIAL_GRADIENT = 3,
 	};
 
 	enum NSVGspreadType {
@@ -95,7 +97,7 @@ namespace nsvg {
 	} NSVGgradient;
 
 	typedef struct NSVGpaint {
-		char type;
+		NSVGpaintType type;
 		union {
 			unsigned int color;
 			NSVGgradient* gradient;

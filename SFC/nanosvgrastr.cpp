@@ -852,7 +852,7 @@ namespace nsvg {
 									float tx, float ty, float scale, NSVGcachedPaint* cache)
 	{
 
-		if (cache->type == NSVG_PAINT_COLOR) {
+		if (cache->type == NSVGpaintType::COLOR) {
 			int i, cr, cg, cb, ca;
 			cr = cache->colors[0] & 0xff;
 			cg = (cache->colors[0] >> 8) & 0xff;
@@ -882,7 +882,7 @@ namespace nsvg {
 				cover++;
 				dst += 4;
 			}
-		} else if (cache->type == NSVG_PAINT_LINEAR_GRADIENT) {
+		} else if (cache->type == NSVGpaintType::LINEAR_GRADIENT) {
 			// TODO: spread modes.
 			// TODO: plenty of opportunities to optimize.
 			float fx, fy, dx, gy;
@@ -926,7 +926,7 @@ namespace nsvg {
 				dst += 4;
 				fx += dx;
 			}
-		} else if (cache->type == NSVG_PAINT_RADIAL_GRADIENT) {
+		} else if (cache->type == NSVGpaintType::RADIAL_GRADIENT) {
 			// TODO: spread modes.
 			// TODO: plenty of opportunities to optimize.
 			// TODO: focus (fx,fy)
@@ -1131,7 +1131,7 @@ namespace nsvg {
 
 		cache->type = paint->type;
 
-		if (paint->type == NSVG_PAINT_COLOR) {
+		if (paint->type == NSVGpaintType::COLOR) {
 			cache->colors[0] = nsvg__applyOpacity(paint->color, opacity);
 			return;
 		}
@@ -1253,7 +1253,7 @@ namespace nsvg {
 			if (!(shape->flags & NSVG_FLAGS_VISIBLE))
 				continue;
 
-			if (shape->fill.type != NSVG_PAINT_NONE) {
+			if (shape->fill.type != NSVGpaintType::NONE) {
 				nsvg__resetPool(r);
 				r->freelist = NULL;
 				r->nedges = 0;
@@ -1277,7 +1277,7 @@ namespace nsvg {
 
 				nsvg__rasterizeSortedEdges(r, tx,ty,scale, &cache, shape->fillRule);
 			}
-			if (shape->stroke.type != NSVG_PAINT_NONE && (shape->strokeWidth * scale) > 0.01f) {
+			if (shape->stroke.type != NSVGpaintType::NONE && (shape->strokeWidth * scale) > 0.01f) {
 				nsvg__resetPool(r);
 				r->freelist = NULL;
 				r->nedges = 0;

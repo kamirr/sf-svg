@@ -4,7 +4,6 @@
  * No license-related aspects are affected.         *
  * Kamil Koczurek | koczurekk@gmail.com             *
  * ================================================ */
-
 /* ============================================================================ *
  * Copyright (c) 2013-14 Mikko Mononen memon@inside.org                         *
  *                                                                              *
@@ -75,7 +74,7 @@ namespace nsvg {
 	} NSVGmemPage;
 
 	typedef struct NSVGcachedPaint {
-		char type;
+		NSVGpaintType type;
 		char spread;
 		float xform[6];
 		unsigned int colors[256];
