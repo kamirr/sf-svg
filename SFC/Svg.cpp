@@ -52,6 +52,19 @@ namespace sfc {
 		return true;
 	}
 
+	sf::Image SVGImage::rasterize(const float scale) {
+		nsvg::NSVGrasterizer* rasterizer = nsvg::nsvgCreateRasterizer();
+		sf::Image img;
+
+		sf::Uint8* pixels = new sf::Uint8[int(this->image->height * scale) * int(this->image->width * scale) * 4];
+		nsvg::nsvgRasterize(rasterizer, this->image, 0, 0, scale, pixels, this->image->width * scale, this->image->height * scale, this->image->width * scale * 4);
+
+		img.create(this->image->width * scale, this->image->height * scale, pixels);
+
+		nsvg::nsvgDeleteRasterizer(rasterizer);
+		return img;
+	}
+
 	void SVGImage::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 		for(const auto& curve: this->curves) {
 			target.draw(*curve, states);

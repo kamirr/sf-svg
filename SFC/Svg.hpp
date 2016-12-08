@@ -17,7 +17,7 @@
 #include <memory>
 
 #include "BezierCubicCurve.hpp"
-#include "nanosvg.hpp"
+#include "nanosvgrastr.hpp"
 
 namespace sfc {
 	//! \class SVGImage
@@ -51,8 +51,17 @@ namespace sfc {
 		//! \param [in] file – path to .svg file
 		//! \param [in] dpi – passed do nanosvg
 		//!
+		//! \returns True if ok, False otherwise
+		//!
 		//! Method that parses .svg file and creates proper Bezier Curves.
 		bool loadFromFile(const std::string& file, const float dpi = 96.f);
+
+		//! \brief Rasterizes SVG
+		//!
+		//! \param [in] scale – passed to nanosvg
+		//!
+		//! \returns Rasterized sf::Image
+		sf::Image rasterize(const float scale = 1.f);
 
 		//! \brief Destructors
 		//!

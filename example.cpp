@@ -20,7 +20,9 @@ int main() {
 	sf::RenderWindow app(sf::VideoMode(800, 600), "app", sf::Style::Default, settings);
 
 	sfc::SVGImage img;
-	img.loadFromFile("nano.svg", 120);
+	img.loadFromFile("nano.svg");
+
+	img.rasterize(2.f).saveToFile("rasterized.png");
 
 	auto i = 0u;
 	while(app.isOpen()) {
