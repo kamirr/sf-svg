@@ -2,13 +2,15 @@
 SFML-based library to draw .svg files and Bézier Curves.
 
 ## What it does:
-- Classes inherit sf::Shape;
+- SVG files support;
+- Curves inherit sf::Shape;
 - Provides interface for Bézier curves;
 - Implements Square- and Cubic Bézier curves;
 - Provides debug-friendly features like "helper lines" etc.
 
 ## What it lacks (yet):
-- .svg files support
+- SVG rasterization;
+- Loading SVG from memory/stream;
 
 ## Documentation
 You can find docs [here](https://koczurekk.github.io/sf-svg/).<br />
