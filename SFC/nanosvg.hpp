@@ -84,37 +84,37 @@ namespace nsvg {
 		INVISIBLE = 0x00
 	};
 
-	typedef struct NSVGgradientStop {
+	struct NSVGgradientStop {
 		unsigned int color;
 		float offset;
-	} NSVGgradientStop;
+	};
 
-	typedef struct NSVGgradient {
+	struct NSVGgradient {
 		float xform[6];
 		NSVGspreadType spread;
 		float fx, fy;
 		int nstops;
 		NSVGgradientStop stops[1];
-	} NSVGgradient;
+	};
 
-	typedef struct NSVGpaint {
+	struct NSVGpaint {
 		NSVGpaintType type;
 		union {
 			unsigned int color;
 			NSVGgradient* gradient;
 		};
-	} NSVGpaint;
+	};
 
-	typedef struct NSVGpath
+	struct NSVGpath
 	{
 		float* pts;					// Cubic bezier points: x0,y0, [cpx1,cpx1,cpx2,cpy2,x1,y1], ...
 		int npts;					// Total number of bezier points.
 		char closed;				// Flag indicating if shapes should be treated as closed.
 		float bounds[4];			// Tight bounding box of the shape [minx,miny,maxx,maxy].
 		struct NSVGpath* next;		// Pointer to next path, or NULL if last element.
-	} NSVGpath;
+	};
 
-	typedef struct NSVGshape
+	struct NSVGshape
 	{
 		char id[64];				// Optional 'id' attr of the shape or its group
 		NSVGpaint fill;				// Fill paint
@@ -131,14 +131,14 @@ namespace nsvg {
 		float bounds[4];			// Tight bounding box of the shape [minx,miny,maxx,maxy].
 		NSVGpath* paths;			// Linked list of paths in the image.
 		struct NSVGshape* next;		// Pointer to next shape, or NULL if last element.
-	} NSVGshape;
+	};
 
-	typedef struct NSVGimage
+	struct NSVGimage
 	{
 		float width;				// Width of the image.
 		float height;				// Height of the image.
 		NSVGshape* shapes;			// Linked list of shapes in the image.
-	} NSVGimage;
+	};
 
 	// Parses SVG file from a file, returns SVG image as paths.
 	NSVGimage* nsvgParseFromFile(const char* filename, const char* units, float dpi);
