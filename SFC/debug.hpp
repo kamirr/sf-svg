@@ -1,6 +1,9 @@
 #ifndef DEBUG_HPP
 #define DEBUG_HPP
 
+//! @file
+//! Some debug files implementation
+
 #include <SFML/System/Vector2.hpp>
 #include <iostream>
 

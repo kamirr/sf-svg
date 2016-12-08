@@ -20,7 +20,7 @@ int main() {
 	sf::RenderWindow app(sf::VideoMode(800, 600), "app", sf::Style::Default, settings);
 
 	sfc::SVGImage img;
-	img.open("nano.svg", 120);
+	img.loadFromFile("nano.svg", 120);
 
 	auto i = 0u;
 	while(app.isOpen()) {

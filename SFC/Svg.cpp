@@ -1,3 +1,5 @@
+//! @file
+//! SVGImage implementation
 #include "Svg.hpp"
 
 namespace sfc {
@@ -6,10 +8,10 @@ namespace sfc {
 	{ }
 
 	SVGImage::SVGImage(const std::string &file, const float dpi) {
-		this->open(file, dpi);
+		this->loadFromFile(file, dpi);
 	}
 
-	bool SVGImage::open(const std::string &file, const float dpi) {
+	bool SVGImage::loadFromFile(const std::string &file, const float dpi) {
 		if(this->image)
 			nsvgDelete(this->image);
 
