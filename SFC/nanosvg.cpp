@@ -5,6 +5,10 @@
  * Kamil Koczurek | koczurekk@gmail.com              *
  * ================================================= */
 
+//! @file
+//!
+//! \brief
+//! Nanosvg++ implementation
 #include "nanosvg.hpp"
 
 namespace nsvg {

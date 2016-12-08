@@ -4,6 +4,8 @@
  * =========================================================== */
 
 //! @file
+//!
+//! \brief
 //! BezierAbstractCurve declaration and partial implementation.
 
 

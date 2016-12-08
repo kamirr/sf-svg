@@ -28,6 +28,11 @@
  * by Sean Barrett - http://nothings.org/                                       *
  * ============================================================================ */
 
+//! @file
+//!
+//! \brief
+//! Nanosvg++ rasterizer declaration
+
 #ifndef NANOSVGRASTR_HPP
 #define NANOSVGRASTR_HPP
 

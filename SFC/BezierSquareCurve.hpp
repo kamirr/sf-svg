@@ -3,6 +3,11 @@
  * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
  * =========================================================== */
 
+//! @file
+//!
+//! \brief
+//! BezierSquareCurve declaration
+
 #ifndef BEZIERSQUARECURVE_H
 #define BEZIERSQUARECURVE_H
 

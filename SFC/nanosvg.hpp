@@ -33,6 +33,11 @@
  * http://blog.hackers-cafe.net/2009/06/how-to-calculate-bezier-curves-bounding.html *
  * ================================================================================= */
 
+//! @file
+//!
+//! \brief
+//! Nanosvg++ declarations
+
 #ifndef NANOSVG_H
 #define NANOSVG_H
 

@@ -4,6 +4,8 @@
  * =========================================================== */
 
 //! @file
+//!
+//! \brief
 //! VertexVector (drawable std::vector<sf::Vertex>) implementation
 
 #ifndef VERTEXVECTOR

@@ -3,6 +3,8 @@
  * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
  * =========================================================== */
 //! @file
+//!
+//! \brief
 //! Base header used by (probably) all sf-svg classes.
 
 #ifndef SFAS_BASE_HPP

@@ -4,6 +4,8 @@
  * =========================================================== */
 
 //! @file
+//!
+//! \brief
 //! Single file to include all curve-related header files
 
 #ifndef BEZIERCURVE_H

@@ -3,6 +3,10 @@
  * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
  * =========================================================== */
 
+//! @file
+//!
+//! \brief
+//! BezierCubicCurve implementation
 #include "BezierCubicCurve.hpp"
 #include <iostream>
 

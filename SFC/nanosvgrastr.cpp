@@ -5,6 +5,10 @@
  * Kamil Koczurek | koczurekk@gmail.com                   *
  * ====================================================== */
 
+//! @file
+//!
+//! \brief
+//! Nanosvg++ rasterizer implementation
 #include "nanosvgrastr.hpp"
 
 namespace nsvg {
