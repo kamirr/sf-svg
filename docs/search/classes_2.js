@@ -1,5 +1,22 @@
 var searchData=
 [
-  ['vertexvector',['VertexVector',['../structsfc_1_1VertexVector.html',1,'sfc']]],
-  ['vertexvector_3c_20sf_3a_3alinesstrip_20_3e',['VertexVector&lt; sf::LinesStrip &gt;',['../structsfc_1_1VertexVector.html',1,'sfc']]]
+  ['nsvgactiveedge',['NSVGactiveEdge',['../structnsvg_1_1NSVGactiveEdge.html',1,'nsvg']]],
+  ['nsvgattrib',['NSVGattrib',['../structnsvg_1_1NSVGattrib.html',1,'nsvg']]],
+  ['nsvgcachedpaint',['NSVGcachedPaint',['../structnsvg_1_1NSVGcachedPaint.html',1,'nsvg']]],
+  ['nsvgcoordinate',['NSVGcoordinate',['../structnsvg_1_1NSVGcoordinate.html',1,'nsvg']]],
+  ['nsvgedge',['NSVGedge',['../structnsvg_1_1NSVGedge.html',1,'nsvg']]],
+  ['nsvggradient',['NSVGgradient',['../structnsvg_1_1NSVGgradient.html',1,'nsvg']]],
+  ['nsvggradientdata',['NSVGgradientData',['../structnsvg_1_1NSVGgradientData.html',1,'nsvg']]],
+  ['nsvggradientstop',['NSVGgradientStop',['../structnsvg_1_1NSVGgradientStop.html',1,'nsvg']]],
+  ['nsvgimage',['NSVGimage',['../structnsvg_1_1NSVGimage.html',1,'nsvg']]],
+  ['nsvglineardata',['NSVGlinearData',['../structnsvg_1_1NSVGlinearData.html',1,'nsvg']]],
+  ['nsvgmempage',['NSVGmemPage',['../structnsvg_1_1NSVGmemPage.html',1,'nsvg']]],
+  ['nsvgnamedcolor',['NSVGNamedColor',['../structnsvg_1_1NSVGNamedColor.html',1,'nsvg']]],
+  ['nsvgpaint',['NSVGpaint',['../structnsvg_1_1NSVGpaint.html',1,'nsvg']]],
+  ['nsvgparser',['NSVGparser',['../structnsvg_1_1NSVGparser.html',1,'nsvg']]],
+  ['nsvgpath',['NSVGpath',['../structnsvg_1_1NSVGpath.html',1,'nsvg']]],
+  ['nsvgpoint',['NSVGpoint',['../structnsvg_1_1NSVGpoint.html',1,'nsvg']]],
+  ['nsvgradialdata',['NSVGradialData',['../structnsvg_1_1NSVGradialData.html',1,'nsvg']]],
+  ['nsvgrasterizer',['NSVGrasterizer',['../structnsvg_1_1NSVGrasterizer.html',1,'nsvg']]],
+  ['nsvgshape',['NSVGshape',['../structnsvg_1_1NSVGshape.html',1,'nsvg']]]
 ];
