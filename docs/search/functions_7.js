@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7ebezierabstractcurve',['~BezierAbstractCurve',['../classsfc_1_1BezierAbstractCurve.html#a58850e4b8631a64e95b0df46766e6c05',1,'sfc::BezierAbstractCurve']]],
-  ['_7esvgimage',['~SVGImage',['../classsfc_1_1SVGImage.html#a7973836023297eac606d7e0356a746f5',1,'sfc::SVGImage']]]
+  ['update',['update',['../classsfc_1_1BezierAbstractCurve.html#a5567b8e12cb76408d1869095f0449cf0',1,'sfc::BezierAbstractCurve::update()'],['../classsfc_1_1BezierCubicCurve.html#a884b28f9276d569e93c6001da094bfa8',1,'sfc::BezierCubicCurve::update()'],['../classsfc_1_1BezierSquareCurve.html#a184fbe417749d60c8763c24d91045df1',1,'sfc::BezierSquareCurve::update()']]]
 ];

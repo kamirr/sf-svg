@@ -103,8 +103,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Inheritance diagram for sfc::SVGImage:</div>
 <div class="dyncontent">
 <div class="center"><img src="classsfc_1_1SVGImage__inherit__graph.png" border="0" usemap="#sfc_1_1SVGImage_inherit__map" alt="Inheritance graph"/></div>
-<map name="sfc_1_1SVGImage_inherit__map" id="sfc_1_1SVGImage_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -118,6 +116,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3b886a34aa4c5f4ccbc4e3f29494de7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1SVGImage.html#a3b886a34aa4c5f4ccbc4e3f29494de7e">loadFromFile</a> (const std::string &amp;file, const float dpi=96.f)</td></tr>
 <tr class="memdesc:a3b886a34aa4c5f4ccbc4e3f29494de7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens .svg file.  <a href="#a3b886a34aa4c5f4ccbc4e3f29494de7e">More...</a><br /></td></tr>
 <tr class="separator:a3b886a34aa4c5f4ccbc4e3f29494de7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafddff63441f5581a82fda7499bc8657"><td class="memItemLeft" align="right" valign="top">sf::Image&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1SVGImage.html#aafddff63441f5581a82fda7499bc8657">rasterize</a> (const float scale=1.f)</td></tr>
+<tr class="memdesc:aafddff63441f5581a82fda7499bc8657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rasterizes SVG.  <a href="#aafddff63441f5581a82fda7499bc8657">More...</a><br /></td></tr>
+<tr class="separator:aafddff63441f5581a82fda7499bc8657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a543207757372b3d75a98261a57774884"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1SVGImage.html#a543207757372b3d75a98261a57774884">move</a> (sf::Vector2f vec)</td></tr>
+<tr class="memdesc:a543207757372b3d75a98261a57774884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translate image.  <a href="#a543207757372b3d75a98261a57774884">More...</a><br /></td></tr>
+<tr class="separator:a543207757372b3d75a98261a57774884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a0c1a56049273580dcdba2ebdcacc0a"><td class="memItemLeft" align="right" valign="top">sf::Vector2f&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1SVGImage.html#a8a0c1a56049273580dcdba2ebdcacc0a">getSize</a> ()</td></tr>
+<tr class="memdesc:a8a0c1a56049273580dcdba2ebdcacc0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns size of image.  <a href="#a8a0c1a56049273580dcdba2ebdcacc0a">More...</a><br /></td></tr>
+<tr class="separator:a8a0c1a56049273580dcdba2ebdcacc0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7973836023297eac606d7e0356a746f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1SVGImage.html#a7973836023297eac606d7e0356a746f5">~SVGImage</a> ()</td></tr>
 <tr class="memdesc:a7973836023297eac606d7e0356a746f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructors.  <a href="#a7973836023297eac606d7e0356a746f5">More...</a><br /></td></tr>
 <tr class="separator:a7973836023297eac606d7e0356a746f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,6 +206,24 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a8a0c1a56049273580dcdba2ebdcacc0a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Vector2f sfc::SVGImage::getSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns size of image. </p>
+<dl class="section return"><dt>Returns</dt><dd>sf::Vector2f (size) </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a3b886a34aa4c5f4ccbc4e3f29494de7e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -231,7 +256,57 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>True if ok, False otherwise</dd></dl>
 <p>Method that parses .svg file and creates proper Bezier Curves. </p>
+
+</div>
+</div>
+<a class="anchor" id="a543207757372b3d75a98261a57774884"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sfc::SVGImage::move </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Translate image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">vec</td><td>– vector by which image will be translated </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aafddff63441f5581a82fda7499bc8657"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sf::Image sfc::SVGImage::rasterize </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>scale</em> = <code>1.f</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rasterizes SVG. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">scale</td><td>– passed to nanosvg</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Rasterized sf::Image </dd></dl>
 
 </div>
 </div>

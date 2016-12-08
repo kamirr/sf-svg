@@ -7,5 +7,6 @@ var searchData=
   ['getnormalizedlengthlimit',['getNormalizedLengthLimit',['../classsfc_1_1BezierAbstractCurve.html#a5c9bfee506f8b99624c5b95490f79c71',1,'sfc::BezierAbstractCurve']]],
   ['getpoint',['getPoint',['../classsfc_1_1BezierAbstractCurve.html#abe2070cd97405130dafd1aa9b94fe058',1,'sfc::BezierAbstractCurve::getPoint()'],['../classsfc_1_1BezierCubicCurve.html#a5f9e6e9f4b4849c1d864ba7db93a7927',1,'sfc::BezierCubicCurve::getPoint()'],['../classsfc_1_1BezierSquareCurve.html#a0e6c3e046ce802c7aa2570a76b8d5f36',1,'sfc::BezierSquareCurve::getPoint()']]],
   ['getpointcount',['getPointCount',['../classsfc_1_1BezierAbstractCurve.html#a0b0989b2587daf77d1029bf9f5b1224d',1,'sfc::BezierAbstractCurve']]],
-  ['getpointposition',['getPointPosition',['../classsfc_1_1BezierCubicCurve.html#aa82ec0b275c1e198edce5962d598d21e',1,'sfc::BezierCubicCurve::getPointPosition()'],['../classsfc_1_1BezierSquareCurve.html#ac70ee96185d3e34d113d0ac501c33ab7',1,'sfc::BezierSquareCurve::getPointPosition()']]]
+  ['getpointposition',['getPointPosition',['../classsfc_1_1BezierCubicCurve.html#aa82ec0b275c1e198edce5962d598d21e',1,'sfc::BezierCubicCurve::getPointPosition()'],['../classsfc_1_1BezierSquareCurve.html#ac70ee96185d3e34d113d0ac501c33ab7',1,'sfc::BezierSquareCurve::getPointPosition()']]],
+  ['getsize',['getSize',['../classsfc_1_1SVGImage.html#a8a0c1a56049273580dcdba2ebdcacc0a',1,'sfc::SVGImage']]]
 ];

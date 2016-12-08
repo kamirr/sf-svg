@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['vector',['vector',['../structsfc_1_1Line2.html#ac9f661de0454820661bcfaa1f46855bd',1,'sfc::Line2']]],
-  ['vertexvector',['VertexVector',['../structsfc_1_1VertexVector.html',1,'sfc']]],
-  ['vertexvector_2ehpp',['VertexVector.hpp',['../VertexVector_8hpp.html',1,'']]],
-  ['vertexvector_3c_20sf_3a_3alinesstrip_20_3e',['VertexVector&lt; sf::LinesStrip &gt;',['../structsfc_1_1VertexVector.html',1,'sfc']]]
+  ['update',['update',['../classsfc_1_1BezierAbstractCurve.html#a5567b8e12cb76408d1869095f0449cf0',1,'sfc::BezierAbstractCurve::update()'],['../classsfc_1_1BezierCubicCurve.html#a884b28f9276d569e93c6001da094bfa8',1,'sfc::BezierCubicCurve::update()'],['../classsfc_1_1BezierSquareCurve.html#a184fbe417749d60c8763c24d91045df1',1,'sfc::BezierSquareCurve::update()']]]
 ];
