@@ -71,7 +71,13 @@ namespace sfc {
 		}
 	}
 
-	sf::Vector2f SVGImage::getSize() {
+	void SVGImage::scale(const float factor) {
+		for(auto& curve: this->curves) {
+			(*curve).scale({factor, factor});
+		}
+	}
+
+	sf::Vector2f SVGImage::getSize() const {
 		return {
 			this->image->width,
 			this->image->height

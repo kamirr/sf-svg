@@ -68,10 +68,12 @@ namespace sfc {
 		//! \param [in] vec – vector by which image will be translated
 		void move(sf::Vector2f vec);
 
+		void scale(const float factor);
+
 		//! \brief Returns size of image
 		//!
 		//! \returns sf::Vector2f (size)
-		sf::Vector2f getSize();
+		sf::Vector2f getSize() const;
 
 		//! \brief Destructors
 		//!
