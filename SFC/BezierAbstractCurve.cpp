@@ -31,4 +31,11 @@ namespace sfc {
 		for(auto& verticle : m_vertices)
 			verticle.position += diff;
 	}
+
+	void BezierAbstractCurve::scale(const sf::Vector2f &factor) {
+		for(auto& vertex: m_vertices) {
+			vertex.position.x *= factor.x;
+			vertex.position.y *= factor.y;
+		}
+	}
 }

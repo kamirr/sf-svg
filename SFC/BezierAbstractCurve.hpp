@@ -154,6 +154,9 @@ namespace sfc {
 
 		//! \brief Translate curve
 		void move(sf::Vector2f);
+
+		//! \brief Scale curve
+		void scale(const sf::Vector2f &factor);
 	};
 }
 #endif // BEZIERABSTRACTCURVE_H
