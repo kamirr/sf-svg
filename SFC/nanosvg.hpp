@@ -56,31 +56,32 @@ namespace nsvg {
 		RADIAL_GRADIENT = 3,
 	};
 
-	enum NSVGspreadType {
-		NSVG_SPREAD_PAD = 0,
-		NSVG_SPREAD_REFLECT = 1,
-		NSVG_SPREAD_REPEAT = 2,
+	enum class NSVGspreadType {
+		PAD = 0,
+		REFLECT = 1,
+		REPEAT = 2,
 	};
 
-	enum NSVGlineJoin {
-		NSVG_JOIN_MITER = 0,
-		NSVG_JOIN_ROUND = 1,
-		NSVG_JOIN_BEVEL = 2,
+	enum class NSVGlineJoin {
+		MITER = 0,
+		ROUND = 1,
+		BEVEL = 2,
 	};
 
-	enum NSVGlineCap {
-		NSVG_CAP_BUTT = 0,
-		NSVG_CAP_ROUND = 1,
-		NSVG_CAP_SQUARE = 2,
+	enum class NSVGlineCap {
+		BUTT = 0,
+		ROUND = 1,
+		SQUARE = 2,
 	};
 
-	enum NSVGfillRule {
-		NSVG_FILLRULE_NONZERO = 0,
-		NSVG_FILLRULE_EVENODD = 1,
+	enum class NSVGfillRule {
+		NONZERO = 0,
+		EVENODD = 1,
 	};
 
-	enum NSVGflags {
-		NSVG_FLAGS_VISIBLE = 0x01
+	enum class NSVGflags {
+		NSVG_FLAGS_VISIBLE = 0x01,
+		INVISIBLE = 0x00
 	};
 
 	typedef struct NSVGgradientStop {
@@ -90,7 +91,7 @@ namespace nsvg {
 
 	typedef struct NSVGgradient {
 		float xform[6];
-		char spread;
+		NSVGspreadType spread;
 		float fx, fy;
 		int nstops;
 		NSVGgradientStop stops[1];
@@ -123,10 +124,10 @@ namespace nsvg {
 		float strokeDashOffset;		// Stroke dash offset (scaled).
 		float strokeDashArray[8];			// Stroke dash array (scaled).
 		char strokeDashCount;				// Number of dash values in dash array.
-		char strokeLineJoin;		// Stroke join type.
-		char strokeLineCap;			// Stroke cap type.
-		char fillRule;				// Fill rule, see NSVGfillRule.
-		unsigned char flags;		// Logical or of NSVG_FLAGS_* flags
+		NSVGlineJoin strokeLineJoin;		// Stroke join type.
+		NSVGlineCap strokeLineCap;			// Stroke cap type.
+		NSVGfillRule fillRule;				// Fill rule, see NSVGfillRule.
+		NSVGflags flags;		// Logical or of NSVG_FLAGS_* flags
 		float bounds[4];			// Tight bounding box of the shape [minx,miny,maxx,maxy].
 		NSVGpath* paths;			// Linked list of paths in the image.
 		struct NSVGshape* next;		// Pointer to next shape, or NULL if last element.

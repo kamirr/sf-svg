@@ -219,7 +219,7 @@ namespace nsvg {
 			NSVGlinearData linear;
 			NSVGradialData radial;
 		};
-		char spread;
+		NSVGspreadType spread;
 		char units;
 		float xform[6];
 		int nstops;
@@ -242,9 +242,9 @@ namespace nsvg {
 		float strokeDashOffset;
 		float strokeDashArray[NSVG_MAX_DASHES];
 		int strokeDashCount;
-		char strokeLineJoin;
-		char strokeLineCap;
-		char fillRule;
+		NSVGlineJoin strokeLineJoin;
+		NSVGlineCap strokeLineCap;
+		NSVGfillRule fillRule;
 		float fontSize;
 		unsigned int stopColor;
 		float stopOpacity;
@@ -449,9 +449,9 @@ namespace nsvg {
 		p->attr[0].strokeOpacity = 1;
 		p->attr[0].stopOpacity = 1;
 		p->attr[0].strokeWidth = 1;
-		p->attr[0].strokeLineJoin = NSVG_JOIN_MITER;
-		p->attr[0].strokeLineCap = NSVG_CAP_BUTT;
-		p->attr[0].fillRule = NSVG_FILLRULE_NONZERO;
+		p->attr[0].strokeLineJoin = NSVGlineJoin::MITER;
+		p->attr[0].strokeLineCap = NSVGlineCap::BUTT;
+		p->attr[0].fillRule = NSVGfillRule::NONZERO;
 		p->attr[0].hasFill = 1;
 		p->attr[0].visible = 1;
 
@@ -821,7 +821,7 @@ namespace nsvg {
 		}
 
 		// Set flags
-		shape->flags = (attr->visible ? NSVG_FLAGS_VISIBLE : 0x00);
+		shape->flags = (attr->visible ? NSVGflags::NSVG_FLAGS_VISIBLE : NSVGflags::INVISIBLE);
 
 		// Add to tail
 		prev = NULL;
@@ -1383,38 +1383,36 @@ namespace nsvg {
 		id[i] = '\0';
 	}
 
-	static char nsvg__parseLineCap(const char* str)
+	static NSVGlineCap nsvg__parseLineCap(const char* str)
 	{
 		if (strcmp(str, "butt") == 0)
-			return NSVG_CAP_BUTT;
+			return NSVGlineCap::BUTT;
 		else if (strcmp(str, "round") == 0)
-			return NSVG_CAP_ROUND;
+			return NSVGlineCap::ROUND;
 		else if (strcmp(str, "square") == 0)
-			return NSVG_CAP_SQUARE;
-		// TODO: handle inherit.
-		return NSVG_CAP_BUTT;
+			return NSVGlineCap::SQUARE;
+
+		return NSVGlineCap::BUTT;
 	}
 
-	static char nsvg__parseLineJoin(const char* str)
+	static NSVGlineJoin nsvg__parseLineJoin(const char* str)
 	{
 		if (strcmp(str, "miter") == 0)
-			return NSVG_JOIN_MITER;
+			return NSVGlineJoin::MITER;
 		else if (strcmp(str, "round") == 0)
-			return NSVG_JOIN_ROUND;
-		else if (strcmp(str, "bevel") == 0)
-			return NSVG_JOIN_BEVEL;
-		// TODO: handle inherit.
-		return NSVG_CAP_BUTT;
+			return NSVGlineJoin::ROUND;
+
+		return NSVGlineJoin::BEVEL;
 	}
 
-	static char nsvg__parseFillRule(const char* str)
+	static NSVGfillRule nsvg__parseFillRule(const char* str)
 	{
 		if (strcmp(str, "nonzero") == 0)
-			return NSVG_FILLRULE_NONZERO;
+			return NSVGfillRule::NONZERO;
 		else if (strcmp(str, "evenodd") == 0)
-			return NSVG_FILLRULE_EVENODD;
-		// TODO: handle inherit.
-		return NSVG_FILLRULE_NONZERO;
+			return NSVGfillRule::EVENODD;
+
+		return NSVGfillRule::NONZERO;
 	}
 
 	static const char* nsvg__getNextDashItem(const char* s, char* it)
@@ -2336,11 +2334,11 @@ namespace nsvg {
 					grad->linear.y2 = nsvg__parseCoordinateRaw(attr[i + 1]);
 				} else if (strcmp(attr[i], "spreadMethod") == 0) {
 					if (strcmp(attr[i+1], "pad") == 0)
-						grad->spread = NSVG_SPREAD_PAD;
+						grad->spread = NSVGspreadType::PAD;
 					else if (strcmp(attr[i+1], "reflect") == 0)
-						grad->spread = NSVG_SPREAD_REFLECT;
+						grad->spread = NSVGspreadType::REFLECT;
 					else if (strcmp(attr[i+1], "repeat") == 0)
-						grad->spread = NSVG_SPREAD_REPEAT;
+						grad->spread = NSVGspreadType::REPEAT;
 				} else if (strcmp(attr[i], "xlink:href") == 0) {
 					const char *href = attr[i+1];
 					strncpy(grad->ref, href+1, 62);
