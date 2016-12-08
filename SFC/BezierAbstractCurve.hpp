@@ -121,7 +121,7 @@ namespace sfc {
 		//!
 		//! Calculates all curve-related things like vertices positions / helper lines etc.
 		//! Not a big deal, use only if you really want to inherit BezierCubicCurve.
-		virtual void calculateVeritces(std::vector<sf::Vector2f>& vector, const size_t numSegments, const float limitCurve, sf::Vertex* debugLines) = 0;
+		virtual void calculateVeritces(std::vector<sf::Vector2f>& vector, const float limitCurve, sf::Vertex* debugLines) = 0;
 
 		//! \brief Sets color
 		//!

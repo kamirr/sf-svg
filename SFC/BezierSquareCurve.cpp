@@ -22,16 +22,12 @@ namespace sfc {
 	*/
 	void BezierSquareCurve::calculateVeritces(
 	std::vector<sf::Vector2f> &vector,
-	const size_t numSegments,
 	const float limitCurve,
 	sf::Vertex *debugLines) {
 		vector.clear();
 
-		if (!numSegments) // Any points at all?
-			return;
-
-		for(float progress = 0.f; progress <= (numSegments + 1) * limitCurve; progress += limitCurve)
-			vector.push_back(this->getPoint(progress / (this->m_pointCount + 1)));
+		for(auto i = 0u; i < getPointCount() && float(i) / getPointCount() <= limitCurve; ++i)
+			vector.push_back(this->getPoint(i));
 
 		if(debugLines) {
 			debugLines[0] = {this->m_begin, sf::Color(0, 255, 0)};
@@ -109,7 +105,6 @@ namespace sfc {
 		std::vector<sf::Vector2f> points;
 		calculateVeritces(
 		points,
-		this->m_pointCount,
 		this->m_limitCurve,
 		this->m_mode == NORMAL ? nullptr : this->m_debugLines);
 

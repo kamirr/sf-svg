@@ -25,7 +25,7 @@ namespace sfc {
 
 	protected:
 		/* Commented in base class */
-		virtual void calculateVeritces(std::vector<sf::Vector2f>&, const size_t, const float, sf::Vertex*);
+		virtual void calculateVeritces(std::vector<sf::Vector2f>&, const float, sf::Vertex*);
 
 	public:
 		//! \brief Point type enum
