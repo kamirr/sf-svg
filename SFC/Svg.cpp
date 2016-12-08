@@ -65,6 +65,19 @@ namespace sfc {
 		return img;
 	}
 
+	void SVGImage::move(sf::Vector2f vec) {
+		for(auto& curve: this->curves) {
+			(*curve).move(vec);
+		}
+	}
+
+	sf::Vector2f SVGImage::getSize() {
+		return {
+			this->image->width,
+			this->image->height
+		};
+	}
+
 	void SVGImage::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 		for(const auto& curve: this->curves) {
 			target.draw(*curve, states);

@@ -63,6 +63,16 @@ namespace sfc {
 		//! \returns Rasterized sf::Image
 		sf::Image rasterize(const float scale = 1.f);
 
+		//! \brief Translate image
+		//!
+		//! \param [in] vec – vector by which image will be translated
+		void move(sf::Vector2f vec);
+
+		//! \brief Returns size of image
+		//!
+		//! \returns sf::Vector2f (size)
+		sf::Vector2f getSize();
+
 		//! \brief Destructors
 		//!
 		//! Releases resources (taken by nanosvg) if any image was loaded.
