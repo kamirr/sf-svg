@@ -21,4 +21,5 @@ HEADERS += \
 	SFC/VertexVector.hpp \
     SFC/Base.hpp \
     SFC/nanosvg.hpp \
-    SFC/Svg.hpp
+    SFC/Svg.hpp \
+    SFC/debug.hpp
