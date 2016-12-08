@@ -1,28 +1,23 @@
 #include "SFC/Svg.hpp"
 
-#include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Graphics/CircleShape.hpp>
 #include <SFML/Window/Event.hpp>
-#include <SFML/System/Clock.hpp>
-#include <iostream>
-#include <vector>
-#include <memory>
-#include <cmath>
 
 int main() {
-	/* Enable antialiasing (optional) */
-	sf::ContextSettings settings;
-	settings.antialiasingLevel = 8;
-	settings.depthBits = 24;
-
-	/* Create window */
-	sf::RenderWindow app(sf::VideoMode(800, 600), "app", sf::Style::Default, settings);
-
+	/* Create image */
 	sfc::SVGImage img;
+
+	/* Load svg file */
 	img.loadFromFile("nano.svg");
 
+	/* Move it by [10, 10] to make it more visible */
+	img.move({10, 10});
+
+	/* Rasterize using scale 2.f and save result (sf::Image) to file */
 	img.rasterize(2.f).saveToFile("rasterized.png");
+
+	/* Create window */
+	sf::RenderWindow app(sf::VideoMode(img.getSize().x + 20, img.getSize().y + 20), "sf-svg");
 
 	auto i = 0u;
 	while(app.isOpen()) {
