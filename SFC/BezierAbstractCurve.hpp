@@ -32,14 +32,6 @@
 #include "VertexVector.hpp"
 #include "Base.hpp"
 
-/*
- * Abstract class!
- * Do not define methods!
- * Inherit it to create class compatibile with Brezier Curve API.
- *
- * Remember, it's not an interface, this class contains variables
- * and some definied methods – getters & setters (mostly).
-*/
 namespace sfc {
 	//! \class BezierAbstractCurve
 	//!
@@ -115,7 +107,6 @@ namespace sfc {
 		//! \brief Calculate points on cuve
 		//!
 		//! \param [out] vector – vector to store vertices
-		//! \param [in]  numSegments – aka point count
 		//! \param [in]  limitCurve – part of curve to be drawn, range [0, 1]
 		//! \param [out] debugLines – vertex array, used to store and draw helper lines
 		//!
