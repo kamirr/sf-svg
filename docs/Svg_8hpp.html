@@ -87,26 +87,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Svg.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>SVGImage class declaration.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;SFML/Graphics/RenderWindow.hpp&gt;</code><br />
 <code>#include &lt;SFML/Graphics/RenderTarget.hpp&gt;</code><br />
+<code>#include &lt;SFML/System/InputStream.hpp&gt;</code><br />
 <code>#include &lt;SFML/Graphics/Drawable.hpp&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &quot;<a class="el" href="BezierCubicCurve_8hpp_source.html">BezierCubicCurve.hpp</a>&quot;</code><br />
-<code>#include &quot;nanosvgrastr.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="nanosvgrastr_8hpp_source.html">nanosvgrastr.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nsvgpp_8hpp_source.html">nsvgpp.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Svg.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Svg_8hpp__incl.png" border="0" usemap="#Svg_8hpp" alt=""/></div>
 <map name="Svg_8hpp" id="Svg_8hpp">
-<area shape="rect" id="node9" href="BezierCubicCurve_8hpp.html" title="BezierCubicCurve.hpp" alt="" coords="987,80,1141,107"/>
-<area shape="rect" id="node18" href="nanosvgrastr_8hpp_source.html" title="nanosvgrastr.hpp" alt="" coords="1235,80,1357,107"/>
-<area shape="rect" id="node10" href="BezierAbstractCurve_8hpp.html" title="BezierAbstractCurve.hpp" alt="" coords="939,155,1107,181"/>
-<area shape="rect" id="node12" href="VertexVector_8hpp.html" title="VertexVector.hpp" alt="" coords="1096,229,1219,256"/>
-<area shape="rect" id="node14" href="Base_8hpp.html" title="Base.hpp" alt="" coords="515,229,592,256"/>
-<area shape="rect" id="node19" href="nanosvg_8hpp_source.html" title="nanosvg.hpp" alt="" coords="1317,155,1413,181"/>
+<area shape="rect" id="node11" href="BezierCubicCurve_8hpp.html" title="BezierCubicCurve declaration. " alt="" coords="543,80,696,107"/>
+<area shape="rect" id="node20" href="nanosvgrastr_8hpp.html" title="Nanosvg++ rasterizer declaration. " alt="" coords="1161,80,1283,107"/>
+<area shape="rect" id="node26" href="nsvgpp_8hpp.html" title="Nanosvg++ additional classes. " alt="" coords="953,80,1043,107"/>
+<area shape="rect" id="node12" href="BezierAbstractCurve_8hpp.html" title="BezierAbstractCurve declaration and partial implementation. " alt="" coords="597,155,765,181"/>
+<area shape="rect" id="node14" href="VertexVector_8hpp.html" title="VertexVector (drawable std::vector&lt;sf::Vertex&gt;) implementation. " alt="" coords="958,229,1081,256"/>
+<area shape="rect" id="node16" href="Base_8hpp.html" title="Base header used by (probably) all sf&#45;svg classes. " alt="" coords="603,229,681,256"/>
+<area shape="rect" id="node21" href="nanosvg_8hpp.html" title="Nanosvg++ declarations. " alt="" coords="1174,155,1270,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -114,7 +121,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Svg_8hpp__dep__incl.png" border="0" usemap="#Svg_8hppdep" alt=""/></div>
 <map name="Svg_8hppdep" id="Svg_8hppdep">
-<area shape="rect" id="node2" href="Svg_8cpp.html" title="Svg.cpp" alt="" coords="5,80,76,107"/>
+<area shape="rect" id="node2" href="Svg_8cpp.html" title="SVGImage implementation. " alt="" coords="5,80,76,107"/>
 </map>
 </div>
 </div>
@@ -133,7 +140,7 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>SVGImage class declaration </p>
+<div class="textblock"><p>SVGImage class declaration. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,23 +1,10 @@
 var searchData=
 [
-  ['normal',['NORMAL',['../namespacesfc.html#a8b65f97d17101a451f7e02f9abf35593aad53d64ea89089008438919984cb979f',1,'sfc']]],
-  ['nsvgactiveedge',['NSVGactiveEdge',['../structnsvg_1_1NSVGactiveEdge.html',1,'nsvg']]],
-  ['nsvgattrib',['NSVGattrib',['../structnsvg_1_1NSVGattrib.html',1,'nsvg']]],
-  ['nsvgcachedpaint',['NSVGcachedPaint',['../structnsvg_1_1NSVGcachedPaint.html',1,'nsvg']]],
-  ['nsvgcoordinate',['NSVGcoordinate',['../structnsvg_1_1NSVGcoordinate.html',1,'nsvg']]],
-  ['nsvgedge',['NSVGedge',['../structnsvg_1_1NSVGedge.html',1,'nsvg']]],
-  ['nsvggradient',['NSVGgradient',['../structnsvg_1_1NSVGgradient.html',1,'nsvg']]],
-  ['nsvggradientdata',['NSVGgradientData',['../structnsvg_1_1NSVGgradientData.html',1,'nsvg']]],
-  ['nsvggradientstop',['NSVGgradientStop',['../structnsvg_1_1NSVGgradientStop.html',1,'nsvg']]],
-  ['nsvgimage',['NSVGimage',['../structnsvg_1_1NSVGimage.html',1,'nsvg']]],
-  ['nsvglineardata',['NSVGlinearData',['../structnsvg_1_1NSVGlinearData.html',1,'nsvg']]],
-  ['nsvgmempage',['NSVGmemPage',['../structnsvg_1_1NSVGmemPage.html',1,'nsvg']]],
-  ['nsvgnamedcolor',['NSVGNamedColor',['../structnsvg_1_1NSVGNamedColor.html',1,'nsvg']]],
-  ['nsvgpaint',['NSVGpaint',['../structnsvg_1_1NSVGpaint.html',1,'nsvg']]],
-  ['nsvgparser',['NSVGparser',['../structnsvg_1_1NSVGparser.html',1,'nsvg']]],
-  ['nsvgpath',['NSVGpath',['../structnsvg_1_1NSVGpath.html',1,'nsvg']]],
-  ['nsvgpoint',['NSVGpoint',['../structnsvg_1_1NSVGpoint.html',1,'nsvg']]],
-  ['nsvgradialdata',['NSVGradialData',['../structnsvg_1_1NSVGradialData.html',1,'nsvg']]],
-  ['nsvgrasterizer',['NSVGrasterizer',['../structnsvg_1_1NSVGrasterizer.html',1,'nsvg']]],
-  ['nsvgshape',['NSVGshape',['../structnsvg_1_1NSVGshape.html',1,'nsvg']]]
+  ['length',['length',['../structsfc_1_1Line2.html#a2c69501b2b3a41cbede049b922178864',1,'sfc::Line2']]],
+  ['line2',['Line2',['../structsfc_1_1Line2.html#ad0452675e8f8085ef71829ad6b42a7f1',1,'sfc::Line2::Line2()'],['../structsfc_1_1Line2.html#a75a22445c2ddad187f5fec39e060349d',1,'sfc::Line2::Line2(const sf::Vector2&lt; T &gt; point, const sf::Vector2&lt; T &gt; vector, const sf::Color color=sf::Color::White)']]],
+  ['line2',['Line2',['../structsfc_1_1Line2.html',1,'sfc']]],
+  ['lineardata',['LinearData',['../structnsvg_1_1LinearData.html',1,'nsvg']]],
+  ['loadfromfile',['loadFromFile',['../classnsvg_1_1Image.html#afcaae5966e6d8f7c0d5b134dc4c9b00e',1,'nsvg::Image::loadFromFile()'],['../classsfc_1_1SVGImage.html#a3b886a34aa4c5f4ccbc4e3f29494de7e',1,'sfc::SVGImage::loadFromFile()']]],
+  ['loadfrommemory',['loadFromMemory',['../classnsvg_1_1Image.html#a1382bec45ad4c9a449cf1b74a3b2088c',1,'nsvg::Image::loadFromMemory()'],['../classsfc_1_1SVGImage.html#a693409cfb4d67acd100e0e18df44c4a9',1,'sfc::SVGImage::loadFromMemory()']]],
+  ['loadfromstream',['loadFromStream',['../classsfc_1_1SVGImage.html#aed29242e805d741dfa0c4fa2b5b6fee1',1,'sfc::SVGImage']]]
 ];

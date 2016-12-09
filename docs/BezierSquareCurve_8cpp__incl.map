@@ -1,0 +1,6 @@
+<map id="BezierSquareCurve.cpp" name="BezierSquareCurve.cpp">
+<area shape="rect" id="node2" href="$BezierSquareCurve_8hpp.html" title="BezierSquareCurve declaration. " alt="" coords="272,80,432,107"/>
+<area shape="rect" id="node3" href="$BezierAbstractCurve_8hpp.html" title="BezierAbstractCurve declaration and partial implementation. " alt="" coords="268,155,436,181"/>
+<area shape="rect" id="node5" href="$VertexVector_8hpp.html" title="VertexVector (drawable std::vector&lt;sf::Vertex&gt;) implementation. " alt="" coords="291,229,413,256"/>
+<area shape="rect" id="node9" href="$Base_8hpp.html" title="Base header used by (probably) all sf&#45;svg classes. " alt="" coords="759,229,836,256"/>
+</map>

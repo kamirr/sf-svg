@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['svgimage',['SVGImage',['../classsfc_1_1SVGImage.html',1,'sfc']]]
+  ['edge',['Edge',['../structnsvg_1_1Edge.html',1,'nsvg']]]
 ];
