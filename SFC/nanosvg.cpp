@@ -502,16 +502,16 @@ namespace nsvg {
 	{
 		Attrib* attr = nsvg__getAttr(p);
 		switch (c.units) {
-			case UNITS_USER:		return c.value;
-			case UNITS_PX:			return c.value;
-			case UNITS_PT:			return c.value / 72.0f * p->dpi;
-			case UNITS_PC:			return c.value / 6.0f * p->dpi;
-			case UNITS_MM:			return c.value / 25.4f * p->dpi;
-			case UNITS_CM:			return c.value / 2.54f * p->dpi;
-			case UNITS_IN:			return c.value * p->dpi;
-			case UNITS_EM:			return c.value * attr->fontSize;
-			case UNITS_EX:			return c.value * attr->fontSize * 0.52f; // x-height of Helvetica.
-			case UNITS_PERCENT:	return orig + c.value / 100.0f * length;
+			case Units::UNITS_USER:		return c.value;
+			case Units::UNITS_PX:		return c.value;
+			case Units::UNITS_PT:		return c.value / 72.0f * p->dpi;
+			case Units::UNITS_PC:		return c.value / 6.0f * p->dpi;
+			case Units::UNITS_MM:		return c.value / 25.4f * p->dpi;
+			case Units::UNITS_CM:		return c.value / 2.54f * p->dpi;
+			case Units::UNITS_IN:		return c.value * p->dpi;
+			case Units::UNITS_EM:		return c.value * attr->fontSize;
+			case Units::UNITS_EX:		return c.value * attr->fontSize * 0.52f; // x-height of Helvetica.
+			case Units::UNITS_PERCENT:	return orig + c.value / 100.0f * length;
 			default:					return c.value;
 		}
 		return c.value;
@@ -1085,39 +1085,40 @@ namespace nsvg {
 		return val;
 	}
 
-	static int nsvg__parseUnits(const char* units)
+	static Units nsvg__parseUnits(const char* units)
 	{
 		if (units[0] == 'p' && units[1] == 'x')
-			return UNITS_PX;
+			return Units::UNITS_PX;
 		else if (units[0] == 'p' && units[1] == 't')
-			return UNITS_PT;
+			return Units::UNITS_PT;
 		else if (units[0] == 'p' && units[1] == 'c')
-			return UNITS_PC;
+			return Units::UNITS_PC;
 		else if (units[0] == 'm' && units[1] == 'm')
-			return UNITS_MM;
+			return Units::UNITS_MM;
 		else if (units[0] == 'c' && units[1] == 'm')
-			return UNITS_CM;
+			return Units::UNITS_CM;
 		else if (units[0] == 'i' && units[1] == 'n')
-			return UNITS_IN;
+			return Units::UNITS_IN;
 		else if (units[0] == '%')
-			return UNITS_PERCENT;
+			return Units::UNITS_PERCENT;
 		else if (units[0] == 'e' && units[1] == 'm')
-			return UNITS_EM;
+			return Units::UNITS_EM;
 		else if (units[0] == 'e' && units[1] == 'x')
-			return UNITS_EX;
-		return UNITS_USER;
+			return Units::UNITS_EX;
+
+		return Units::UNITS_USER;
 	}
 
 	static Coordinate nsvg__parseCoordinateRaw(const char* str)
 	{
-		Coordinate coord = {0, UNITS_USER};
+		Coordinate coord = {0, Units::UNITS_USER};
 		char units[32]="";
 		sscanf(str, "%f%s", &coord.value, units);
 		coord.units = nsvg__parseUnits(units);
 		return coord;
 	}
 
-	static Coordinate nsvg__coord(float v, int units)
+	static Coordinate nsvg__coord(float v, Units units)
 	{
 		Coordinate coord = {v, units};
 		return coord;
@@ -2191,14 +2192,14 @@ namespace nsvg {
 		grad->units = GradientUnits::OBJECT_SPACE;
 		grad->type = type;
 		if (grad->type == PaintType::LINEAR_GRADIENT) {
-			grad->linear.x1 = nsvg__coord(0.0f, UNITS_PERCENT);
-			grad->linear.y1 = nsvg__coord(0.0f, UNITS_PERCENT);
-			grad->linear.x2 = nsvg__coord(100.0f, UNITS_PERCENT);
-			grad->linear.y2 = nsvg__coord(0.0f, UNITS_PERCENT);
+			grad->linear.x1 = nsvg__coord(0.0f, Units::UNITS_PERCENT);
+			grad->linear.y1 = nsvg__coord(0.0f, Units::UNITS_PERCENT);
+			grad->linear.x2 = nsvg__coord(100.0f, Units::UNITS_PERCENT);
+			grad->linear.y2 = nsvg__coord(0.0f, Units::UNITS_PERCENT);
 		} else if (grad->type == PaintType::RADIAL_GRADIENT) {
-			grad->radial.cx = nsvg__coord(50.0f, UNITS_PERCENT);
-			grad->radial.cy = nsvg__coord(50.0f, UNITS_PERCENT);
-			grad->radial.r = nsvg__coord(50.0f, UNITS_PERCENT);
+			grad->radial.cx = nsvg__coord(50.0f, Units::UNITS_PERCENT);
+			grad->radial.cy = nsvg__coord(50.0f, Units::UNITS_PERCENT);
+			grad->radial.r = nsvg__coord(50.0f, Units::UNITS_PERCENT);
 		}
 
 		nsvg__xformIdentity(grad->xform);

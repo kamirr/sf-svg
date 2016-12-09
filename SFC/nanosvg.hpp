@@ -149,7 +149,7 @@ namespace nsvg {
 
 	#define NSVG_MAX_DASHES 8
 
-	enum Units {
+	enum class Units {
 		UNITS_USER,
 		UNITS_PX,
 		UNITS_PT,
@@ -164,7 +164,7 @@ namespace nsvg {
 
 	struct Coordinate {
 		float value;
-		int units;
+		Units units;
 	};
 
 	struct LinearData {
