@@ -143,56 +143,56 @@ namespace nsvg {
 	#define MAX_ATTR 128
 
 	enum GradientUnits {
-		NSVG_USER_SPACE = 0,
-		NSVG_OBJECT_SPACE = 1,
+		USER_SPACE = 0,
+		OBJECT_SPACE = 1,
 	};
 
 	#define NSVG_MAX_DASHES 8
 
 	enum Units {
-		NSVG_UNITS_USER,
-		NSVG_UNITS_PX,
-		NSVG_UNITS_PT,
-		NSVG_UNITS_PC,
-		NSVG_UNITS_MM,
-		NSVG_UNITS_CM,
-		NSVG_UNITS_IN,
-		NSVG_UNITS_PERCENT,
-		NSVG_UNITS_EM,
-		NSVG_UNITS_EX,
+		UNITS_USER,
+		UNITS_PX,
+		UNITS_PT,
+		UNITS_PC,
+		UNITS_MM,
+		UNITS_CM,
+		UNITS_IN,
+		UNITS_PERCENT,
+		UNITS_EM,
+		UNITS_EX,
 	};
 
-	struct NSVGcoordinate {
+	struct Coordinate {
 		float value;
 		int units;
 	};
 
-	struct NSVGlinearData {
-		NSVGcoordinate x1, y1, x2, y2;
+	struct LinearData {
+		Coordinate x1, y1, x2, y2;
 	};
 
-	struct NSVGradialData {
-		NSVGcoordinate cx, cy, r, fx, fy;
+	struct RadialData {
+		Coordinate cx, cy, r, fx, fy;
 	};
 
-	struct NSVGgradientData
+	struct GradientData
 	{
 		char id[64];
 		char ref[64];
 		PaintType type;
 		union {
-			NSVGlinearData linear;
-			NSVGradialData radial;
+			LinearData linear;
+			RadialData radial;
 		};
 		SpreadType spread;
 		char units;
 		float xform[6];
 		int nstops;
 		GradientStop* stops;
-		struct NSVGgradientData* next;
+		struct GradientData* next;
 	};
 
-	struct NSVGattrib
+	struct Attrib
 	{
 		char id[64];
 		float xform[6];
@@ -219,16 +219,16 @@ namespace nsvg {
 		char visible;
 	};
 
-	struct NSVGparser
+	struct Parser
 	{
-		NSVGattrib attr[MAX_ATTR];
+		Attrib attr[MAX_ATTR];
 		int attrHead;
 		float* pts;
 		int npts;
 		int cpts;
 		Path* plist;
 		ImageStruct* image;
-		NSVGgradientData* gradients;
+		GradientData* gradients;
 		float viewMinx, viewMiny, viewWidth, viewHeight;
 		int alignX, alignY, alignType;
 		float dpi;
