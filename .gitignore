@@ -2,6 +2,7 @@
 
 Doxygen/
 build-shared/
+rasterized.png
 
 *.slo
 *.lo
