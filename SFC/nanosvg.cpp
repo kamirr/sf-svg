@@ -557,7 +557,7 @@ namespace nsvg {
 		if (grad == NULL) return NULL;
 
 		// The shape width and height.
-		if (data->units == OBJECT_SPACE) {
+		if (data->units == GradientUnits::OBJECT_SPACE) {
 			ox = localBounds[0];
 			oy = localBounds[1];
 			sw = localBounds[2] - localBounds[0];
@@ -2188,7 +2188,7 @@ namespace nsvg {
 		GradientData* grad = (GradientData*)malloc(sizeof(GradientData));
 		if (grad == NULL) return;
 		memset(grad, 0, sizeof(GradientData));
-		grad->units = OBJECT_SPACE;
+		grad->units = GradientUnits::OBJECT_SPACE;
 		grad->type = type;
 		if (grad->type == PaintType::LINEAR_GRADIENT) {
 			grad->linear.x1 = nsvg__coord(0.0f, UNITS_PERCENT);
@@ -2210,9 +2210,9 @@ namespace nsvg {
 			} else if (!nsvg__parseAttr(p, attr[i], attr[i + 1])) {
 				if (strcmp(attr[i], "gradientUnits") == 0) {
 					if (strcmp(attr[i+1], "objectBoundingBox") == 0)
-						grad->units = OBJECT_SPACE;
+						grad->units = GradientUnits::OBJECT_SPACE;
 					else
-						grad->units = USER_SPACE;
+						grad->units = GradientUnits::USER_SPACE;
 				} else if (strcmp(attr[i], "gradientTransform") == 0) {
 					nsvg__parseTransform(grad->xform, attr[i + 1]);
 				} else if (strcmp(attr[i], "cx") == 0) {

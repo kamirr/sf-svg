@@ -142,7 +142,7 @@ namespace nsvg {
 
 	#define MAX_ATTR 128
 
-	enum GradientUnits {
+	enum class GradientUnits {
 		USER_SPACE = 0,
 		OBJECT_SPACE = 1,
 	};
@@ -185,7 +185,7 @@ namespace nsvg {
 			RadialData radial;
 		};
 		SpreadType spread;
-		char units;
+		GradientUnits units;
 		float xform[6];
 		int nstops;
 		GradientStop* stops;
