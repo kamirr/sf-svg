@@ -18,11 +18,24 @@
 #include "nanosvg.hpp"
 
 namespace nsvg {
+	//! \struct Point set of Bezier Cubic Curve
+	//!
+	//! Can store all four points of any Bezier Cubic Curve.
 	struct CubicPointSet {
+		//! \brief
+		//! Beginning of the curve
 		sf::Vector2f begin;
+
+		//! \brief
+		//! End of the curve
 		sf::Vector2f end;
 
+		//! \brief
+		//! First handle of the curve
 		sf::Vector2f control1;
+
+		//! \brief
+		//! Second handle of the curve
 		sf::Vector2f control2;
 	};
 
