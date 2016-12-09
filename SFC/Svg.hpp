@@ -16,14 +16,14 @@
 #include <SFML/System/InputStream.hpp>
 #include <SFML/Graphics/Drawable.hpp>
 #include <iostream>
-#include <cstring>
 #include <string>
 #include <vector>
 #include <memory>
 
+#include "nanosvg++/nanosvgrastr.hpp"
+#include "nanosvg++/nsvgpp.hpp"
+
 #include "BezierCubicCurve.hpp"
-#include "nanosvgrastr.hpp"
-#include "nsvgpp.hpp"
 
 namespace sfc {
 	//! \class SVGImage
