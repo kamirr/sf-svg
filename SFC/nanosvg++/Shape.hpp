@@ -105,6 +105,14 @@ namespace nsvg {
 		//! \return True if instance wraps proper pointer (not nullptr), False otherwise.
 		bool good() const;
 
+		//! \brief Switches itself to next shape
+		//!
+		//! \return Reference to *this
+		//!
+		//! Equivalent to:
+		//! \code{.cpp}
+		//! sampleShape = sampleShape.getNextShape();
+		//! \endcode
 		Shape& operator ++();
 	};
 }
