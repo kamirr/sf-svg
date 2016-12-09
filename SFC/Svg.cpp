@@ -40,10 +40,10 @@ namespace sfc {
 					(*this->curves.back()).update();
 				}
 
-				path = path.getNextPath();
+				++path;
 			}
 
-			shape = shape.getNextShape();
+			++shape;
 		}
 	}
 

@@ -25,4 +25,12 @@ namespace nsvg {
 	Path Path::getNextPath() const{
 		return Path(this->internal->next);
 	}
+
+	bool Path::good() const  {
+		return internal;
+	}
+
+	Path& Path::operator ++() {
+		return (*this = this->getNextPath());
+	}
 }

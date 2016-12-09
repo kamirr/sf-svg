@@ -37,9 +37,9 @@ namespace nsvg {
 
 		Path getNextPath() const;
 
-		bool good() const {
-			return internal;
-		}
+		bool good() const;
+
+		Path& operator ++();
 	};
 }
 

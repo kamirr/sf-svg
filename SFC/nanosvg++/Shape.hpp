@@ -103,9 +103,9 @@ namespace nsvg {
 		//! \brief Is ok?
 		//!
 		//! \return True if instance wraps proper pointer (not nullptr), False otherwise.
-		bool good() const {
-			return internal;
-		}
+		bool good() const;
+
+		Shape& operator ++();
 	};
 }
 

@@ -71,4 +71,12 @@ namespace nsvg {
 	Shape Shape::getNextShape() const {
 		return Shape(this->internal->next);
 	}
+
+	bool Shape::good() const  {
+		return internal;
+	}
+
+	Shape& Shape::operator++() {
+		return (*this = this->getNextShape());
+	}
 }
