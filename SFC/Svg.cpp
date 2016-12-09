@@ -93,7 +93,7 @@ namespace sfc {
 	}
 
 	sf::Image SVGImage::rasterize(const float scale) {
-		nsvg::NSVGrasterizer* rasterizer = nsvg::nsvgCreateRasterizer();
+		nsvg::Rasterizer* rasterizer = nsvg::nsvgCreateRasterizer();
 		sf::Image img;
 
 		sf::Uint8* pixels = new sf::Uint8[int(this->image.getSize().x * scale) * int(this->image.getSize().y * scale) * 4];

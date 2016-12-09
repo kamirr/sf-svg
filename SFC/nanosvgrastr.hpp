@@ -44,13 +44,13 @@ namespace nsvg {
 	#define FIXMASK	     (FIX-1)
 	#define MEMPAGE_SIZE 1024
 
-	struct NSVGedge {
+	struct Edge {
 		float x0,y0, x1,y1;
 		int dir;
-		struct NSVGedge* next;
+		struct Edge* next;
 	};
 
-	struct NSVGpoint {
+	struct Point {
 		float x, y;
 		float dx, dy;
 		float len;
@@ -58,48 +58,48 @@ namespace nsvg {
 		unsigned char flags;
 	};
 
-	struct NSVGactiveEdge {
+	struct ActiveEdge {
 		int x,dx;
 		float ey;
 		int dir;
-		struct NSVGactiveEdge *next;
+		struct ActiveEdge *next;
 	};
 
-	struct NSVGmemPage {
+	struct MemPage {
 		unsigned char mem[MEMPAGE_SIZE];
 		int size;
-		struct NSVGmemPage* next;
+		struct MemPage* next;
 	};
 
-	struct NSVGcachedPaint {
+	struct CachedPaint {
 		PaintType type;
 		SpreadType spread;
 		float xform[6];
 		unsigned int colors[256];
 	};
 
-	struct NSVGrasterizer
+	struct Rasterizer
 	{
 		float px, py;
 
 		float tessTol;
 		float distTol;
 
-		NSVGedge* edges;
+		Edge* edges;
 		int nedges;
 		int cedges;
 
-		NSVGpoint* points;
+		Point* points;
 		int npoints;
 		int cpoints;
 
-		NSVGpoint* points2;
+		Point* points2;
 		int npoints2;
 		int cpoints2;
 
-		NSVGactiveEdge* freelist;
-		NSVGmemPage* pages;
-		NSVGmemPage* curpage;
+		ActiveEdge* freelist;
+		MemPage* pages;
+		MemPage* curpage;
 
 		unsigned char* scanline;
 		int cscanline;
@@ -121,7 +121,7 @@ namespace nsvg {
 	*/
 
 	// Allocated rasterizer context.
-	NSVGrasterizer* nsvgCreateRasterizer();
+	Rasterizer* nsvgCreateRasterizer();
 
 	// Rasterizes SVG image, returns RGBA image (non-premultiplied alpha)
 	//   r - pointer to rasterizer context
@@ -132,12 +132,12 @@ namespace nsvg {
 	//   w - width of the image to render
 	//   h - height of the image to render
 	//   stride - number of bytes per scaleline in the destination buffer
-	void nsvgRasterize(NSVGrasterizer* r,
+	void nsvgRasterize(Rasterizer* r,
 					   ImageStruct* image, float tx, float ty, float scale,
 					   unsigned char* dst, int w, int h, int stride);
 
 	// Deletes rasterizer context.
-	void nsvgDeleteRasterizer(NSVGrasterizer*);
+	void nsvgDeleteRasterizer(Rasterizer*);
 }
 
 #endif // NANOSVGRASTR_HPP
