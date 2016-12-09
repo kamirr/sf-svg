@@ -1,3 +1,12 @@
+/* =========================================================== *
+ * sf-svg (c) Kamil Koczurek | koczurekk@gmail.com             *
+ * GNU GPL v3 License http://www.gnu.org/licenses/gpl-3.0.html *
+ * =========================================================== */
+//! @file
+//!
+//! \brief
+//! Nanosvg++ additional classes
+
 #ifndef NSVGPP_H
 #define NSVGPP_H
 
@@ -7,15 +16,22 @@
 #include "nanosvg.hpp"
 
 namespace nsvg {
+	//! \class Image
+	//!
+	//! \brief C++-styled ImageStruct wrapper
+	//!
+	//! Provides object orientated interface for C-style nsvg::ImageStruct.
 	class Image {
 		ImageStruct* internal = nullptr;
 
 	public:
-		~Image() {
-			if(internal)
-				nsvg::deleteImage(internal);
-		}
-
+		//! \brief Parses SVG from file
+		//!
+		//! \param [in] filename – path to file
+		//! \param [in] units – passed to nanosvg
+		//! \param [in] dpi – passed to nanosvg
+		//!
+		//! \return True if ok, False otherwise
 		bool loadFromFile(const std::string& filename, const std::string& units, const float dpi = 96.f) {
 			if(internal)
 				nsvg::deleteImage(internal);
@@ -31,6 +47,13 @@ namespace nsvg {
 			return true;
 		}
 
+		//! \brief Parses SVG from memory
+		//!
+		//! \param [in] input – null-terminated data
+		//! \param [in] units – passed to nanosvg
+		//! \param [in] dpi – passed to nanosvg
+		//!
+		//! \return True if ok, False otherwise
 		bool loadFromMemory(std::string input, const std::string& units, const float dpi = 96.f) {
 			if(internal)
 				nsvg::deleteImage(internal);
@@ -46,19 +69,36 @@ namespace nsvg {
 			return true;
 		}
 
+		//! \brief Get internal image
+		//!
+		//! \return C-styled nsvg::ImageStruct
 		ImageStruct* getInternalImage() {
 			return this->internal;
 		}
 
+		//! \brief Get shapes
+		//!
+		//! \return Shapes to process
 		Shape* getShapes() {
 			return this->internal->shapes;
 		}
 
+		//! \brief Get size
+		//!
+		//! \return Image's size in sf::Vector2f
 		sf::Vector2f getSize() const{
 			return {
 				this->internal->width,
 				this->internal->height
 			};
+		}
+
+		//! \brief Destructor
+		//!
+		//! Releases resources if any were allocated
+		~Image() {
+			if(internal)
+				nsvg::deleteImage(internal);
 		}
 	};
 }
