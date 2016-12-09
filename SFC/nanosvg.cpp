@@ -172,105 +172,6 @@ namespace nsvg {
 		return 1;
 	}
 
-
-	/* Simple SVG parser. */
-
-	#define NSVG_MAX_ATTR 128
-
-	enum NSVGgradientUnits {
-		NSVG_USER_SPACE = 0,
-		NSVG_OBJECT_SPACE = 1,
-	};
-
-	#define NSVG_MAX_DASHES 8
-
-	enum NSVGunits {
-		NSVG_UNITS_USER,
-		NSVG_UNITS_PX,
-		NSVG_UNITS_PT,
-		NSVG_UNITS_PC,
-		NSVG_UNITS_MM,
-		NSVG_UNITS_CM,
-		NSVG_UNITS_IN,
-		NSVG_UNITS_PERCENT,
-		NSVG_UNITS_EM,
-		NSVG_UNITS_EX,
-	};
-
-	typedef struct NSVGcoordinate {
-		float value;
-		int units;
-	} NSVGcoordinate;
-
-	typedef struct NSVGlinearData {
-		NSVGcoordinate x1, y1, x2, y2;
-	} NSVGlinearData;
-
-	typedef struct NSVGradialData {
-		NSVGcoordinate cx, cy, r, fx, fy;
-	} NSVGradialData;
-
-	typedef struct NSVGgradientData
-	{
-		char id[64];
-		char ref[64];
-		PaintType type;
-		union {
-			NSVGlinearData linear;
-			NSVGradialData radial;
-		};
-		SpreadType spread;
-		char units;
-		float xform[6];
-		int nstops;
-		GradientStop* stops;
-		struct NSVGgradientData* next;
-	} NSVGgradientData;
-
-	typedef struct NSVGattrib
-	{
-		char id[64];
-		float xform[6];
-		unsigned int fillColor;
-		unsigned int strokeColor;
-		float opacity;
-		float fillOpacity;
-		float strokeOpacity;
-		char fillGradient[64];
-		char strokeGradient[64];
-		float strokeWidth;
-		float strokeDashOffset;
-		float strokeDashArray[NSVG_MAX_DASHES];
-		int strokeDashCount;
-		LineJoin strokeLineJoin;
-		LineCap strokeLineCap;
-		FillRule fillRule;
-		float fontSize;
-		unsigned int stopColor;
-		float stopOpacity;
-		float stopOffset;
-		char hasFill;
-		char hasStroke;
-		char visible;
-	} NSVGattrib;
-
-	typedef struct NSVGparser
-	{
-		NSVGattrib attr[NSVG_MAX_ATTR];
-		int attrHead;
-		float* pts;
-		int npts;
-		int cpts;
-		Path* plist;
-		ImageStruct* image;
-		NSVGgradientData* gradients;
-		float viewMinx, viewMiny, viewWidth, viewHeight;
-		int alignX, alignY, alignType;
-		float dpi;
-		char pathFlag;
-		char defsFlag;
-	} NSVGparser;
-
 	static void nsvg__xformIdentity(float* t)
 	{
 		t[0] = 1.0f; t[1] = 0.0f;
@@ -559,7 +460,7 @@ namespace nsvg {
 
 	static void nsvg__pushAttr(NSVGparser* p)
 	{
-		if (p->attrHead < NSVG_MAX_ATTR-1) {
+		if (p->attrHead < MAX_ATTR-1) {
 			p->attrHead++;
 			memcpy(&p->attr[p->attrHead], &p->attr[p->attrHead-1], sizeof(NSVGattrib));
 		}

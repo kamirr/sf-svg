@@ -140,6 +140,102 @@ namespace nsvg {
 		Shape* shapes;			// Linked list of shapes in the image.
 	};
 
+	#define MAX_ATTR 128
+
+	enum GradientUnits {
+		NSVG_USER_SPACE = 0,
+		NSVG_OBJECT_SPACE = 1,
+	};
+
+	#define NSVG_MAX_DASHES 8
+
+	enum Units {
+		NSVG_UNITS_USER,
+		NSVG_UNITS_PX,
+		NSVG_UNITS_PT,
+		NSVG_UNITS_PC,
+		NSVG_UNITS_MM,
+		NSVG_UNITS_CM,
+		NSVG_UNITS_IN,
+		NSVG_UNITS_PERCENT,
+		NSVG_UNITS_EM,
+		NSVG_UNITS_EX,
+	};
+
+	struct NSVGcoordinate {
+		float value;
+		int units;
+	};
+
+	struct NSVGlinearData {
+		NSVGcoordinate x1, y1, x2, y2;
+	};
+
+	struct NSVGradialData {
+		NSVGcoordinate cx, cy, r, fx, fy;
+	};
+
+	struct NSVGgradientData
+	{
+		char id[64];
+		char ref[64];
+		PaintType type;
+		union {
+			NSVGlinearData linear;
+			NSVGradialData radial;
+		};
+		SpreadType spread;
+		char units;
+		float xform[6];
+		int nstops;
+		GradientStop* stops;
+		struct NSVGgradientData* next;
+	};
+
+	struct NSVGattrib
+	{
+		char id[64];
+		float xform[6];
+		unsigned int fillColor;
+		unsigned int strokeColor;
+		float opacity;
+		float fillOpacity;
+		float strokeOpacity;
+		char fillGradient[64];
+		char strokeGradient[64];
+		float strokeWidth;
+		float strokeDashOffset;
+		float strokeDashArray[NSVG_MAX_DASHES];
+		int strokeDashCount;
+		LineJoin strokeLineJoin;
+		LineCap strokeLineCap;
+		FillRule fillRule;
+		float fontSize;
+		unsigned int stopColor;
+		float stopOpacity;
+		float stopOffset;
+		char hasFill;
+		char hasStroke;
+		char visible;
+	};
+
+	struct NSVGparser
+	{
+		NSVGattrib attr[MAX_ATTR];
+		int attrHead;
+		float* pts;
+		int npts;
+		int cpts;
+		Path* plist;
+		ImageStruct* image;
+		NSVGgradientData* gradients;
+		float viewMinx, viewMiny, viewWidth, viewHeight;
+		int alignX, alignY, alignType;
+		float dpi;
+		char pathFlag;
+		char defsFlag;
+	};
+
 	// Parses SVG file from a file, returns SVG image as paths.
 	ImageStruct* parseFromFile(const char* filename, const char* units, float dpi);
 
