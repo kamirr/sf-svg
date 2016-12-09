@@ -121,7 +121,7 @@ namespace nsvg {
 	*/
 
 	// Allocated rasterizer context.
-	Rasterizer* nsvgCreateRasterizer();
+	Rasterizer* createRasterizer();
 
 	// Rasterizes SVG image, returns RGBA image (non-premultiplied alpha)
 	//   r - pointer to rasterizer context
@@ -132,12 +132,12 @@ namespace nsvg {
 	//   w - width of the image to render
 	//   h - height of the image to render
 	//   stride - number of bytes per scaleline in the destination buffer
-	void nsvgRasterize(Rasterizer* r,
+	void rasterize(Rasterizer* r,
 					   ImageStruct* image, float tx, float ty, float scale,
 					   unsigned char* dst, int w, int h, int stride);
 
 	// Deletes rasterizer context.
-	void nsvgDeleteRasterizer(Rasterizer*);
+	void deleteRasterizer(Rasterizer*);
 }
 
 #endif // NANOSVGRASTR_HPP
