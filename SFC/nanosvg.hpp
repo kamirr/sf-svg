@@ -84,41 +84,41 @@ namespace nsvg {
 		INVISIBLE = 0x00
 	};
 
-	struct NSVGgradientStop {
+	struct GradientStop {
 		unsigned int color;
 		float offset;
 	};
 
-	struct NSVGgradient {
+	struct Gradient {
 		float xform[6];
 		SpreadType spread;
 		float fx, fy;
 		int nstops;
-		NSVGgradientStop stops[1];
+		GradientStop stops[1];
 	};
 
-	struct NSVGpaint {
+	struct Paint {
 		PaintType type;
 		union {
 			unsigned int color;
-			NSVGgradient* gradient;
+			Gradient* gradient;
 		};
 	};
 
-	struct NSVGpath
+	struct Path
 	{
 		float* pts;					// Cubic bezier points: x0,y0, [cpx1,cpx1,cpx2,cpy2,x1,y1], ...
 		int npts;					// Total number of bezier points.
 		char closed;				// Flag indicating if shapes should be treated as closed.
 		float bounds[4];			// Tight bounding box of the shape [minx,miny,maxx,maxy].
-		struct NSVGpath* next;		// Pointer to next path, or NULL if last element.
+		struct Path* next;		// Pointer to next path, or NULL if last element.
 	};
 
-	struct NSVGshape
+	struct Shape
 	{
 		char id[64];				// Optional 'id' attr of the shape or its group
-		NSVGpaint fill;				// Fill paint
-		NSVGpaint stroke;			// Stroke paint
+		Paint fill;				// Fill paint
+		Paint stroke;			// Stroke paint
 		float opacity;				// Opacity of the shape.
 		float strokeWidth;			// Stroke width (scaled).
 		float strokeDashOffset;		// Stroke dash offset (scaled).
@@ -129,25 +129,25 @@ namespace nsvg {
 		FillRule fillRule;				// Fill rule, see NSVGfillRule.
 		Flags flags;		// Logical or of NSVG_FLAGS_* flags
 		float bounds[4];			// Tight bounding box of the shape [minx,miny,maxx,maxy].
-		NSVGpath* paths;			// Linked list of paths in the image.
-		struct NSVGshape* next;		// Pointer to next shape, or NULL if last element.
+		Path* paths;			// Linked list of paths in the image.
+		struct Shape* next;		// Pointer to next shape, or NULL if last element.
 	};
 
-	struct NSVGimage
+	struct Image
 	{
 		float width;				// Width of the image.
 		float height;				// Height of the image.
-		NSVGshape* shapes;			// Linked list of shapes in the image.
+		Shape* shapes;			// Linked list of shapes in the image.
 	};
 
 	// Parses SVG file from a file, returns SVG image as paths.
-	NSVGimage* nsvgParseFromFile(const char* filename, const char* units, float dpi);
+	Image* nsvgParseFromFile(const char* filename, const char* units, float dpi);
 
 	// Parses SVG file from a null terminated string, returns SVG image as paths.
 	// Important note: changes the string.
-	NSVGimage* nsvgParse(char* input, const char* units, float dpi);
+	Image* nsvgParse(char* input, const char* units, float dpi);
 
 	// Deletes list of paths.
-	void nsvgDelete(NSVGimage* image);
+	void nsvgDelete(Image* image);
 }
 #endif // NANOSVG_H

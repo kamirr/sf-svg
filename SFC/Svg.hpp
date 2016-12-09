@@ -33,7 +33,7 @@ namespace sfc {
 	class SVGImage
 	: public sf::Drawable {
 		std::vector<std::shared_ptr<BezierCubicCurve>> curves;
-		nsvg::NSVGimage* image;
+		nsvg::Image* image;
 
 		virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
 		void update();

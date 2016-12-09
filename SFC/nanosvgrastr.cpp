@@ -232,10 +232,10 @@ namespace nsvg {
 		nsvg__flattenCubicBez(r, x1234,y1234, x234,y234, x34,y34, x4,y4, level+1, type);
 	}
 
-	static void nsvg__flattenShape(NSVGrasterizer* r, NSVGshape* shape, float scale)
+	static void nsvg__flattenShape(NSVGrasterizer* r, Shape* shape, float scale)
 	{
 		int i, j;
-		NSVGpath* path;
+		Path* path;
 
 		for (path = shape->paths; path != NULL; path = path->next) {
 			r->npoints = 0;
@@ -596,10 +596,10 @@ namespace nsvg {
 		}
 	}
 
-	static void nsvg__flattenShapeStroke(NSVGrasterizer* r, NSVGshape* shape, float scale)
+	static void nsvg__flattenShapeStroke(NSVGrasterizer* r, Shape* shape, float scale)
 	{
 		int i, j, closed;
-		NSVGpath* path;
+		Path* path;
 		NSVGpoint* p0, *p1;
 		float miterLimit = 4;
 		LineJoin lineJoin = shape->strokeLineJoin;
@@ -1124,10 +1124,10 @@ namespace nsvg {
 	}
 
 
-	static void nsvg__initPaint(NSVGcachedPaint* cache, NSVGpaint* paint, float opacity)
+	static void nsvg__initPaint(NSVGcachedPaint* cache, Paint* paint, float opacity)
 	{
 		int i, j;
-		NSVGgradient* grad;
+		Gradient* grad;
 
 		cache->type = paint->type;
 
@@ -1227,10 +1227,10 @@ namespace nsvg {
 	*/
 
 	void nsvgRasterize(NSVGrasterizer* r,
-					   NSVGimage* image, float tx, float ty, float scale,
+					   Image* image, float tx, float ty, float scale,
 					   unsigned char* dst, int w, int h, int stride)
 	{
-		NSVGshape *shape = NULL;
+		Shape *shape = NULL;
 		NSVGedge *e = NULL;
 		NSVGcachedPaint cache;
 		int i;
