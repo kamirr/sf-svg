@@ -617,7 +617,7 @@ namespace cstyle {
 		return (sx + sy) * 0.5f;
 	}
 
-	static void nsvg__getLocalBounds(float* bounds, Shape *shape, float* xform)
+	static void nsvg__getLocalBounds(float* bounds, ShapeStruct *shape, float* xform)
 	{
 		Path* path;
 		float curve[4*2], curveBounds[4];
@@ -651,16 +651,16 @@ namespace cstyle {
 	{
 		Attrib* attr = nsvg__getAttr(p);
 		float scale = 1.0f;
-		Shape *shape, *cur, *prev;
+		ShapeStruct *shape, *cur, *prev;
 		Path* path;
 		int i;
 
 		if (p->plist == NULL)
 			return;
 
-		shape = (Shape*)malloc(sizeof(Shape));
+		shape = (ShapeStruct*)malloc(sizeof(ShapeStruct));
 		if (shape == NULL) goto error;
-		memset(shape, 0, sizeof(Shape));
+		memset(shape, 0, sizeof(ShapeStruct));
 
 		memcpy(shape->id, attr->id, sizeof shape->id);
 		scale = nsvg__getAverageScale(attr->xform);
@@ -2380,7 +2380,7 @@ namespace cstyle {
 
 	static void nsvg__imageBounds(Parser* p, float* bounds)
 	{
-		Shape* shape;
+		ShapeStruct* shape;
 		shape = p->image->shapes;
 		if (shape == NULL) {
 			bounds[0] = bounds[1] = bounds[2] = bounds[3] = 0.0;
@@ -2420,7 +2420,7 @@ namespace cstyle {
 
 	static void nsvg__scaleToViewbox(Parser* p, const char* units)
 	{
-		Shape* shape;
+		ShapeStruct* shape;
 		Path* path;
 		float tx, ty, sx, sy, us, bounds[4], t[6], avgs;
 		int i;
@@ -2564,7 +2564,7 @@ namespace cstyle {
 
 	void deleteImage(ImageStruct* image)
 	{
-		Shape *snext, *shape;
+		ShapeStruct *snext, *shape;
 		if (image == NULL) return;
 		shape = image->shapes;
 		while (shape != NULL) {

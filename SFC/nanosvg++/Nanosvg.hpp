@@ -145,7 +145,7 @@ namespace cstyle {
 		struct Path* next;		// Pointer to next path, or NULL if last element.
 	};
 
-	struct Shape
+	struct ShapeStruct
 	{
 		char id[64];				// Optional 'id' attr of the shape or its group
 		Paint fill;				// Fill paint
@@ -162,14 +162,14 @@ namespace cstyle {
 		float bounds[4];			// Tight bounding box of the shape [minx,miny,maxx,maxy].
 
 		Path* paths;			// Linked list of paths in the image.
-		Shape* next;		// Pointer to next shape, or NULL if last element.
+		ShapeStruct* next;		// Pointer to next shape, or NULL if last element.
 	};
 
 	struct ImageStruct
 	{
 		float width;				// Width of the image.
 		float height;				// Height of the image.
-		Shape* shapes;			// Linked list of shapes in the image.
+		ShapeStruct* shapes;			// Linked list of shapes in the image.
 	};
 
 	struct Coordinate {

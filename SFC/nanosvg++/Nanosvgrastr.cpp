@@ -233,7 +233,7 @@ namespace cstyle {
 		nsvg__flattenCubicBez(r, x1234,y1234, x234,y234, x34,y34, x4,y4, level+1, type);
 	}
 
-	static void nsvg__flattenShape(Rasterizer* r, Shape* shape, float scale)
+	static void nsvg__flattenShape(Rasterizer* r, ShapeStruct* shape, float scale)
 	{
 		int i, j;
 		Path* path;
@@ -597,7 +597,7 @@ namespace cstyle {
 		}
 	}
 
-	static void nsvg__flattenShapeStroke(Rasterizer* r, Shape* shape, float scale)
+	static void nsvg__flattenShapeStroke(Rasterizer* r, ShapeStruct* shape, float scale)
 	{
 		int i, j, closed;
 		Path* path;
@@ -1231,7 +1231,7 @@ namespace cstyle {
 					   ImageStruct* image, float tx, float ty, float scale,
 					   unsigned char* dst, int w, int h, int stride)
 	{
-		Shape *shape = NULL;
+		ShapeStruct *shape = NULL;
 		Edge *e = NULL;
 		CachedPaint cache;
 		int i;

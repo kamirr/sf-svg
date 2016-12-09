@@ -1,7 +1,7 @@
 #include "Image.hpp"
 
 namespace nsvg {
-	bool Image::loadFromFile(const std::string& filename, const std::string& units, const float dpi = 96.f) {
+	bool Image::loadFromFile(const std::string& filename, const std::string& units, const float dpi) {
 		if(internal)
 			cstyle::deleteImage(internal);
 
@@ -16,7 +16,7 @@ namespace nsvg {
 		return true;
 	}
 
-	bool Image::loadFromMemory(std::string input, const std::string& units, const float dpi = 96.f) {
+	bool Image::loadFromMemory(std::string input, const std::string& units, const float dpi) {
 		if(internal)
 			cstyle::deleteImage(internal);
 
@@ -35,7 +35,7 @@ namespace nsvg {
 		return this->internal;
 	}
 
-	cstyle::Shape* Image::getShapes() {
+	cstyle::ShapeStruct* Image::getShapes() {
 		return this->internal->shapes;
 	}
 

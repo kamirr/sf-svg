@@ -11,6 +11,7 @@
 #define IMAGE_HPP
 
 #include <SFML/System/Vector2.hpp>
+#include <iostream>
 #include <string>
 
 #include "Nanosvg.hpp"
@@ -51,7 +52,7 @@ namespace nsvg {
 		//! \brief Get shapes
 		//!
 		//! \return Shapes to process
-		cstyle::Shape* getShapes();
+		cstyle::ShapeStruct* getShapes();
 
 		//! \brief Get size
 		//!
