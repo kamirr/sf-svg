@@ -1,3 +1,14 @@
+/* ====================================================== *
+ * nanosvg++                                              *
+ * This software is a fork of nanosvg (nanosvgrastr.hpp). *
+ * No license-related aspects are affected.               *
+ * Kamil Koczurek | koczurekk@gmail.com                   *
+ * ====================================================== */
+//! @file
+//!
+//! \brief
+//! Image class implementation
+
 #include "Image.hpp"
 
 namespace nsvg {

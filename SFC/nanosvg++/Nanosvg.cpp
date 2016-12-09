@@ -4,7 +4,6 @@
  * No license-related aspects are affected.          *
  * Kamil Koczurek | koczurekk@gmail.com              *
  * ================================================= */
-
 //! @file
 //!
 //! \brief
