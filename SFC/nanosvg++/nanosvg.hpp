@@ -51,6 +51,13 @@
 //!
 //! \brief Nanosvg++ namespace
 namespace nsvg {
+
+//! \namespace cstyle
+//!
+//! \brief Completly or partially C-styled code
+//!
+//! All C-styled code is stored in another namespace to avoid using it non-necessarily.
+//! All that code will be slowly replaced with object orientated one to provide fully-functional, C++-styled SVG library.
 namespace cstyle {
 	/*
 	 *	Definitions
