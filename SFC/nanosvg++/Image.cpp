@@ -35,7 +35,7 @@ namespace nsvg {
 		return this->internal;
 	}
 
-	cstyle::ShapeStruct* Image::getShapes() {
+	cstyle::ShapeStruct* Image::getFirstShape() {
 		return this->internal->shapes;
 	}
 

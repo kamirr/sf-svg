@@ -14,7 +14,7 @@
 #include <iostream>
 #include <string>
 
-#include "Nanosvg.hpp"
+#include "nanosvg.hpp"
 
 namespace nsvg {
 	//! \class Image
@@ -52,7 +52,7 @@ namespace nsvg {
 		//! \brief Get shapes
 		//!
 		//! \return Shapes to process
-		cstyle::ShapeStruct* getShapes();
+		cstyle::ShapeStruct* getFirstShape();
 
 		//! \brief Get size
 		//!

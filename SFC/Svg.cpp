@@ -23,8 +23,9 @@ namespace sfc {
 	void SVGImage::update() {
 		this->curves.clear();
 
-		for(auto shape = this->image.getShapes(); shape != NULL; shape = shape->next) {
-			for(auto path = shape->paths; path != NULL; path = path->next) {
+		nsvg::Shape shape(this->image.getFirstShape());
+		while(shape.good()) {
+			for(auto path = shape.getPaths(); path != NULL; path = path->next) {
 				for(auto i = 0; i < path->npts - 1; i += 3) {
 					float* p = &path->pts[i * 2];
 
@@ -39,6 +40,8 @@ namespace sfc {
 					(*this->curves.back()).update();
 				}
 			}
+
+			shape = shape.getNextShape();
 		}
 	}
 

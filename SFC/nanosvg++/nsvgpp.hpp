@@ -10,6 +10,7 @@
 #ifndef NSVGPP_H
 #define NSVGPP_H
 
+#include "Shape.hpp"
 #include "Image.hpp"
 
 #endif // NSVGPP_H

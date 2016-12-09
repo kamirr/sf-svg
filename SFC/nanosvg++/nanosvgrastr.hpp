@@ -35,7 +35,7 @@
 #ifndef NANOSVGRASTR_HPP
 #define NANOSVGRASTR_HPP
 
-#include "Nanosvg.hpp"
+#include "nanosvg.hpp"
 
 namespace nsvg {
 namespace cstyle {
