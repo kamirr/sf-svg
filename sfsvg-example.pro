@@ -29,4 +29,5 @@ HEADERS += \
     SFC/nanosvg++/Shape.hpp \
     SFC/nanosvg++/nanosvg.hpp \
     SFC/nanosvg++/nanosvgrastr.hpp \
-    SFC/nanosvg++/nsvgpp.hpp
+    SFC/nanosvg++/nsvgpp.hpp \
+    SFC/nanosvg++/enums.hpp

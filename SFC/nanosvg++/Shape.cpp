@@ -37,15 +37,15 @@ namespace nsvg {
 		return this->internal->strokeDashCount;
 	}
 
-	cstyle::LineJoin Shape::getStrokeLineJoin() const {
+	LineJoin Shape::getStrokeLineJoin() const {
 		return this->internal->strokeLineJoin;
 	}
 
-	cstyle::LineCap Shape::getStrokeLineCap() const {
+	LineCap Shape::getStrokeLineCap() const {
 		return this->internal->strokeLineCap;
 	}
 
-	cstyle::Flags Shape::getFlags() const {
+	Flags Shape::getFlags() const {
 		return this->internal->flags;
 	}
 

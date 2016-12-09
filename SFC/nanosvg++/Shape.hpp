@@ -50,11 +50,11 @@ namespace nsvg {
 
 		size_t getStrokeDashCount() const;
 
-		cstyle::LineJoin getStrokeLineJoin() const;
+		LineJoin getStrokeLineJoin() const;
 
-		cstyle::LineCap getStrokeLineCap() const;
+		LineCap getStrokeLineCap() const;
 
-		cstyle::Flags getFlags() const;
+		Flags getFlags() const;
 
 		const float* getBounds() const;
 
