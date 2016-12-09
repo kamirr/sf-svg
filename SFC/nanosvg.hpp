@@ -49,6 +49,15 @@
 //!
 //! \brief Nanosvg++ namespace
 namespace nsvg {
+	/*
+	 *	Definitions
+	*/
+	#define MAX_ATTR 128
+	#define NSVG_MAX_DASHES 8
+
+	/*
+	 *	Enums
+	*/
 	enum class PaintType {
 		NONE = 0,
 		COLOR = 1,
@@ -84,6 +93,27 @@ namespace nsvg {
 		INVISIBLE = 0x00
 	};
 
+	enum class GradientUnits {
+		USER_SPACE = 0,
+		OBJECT_SPACE = 1,
+	};
+
+	enum class Units {
+		UNITS_USER,
+		UNITS_PX,
+		UNITS_PT,
+		UNITS_PC,
+		UNITS_MM,
+		UNITS_CM,
+		UNITS_IN,
+		UNITS_PERCENT,
+		UNITS_EM,
+		UNITS_EX,
+	};
+
+	/*
+	 *	Structures
+	*/
 	struct GradientStop {
 		unsigned int color;
 		float offset;
@@ -138,28 +168,6 @@ namespace nsvg {
 		float width;				// Width of the image.
 		float height;				// Height of the image.
 		Shape* shapes;			// Linked list of shapes in the image.
-	};
-
-	#define MAX_ATTR 128
-
-	enum class GradientUnits {
-		USER_SPACE = 0,
-		OBJECT_SPACE = 1,
-	};
-
-	#define NSVG_MAX_DASHES 8
-
-	enum class Units {
-		UNITS_USER,
-		UNITS_PX,
-		UNITS_PT,
-		UNITS_PC,
-		UNITS_MM,
-		UNITS_CM,
-		UNITS_IN,
-		UNITS_PERCENT,
-		UNITS_EM,
-		UNITS_EX,
 	};
 
 	struct Coordinate {
@@ -236,6 +244,9 @@ namespace nsvg {
 		char defsFlag;
 	};
 
+	/*
+	 *	Functions
+	*/
 	// Parses SVG file from a file, returns SVG image as paths.
 	ImageStruct* parseFromFile(const char* filename, const char* units, float dpi);
 
