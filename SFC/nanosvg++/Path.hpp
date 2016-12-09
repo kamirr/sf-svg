@@ -18,7 +18,7 @@
 #include "nanosvg.hpp"
 
 namespace nsvg {
-	//! \struct Point set of Bezier Cubic Curve
+	//! \brief Point set of Bezier Cubic Curve
 	//!
 	//! Can store all four points of any Bezier Cubic Curve.
 	struct CubicPointSet {
