@@ -74,6 +74,14 @@ namespace sfc {
 		//! Method that parses SVG-XML image from memory and creates proper Bezier Curves.
 		bool loadFromMemory(const void* data, size_t size, const float dpi = 96.f);
 
+		//! \brief Loads SVG image from stream
+		//!
+		//! \param [in] stream – SFML input stream instance
+		//! \param [in] dpi – passed to nanosvg
+		//!
+		//! \return True if ok, False otherwise
+		//!
+		//! Method that parses SVG-XML image from SFML input stream and creates proper Bezier Curves.
 		bool loadFromStream(sf::InputStream& stream, const float dpi = 96.f);
 
 		//! \brief Rasterizes SVG
