@@ -85,8 +85,8 @@ namespace nsvg {
 	static unsigned char* nsvg__alloc(NSVGrasterizer* r, int size)
 	{
 		unsigned char* buf;
-		if (size > NSVG__MEMPAGE_SIZE) return NULL;
-		if (r->curpage == NULL || r->curpage->size+size > NSVG__MEMPAGE_SIZE) {
+		if (size > MEMPAGE_SIZE) return NULL;
+		if (r->curpage == NULL || r->curpage->size+size > MEMPAGE_SIZE) {
 			r->curpage = nsvg__nextPage(r, r->curpage);
 		}
 		buf = &r->curpage->mem[r->curpage->size];
@@ -734,10 +734,10 @@ namespace nsvg {
 	//	STBTT_assert(e->y0 <= start_point);
 		// round dx down to avoid going too far
 		if (dxdy < 0)
-			z->dx = (int)(-floorf(NSVG__FIX * -dxdy));
+			z->dx = (int)(-floorf(FIX * -dxdy));
 		else
-			z->dx = (int)floorf(NSVG__FIX * dxdy);
-		z->x = (int)floorf(NSVG__FIX * (e->x0 + dxdy * (startPoint - e->y0)));
+			z->dx = (int)floorf(FIX * dxdy);
+		z->x = (int)floorf(FIX * (e->x0 + dxdy * (startPoint - e->y0)));
 	//	z->x -= off_x * FIX;
 		z->ey = e->y1;
 		z->next = 0;
@@ -754,22 +754,22 @@ namespace nsvg {
 
 	static void nsvg__fillScanline(unsigned char* scanline, int len, int x0, int x1, int maxWeight, int* xmin, int* xmax)
 	{
-		int i = x0 >> NSVG__FIXSHIFT;
-		int j = x1 >> NSVG__FIXSHIFT;
+		int i = x0 >> FIXSHIFT;
+		int j = x1 >> FIXSHIFT;
 		if (i < *xmin) *xmin = i;
 		if (j > *xmax) *xmax = j;
 		if (i < len && j >= 0) {
 			if (i == j) {
 				// x0,x1 are the same pixel, so compute combined coverage
-				scanline[i] += (unsigned char)((x1 - x0) * maxWeight >> NSVG__FIXSHIFT);
+				scanline[i] += (unsigned char)((x1 - x0) * maxWeight >> FIXSHIFT);
 			} else {
 				if (i >= 0) // add antialiasing for x0
-					scanline[i] += (unsigned char)(((NSVG__FIX - (x0 & NSVG__FIXMASK)) * maxWeight) >> NSVG__FIXSHIFT);
+					scanline[i] += (unsigned char)(((FIX - (x0 & FIXMASK)) * maxWeight) >> FIXSHIFT);
 				else
 					i = -1; // clip
 
 				if (j < len) // add antialiasing for x1
-					scanline[j] += (unsigned char)(((x1 & NSVG__FIXMASK) * maxWeight) >> NSVG__FIXSHIFT);
+					scanline[j] += (unsigned char)(((x1 & FIXMASK) * maxWeight) >> FIXSHIFT);
 				else
 					j = len; // clip
 
@@ -981,16 +981,16 @@ namespace nsvg {
 		NSVGactiveEdge *active = NULL;
 		int y, s;
 		int e = 0;
-		int maxWeight = (255 / NSVG__SUBSAMPLES);  // weight per vertical scanline
+		int maxWeight = (255 / SUBSAMPLES);  // weight per vertical scanline
 		int xmin, xmax;
 
 		for (y = 0; y < r->height; y++) {
 			memset(r->scanline, 0, r->width);
 			xmin = r->width;
 			xmax = 0;
-			for (s = 0; s < NSVG__SUBSAMPLES; ++s) {
+			for (s = 0; s < SUBSAMPLES; ++s) {
 				// find center of pixel for this scanline
-				float scany = y*NSVG__SUBSAMPLES + s + 0.5f;
+				float scany = y*SUBSAMPLES + s + 0.5f;
 				NSVGactiveEdge **step = &active;
 
 				// update all active edges;
@@ -1264,9 +1264,9 @@ namespace nsvg {
 				for (i = 0; i < r->nedges; i++) {
 					e = &r->edges[i];
 					e->x0 = tx + e->x0;
-					e->y0 = (ty + e->y0) * NSVG__SUBSAMPLES;
+					e->y0 = (ty + e->y0) * SUBSAMPLES;
 					e->x1 = tx + e->x1;
-					e->y1 = (ty + e->y1) * NSVG__SUBSAMPLES;
+					e->y1 = (ty + e->y1) * SUBSAMPLES;
 				}
 
 				// Rasterize edges
@@ -1290,9 +1290,9 @@ namespace nsvg {
 				for (i = 0; i < r->nedges; i++) {
 					e = &r->edges[i];
 					e->x0 = tx + e->x0;
-					e->y0 = (ty + e->y0) * NSVG__SUBSAMPLES;
+					e->y0 = (ty + e->y0) * SUBSAMPLES;
 					e->x1 = tx + e->x1;
-					e->y1 = (ty + e->y1) * NSVG__SUBSAMPLES;
+					e->y1 = (ty + e->y1) * SUBSAMPLES;
 				}
 
 				// Rasterize edges

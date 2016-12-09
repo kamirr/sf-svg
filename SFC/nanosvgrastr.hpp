@@ -38,47 +38,45 @@
 #include "nanosvg.hpp"
 
 namespace nsvg {
-	typedef struct NSVGrasterizer NSVGrasterizer;
+	#define SUBSAMPLES   5
+	#define FIXSHIFT     10
+	#define FIX	         (1 << FIXSHIFT)
+	#define FIXMASK	     (FIX-1)
+	#define MEMPAGE_SIZE 1024
 
-	#define NSVG__SUBSAMPLES	5
-	#define NSVG__FIXSHIFT		10
-	#define NSVG__FIX			(1 << NSVG__FIXSHIFT)
-	#define NSVG__FIXMASK		(NSVG__FIX-1)
-	#define NSVG__MEMPAGE_SIZE	1024
-
-	typedef struct NSVGedge {
+	struct NSVGedge {
 		float x0,y0, x1,y1;
 		int dir;
 		struct NSVGedge* next;
-	} NSVGedge;
+	};
 
-	typedef struct NSVGpoint {
+	struct NSVGpoint {
 		float x, y;
 		float dx, dy;
 		float len;
 		float dmx, dmy;
 		unsigned char flags;
-	} NSVGpoint;
+	};
 
-	typedef struct NSVGactiveEdge {
+	struct NSVGactiveEdge {
 		int x,dx;
 		float ey;
 		int dir;
 		struct NSVGactiveEdge *next;
-	} NSVGactiveEdge;
+	};
 
-	typedef struct NSVGmemPage {
-		unsigned char mem[NSVG__MEMPAGE_SIZE];
+	struct NSVGmemPage {
+		unsigned char mem[MEMPAGE_SIZE];
 		int size;
 		struct NSVGmemPage* next;
-	} NSVGmemPage;
+	};
 
-	typedef struct NSVGcachedPaint {
+	struct NSVGcachedPaint {
 		PaintType type;
 		SpreadType spread;
 		float xform[6];
 		unsigned int colors[256];
-	} NSVGcachedPaint;
+	};
 
 	struct NSVGrasterizer
 	{
