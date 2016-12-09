@@ -235,7 +235,7 @@ namespace cstyle {
 	static void nsvg__flattenShape(Rasterizer* r, ShapeStruct* shape, float scale)
 	{
 		int i, j;
-		Path* path;
+		PathStruct* path;
 
 		for (path = shape->paths; path != NULL; path = path->next) {
 			r->npoints = 0;
@@ -599,7 +599,7 @@ namespace cstyle {
 	static void nsvg__flattenShapeStroke(Rasterizer* r, ShapeStruct* shape, float scale)
 	{
 		int i, j, closed;
-		Path* path;
+		PathStruct* path;
 		Point* p0, *p1;
 		float miterLimit = 4;
 		LineJoin lineJoin = shape->strokeLineJoin;

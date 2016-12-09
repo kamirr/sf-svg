@@ -82,13 +82,13 @@ namespace cstyle {
 		};
 	};
 
-	struct Path
+	struct PathStruct
 	{
 		float* pts;					// Cubic bezier points: x0,y0, [cpx1,cpx1,cpx2,cpy2,x1,y1], ...
 		int npts;					// Total number of bezier points.
 		char closed;				// Flag indicating if shapes should be treated as closed.
 		float bounds[4];			// Tight bounding box of the shape [minx,miny,maxx,maxy].
-		struct Path* next;		// Pointer to next path, or NULL if last element.
+		struct PathStruct* next;		// Pointer to next path, or NULL if last element.
 	};
 
 	struct ShapeStruct
@@ -107,7 +107,7 @@ namespace cstyle {
 		Flags flags;		// Logical or of NSVG_FLAGS_* flags
 		float bounds[4];			// Tight bounding box of the shape [minx,miny,maxx,maxy].
 
-		Path* paths;			// Linked list of paths in the image.
+		PathStruct* paths;			// Linked list of paths in the image.
 		ShapeStruct* next;		// Pointer to next shape, or NULL if last element.
 	};
 
@@ -182,7 +182,7 @@ namespace cstyle {
 		float* pts;
 		int npts;
 		int cpts;
-		Path* plist;
+		PathStruct* plist;
 		ImageStruct* image;
 		GradientData* gradients;
 		float viewMinx, viewMiny, viewWidth, viewHeight;

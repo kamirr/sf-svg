@@ -366,10 +366,10 @@ namespace cstyle {
 		return NULL;
 	}
 
-	static void nsvg__deletePaths(Path* path)
+	static void nsvg__deletePaths(PathStruct* path)
 	{
 		while (path) {
-			Path *next = path->next;
+			PathStruct *next = path->next;
 			if (path->pts != NULL)
 				free(path->pts);
 			free(path);
@@ -618,7 +618,7 @@ namespace cstyle {
 
 	static void nsvg__getLocalBounds(float* bounds, ShapeStruct *shape, float* xform)
 	{
-		Path* path;
+		PathStruct* path;
 		float curve[4*2], curveBounds[4];
 		int i, first = 1;
 		for (path = shape->paths; path != NULL; path = path->next) {
@@ -651,7 +651,7 @@ namespace cstyle {
 		Attrib* attr = nsvg__getAttr(p);
 		float scale = 1.0f;
 		ShapeStruct *shape, *cur, *prev;
-		Path* path;
+		PathStruct* path;
 		int i;
 
 		if (p->plist == NULL)
@@ -745,7 +745,7 @@ namespace cstyle {
 	static void nsvg__addPath(Parser* p, char closed)
 	{
 		Attrib* attr = nsvg__getAttr(p);
-		Path* path = NULL;
+		PathStruct* path = NULL;
 		float bounds[4];
 		float* curve;
 		int i;
@@ -756,9 +756,9 @@ namespace cstyle {
 		if (closed)
 			nsvg__lineTo(p, p->pts[0], p->pts[1]);
 
-		path = (Path*)malloc(sizeof(Path));
+		path = (PathStruct*)malloc(sizeof(PathStruct));
 		if (path == NULL) goto error;
-		memset(path, 0, sizeof(Path));
+		memset(path, 0, sizeof(PathStruct));
 
 		path->pts = (float*)malloc(p->npts*2*sizeof(float));
 		if (path->pts == NULL) goto error;
@@ -2420,7 +2420,7 @@ namespace cstyle {
 	static void nsvg__scaleToViewbox(Parser* p, const char* units)
 	{
 		ShapeStruct* shape;
-		Path* path;
+		PathStruct* path;
 		float tx, ty, sx, sy, us, bounds[4], t[6], avgs;
 		int i;
 		float* pt;
