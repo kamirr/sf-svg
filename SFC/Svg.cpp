@@ -23,7 +23,7 @@ namespace sfc {
 	void SVGImage::update() {
 		this->curves.clear();
 
-		for(auto shape = this->image.internal->shapes; shape != NULL; shape = shape->next) {
+		for(auto shape = this->image.getShapes(); shape != NULL; shape = shape->next) {
 			for(auto path = shape->paths; path != NULL; path = path->next) {
 				for(auto i = 0; i < path->npts - 1; i += 3) {
 					float* p = &path->pts[i * 2];
@@ -96,10 +96,10 @@ namespace sfc {
 		nsvg::NSVGrasterizer* rasterizer = nsvg::nsvgCreateRasterizer();
 		sf::Image img;
 
-		sf::Uint8* pixels = new sf::Uint8[int(this->image.internal->height * scale) * int(this->image.internal->width * scale) * 4];
-		nsvg::nsvgRasterize(rasterizer, this->image.internal, 0, 0, scale, pixels, this->image.internal->width * scale, this->image.internal->height * scale, this->image.internal->width * scale * 4);
+		sf::Uint8* pixels = new sf::Uint8[int(this->image.getSize().x * scale) * int(this->image.getSize().y * scale) * 4];
+		nsvg::nsvgRasterize(rasterizer, this->image.getInternalImage(), 0, 0, scale, pixels, this->image.getSize().x * scale, this->image.getSize().y * scale, this->image.getSize().x * scale * 4);
 
-		img.create(this->image.internal->width * scale, this->image.internal->height * scale, pixels);
+		img.create(this->image.getSize().x * scale, this->image.getSize().y * scale, pixels);
 
 		nsvg::nsvgDeleteRasterizer(rasterizer);
 		return img;
@@ -118,9 +118,6 @@ namespace sfc {
 	}
 
 	sf::Vector2f SVGImage::getSize() const {
-		return {
-			this->image.internal->width,
-			this->image.internal->height
-		};
+		return this->image.getSize();
 	}
 }

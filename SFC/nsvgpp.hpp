@@ -1,12 +1,13 @@
 #ifndef NSVGPP_H
 #define NSVGPP_H
 
+#include <SFML/System/Vector2.hpp>
 #include <string>
+
 #include "nanosvg.hpp"
 
 namespace nsvg {
 	class ImageC {
-	public:
 		Image* internal = nullptr;
 
 	public:
@@ -43,6 +44,21 @@ namespace nsvg {
 			}
 
 			return true;
+		}
+
+		Image* getInternalImage() {
+			return this->internal;
+		}
+
+		Shape* getShapes() {
+			return this->internal->shapes;
+		}
+
+		sf::Vector2f getSize() const{
+			return {
+				this->internal->width,
+				this->internal->height
+			};
 		}
 	};
 }

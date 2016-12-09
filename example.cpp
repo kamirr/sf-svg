@@ -10,6 +10,9 @@ int main() {
 	/* Load SVG image from file */
 	img.loadFromFile("media/car.svg");
 
+	/* Rasterize image */
+	img.rasterize().saveToFile("rasterized.png");
+
 	/* Move it by [10, 10] to make it more visible */
 	img.move({10, 10});
 
