@@ -21,9 +21,9 @@
 namespace nsvg {
 	//! \class Image
 	//!
-	//! \brief C++-styled ImageStruct wrapper
+	//! \brief C++-styled cstyle::ImageStruct wrapper
 	//!
-	//! Provides object orientated interface for C-style nsvg::ImageStruct.
+	//! Provides object orientated interface for C-style nsvg::cstyle::ImageStruct.
 	class Image {
 		cstyle::ImageStruct* internal = nullptr;
 

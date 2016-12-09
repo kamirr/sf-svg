@@ -1,3 +1,14 @@
+/* ====================================================== *
+ * nanosvg++                                              *
+ * This software is a fork of nanosvg (nanosvgrastr.hpp). *
+ * No license-related aspects are affected.               *
+ * Kamil Koczurek | koczurekk@gmail.com                   *
+ * ====================================================== */
+//! @file
+//!
+//! \brief
+//! Path class declaration
+
 #ifndef PATH_HPP
 #define PATH_HPP
 
@@ -6,17 +17,6 @@
 
 #include "nanosvg.hpp"
 
-/*
-	struct PathStruct
-	{
-		float* pts;					// Cubic bezier points: x0,y0, [cpx1,cpx1,cpx2,cpy2,x1,y1], ...
-		int npts;					// Total number of bezier points.
-		char closed;				// Flag indicating if shapes should be treated as closed.
-		float bounds[4];			// Tight bounding box of the shape [minx,miny,maxx,maxy].
-
-		PathStruct* next;		// Pointer to next path, or NULL if last element.
-	};
-*/
 namespace nsvg {
 	struct CubicPointSet {
 		sf::Vector2f begin;
@@ -28,7 +28,7 @@ namespace nsvg {
 
 	//! \class Path
 	//!
-	//! \brief C++-styled cstyled::PathStruct wrapper
+	//! \brief C++-styled cstyle::PathStruct wrapper
 	class Path {
 	public:
 		const cstyle::PathStruct* internal;
