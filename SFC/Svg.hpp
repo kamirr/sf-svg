@@ -13,6 +13,7 @@
 
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/System/InputStream.hpp>
 #include <SFML/Graphics/Drawable.hpp>
 #include <iostream>
 #include <cstring>
@@ -71,6 +72,8 @@ namespace sfc {
 		//!
 		//! Method that parses SVG-XML image from memory and creates proper Bezier Curves.
 		bool loadFromMemory(const void* data, size_t size, const float dpi = 96.f);
+
+		bool loadFromStream(sf::InputStream& stream, const float dpi = 96.f);
 
 		//! \brief Rasterizes SVG
 		//!

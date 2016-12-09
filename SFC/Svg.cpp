@@ -79,12 +79,42 @@ namespace sfc {
 			return false;
 		}
 
-		char* copy = new char[size];
-		std::strcpy(copy, static_cast<const char*>(data));
+		{
+			char* copy = new char[size];
+			std::strcpy(copy, static_cast<const char*>(data));
 
-		this->image = nsvg::nsvgParse(copy, "px", dpi);
+			this->image = nsvg::nsvgParse(copy, "px", dpi);
 
-		delete[] copy;
+			delete[] copy;
+		}
+
+		if(!this->image) {
+			std::cout << "Couldn't parse SVG image!" << std::endl;
+			this->image = nullptr;
+			return false;
+		}
+
+		this->update();
+
+		return true;
+	}
+
+	bool SVGImage::loadFromStream(sf::InputStream& stream, const float dpi) {
+		if(this->image)
+			nsvgDelete(this->image);
+
+		{
+			char* copy = new char[stream.getSize() + 1];
+			stream.read(copy, stream.getSize());
+
+			if(copy[stream.getSize() - 1] != '\0') {
+				copy[stream.getSize()] = '\0';
+			}
+
+			this->image = nsvg::nsvgParse(copy, "px", dpi);
+
+			delete[] copy;
+		}
 
 		if(!this->image) {
 			std::cout << "Couldn't parse SVG image!" << std::endl;
