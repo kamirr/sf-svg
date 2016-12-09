@@ -32,20 +32,7 @@ namespace nsvg {
 		//! \param [in] dpi – passed to nanosvg
 		//!
 		//! \return True if ok, False otherwise
-		bool loadFromFile(const std::string& filename, const std::string& units, const float dpi = 96.f) {
-			if(internal)
-				cstyle::deleteImage(internal);
-
-			internal = cstyle::parseFromFile(filename.c_str(), units.c_str(), dpi);
-
-			if(!this->internal) {
-				std::cout << "Couldn't parse SVG image!" << std::endl;
-				this->internal = nullptr;
-				return false;
-			}
-
-			return true;
-		}
+		bool loadFromFile(const std::string& filename, const std::string& units, const float dpi = 96.f);
 
 		//! \brief Parses SVG from memory
 		//!
@@ -54,52 +41,27 @@ namespace nsvg {
 		//! \param [in] dpi – passed to nanosvg
 		//!
 		//! \return True if ok, False otherwise
-		bool loadFromMemory(std::string input, const std::string& units, const float dpi = 96.f) {
-			if(internal)
-				cstyle::deleteImage(internal);
-
-			internal = cstyle::parse(&input[0], units.c_str(), dpi);
-
-			if(!this->internal) {
-				std::cout << "Couldn't parse SVG image!" << std::endl;
-				this->internal = nullptr;
-				return false;
-			}
-
-			return true;
-		}
+		bool loadFromMemory(std::string input, const std::string& units, const float dpi = 96.f);
 
 		//! \brief Get internal image
 		//!
 		//! \return C-styled nsvg::ImageStruct
-		cstyle::ImageStruct* getInternalImage() {
-			return this->internal;
-		}
+		cstyle::ImageStruct* getInternalImage();
 
 		//! \brief Get shapes
 		//!
 		//! \return Shapes to process
-		cstyle::Shape* getShapes() {
-			return this->internal->shapes;
-		}
+		cstyle::Shape* getShapes();
 
 		//! \brief Get size
 		//!
 		//! \return Image's size in sf::Vector2f
-		sf::Vector2f getSize() const{
-			return {
-				this->internal->width,
-				this->internal->height
-			};
-		}
+		sf::Vector2f getSize() const;
 
 		//! \brief Destructor
 		//!
 		//! Releases resources if any were allocated
-		~Image() {
-			if(internal)
-				cstyle::deleteImage(internal);
-		}
+		~Image();
 	};
 }
 
