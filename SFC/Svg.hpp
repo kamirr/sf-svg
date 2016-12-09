@@ -15,6 +15,7 @@
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/Graphics/Drawable.hpp>
 #include <iostream>
+#include <cstring>
 #include <string>
 #include <vector>
 #include <memory>
@@ -34,6 +35,7 @@ namespace sfc {
 		nsvg::NSVGimage* image;
 
 		virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
+		void update();
 
 	public:
 		//! \brief Default Constructor
@@ -58,6 +60,17 @@ namespace sfc {
 		//!
 		//! Method that parses .svg file and creates proper Bezier Curves.
 		bool loadFromFile(const std::string& file, const float dpi = 96.f);
+
+		//! \brief Loads SVG image from memory
+		//!
+		//! \param [in] data – pointer to null-terminated data
+		//! \param [in] size – data count
+		//! \param [in] dpi – passed to nanosvg
+		//!
+		//! \return True if ok, False otherwise
+		//!
+		//! Method that parses SVG-XML image from memory and creates proper Bezier Curves.
+		bool loadFromMemory(const void* data, size_t size, const float dpi = 96.f);
 
 		//! \brief Rasterizes SVG
 		//!

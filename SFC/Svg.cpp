@@ -11,6 +11,40 @@
 #include "Svg.hpp"
 
 namespace sfc {
+	/*
+		Private
+	*/
+	void SVGImage::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+		for(const auto& curve: this->curves) {
+			target.draw(*curve, states);
+		}
+	}
+
+	void SVGImage::update() {
+		this->curves.clear();
+
+		for(auto shape = this->image->shapes; shape != NULL; shape = shape->next) {
+			for(auto path = shape->paths; path != NULL; path = path->next) {
+				for(auto i = 0; i < path->npts - 1; i += 3) {
+					float* p = &path->pts[i * 2];
+
+					sf::Vector2f begin    = { p[0], p[1] };
+					sf::Vector2f ctrl1    = { p[2], p[3] };
+					sf::Vector2f ctrl2    = { p[4], p[5] };
+					sf::Vector2f end     = { p[6], p[7] };
+
+					this->curves.push_back(std::make_shared<BezierCubicCurve>(begin, end, ctrl1, ctrl2));
+					(*this->curves.back()).setNormalizedLengthLimit(1.f);
+					(*this->curves.back()).setPointCount(1024);
+					(*this->curves.back()).update();
+				}
+			}
+		}
+	}
+
+	/*
+		Public
+	*/
 	SVGImage::SVGImage()
 		: image { nullptr }
 	{ }
@@ -25,32 +59,40 @@ namespace sfc {
 
 		this->image = nsvg::nsvgParseFromFile(file.c_str(), "px", dpi);
 
-		if(this->image == NULL)
-			this->image = nullptr;
-
 		if(!this->image) {
-			std::cout << "Couldn't open SVG image!" << std::endl;
+			std::cout << "Couldn't parse SVG image!" << std::endl;
+			this->image = nullptr;
 			return false;
 		}
 
-		this->curves.clear();
-		for(auto shape = this->image->shapes; shape != NULL; shape = shape->next) {
-			for(auto path = shape->paths; path != NULL; path = path->next) {
-				for(auto i = 0; i < path->npts - 1; i += 3) {
-					float* p = &path->pts[i * 2];
+		this->update();
 
-					sf::Vector2f begin    = { p[0], p[1] };
-					sf::Vector2f ctrl1    = { p[2], p[3] };
-					sf::Vector2f ctrl2    = { p[4], p[5] };
-					sf::Vector2f end     = { p[6], p[7] };
+		return true;
+	}
 
-					this->curves.push_back(std::make_shared<BezierCubicCurve>(begin, end, ctrl1, ctrl2));
-					(*this->curves.back()).setNormalizedLengthLimit(1.f);
-					(*this->curves.back()).setPointCount(2048);
-					(*this->curves.back()).update();
-				}
-			}
+	bool SVGImage::loadFromMemory(const void *data, size_t size, const float dpi) {
+		if(this->image)
+			nsvgDelete(this->image);
+
+		if(static_cast<const sf::Uint8*>(data)[size - 1] != '\0') {
+			std::cout << "SVG file in memory has to be null-terminated!" << std::endl;
+			return false;
 		}
+
+		char* copy = new char[size];
+		std::strcpy(copy, static_cast<const char*>(data));
+
+		this->image = nsvg::nsvgParse(copy, "px", dpi);
+
+		delete[] copy;
+
+		if(!this->image) {
+			std::cout << "Couldn't parse SVG image!" << std::endl;
+			this->image = nullptr;
+			return false;
+		}
+
+		this->update();
 
 		return true;
 	}
@@ -85,12 +127,6 @@ namespace sfc {
 			this->image->width,
 			this->image->height
 		};
-	}
-
-	void SVGImage::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-		for(const auto& curve: this->curves) {
-			target.draw(*curve, states);
-		}
 	}
 
 	SVGImage::~SVGImage() {
