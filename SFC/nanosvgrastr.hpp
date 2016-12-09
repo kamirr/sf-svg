@@ -47,7 +47,8 @@ namespace nsvg {
 	struct Edge {
 		float x0,y0, x1,y1;
 		int dir;
-		struct Edge* next;
+
+		Edge* next;
 	};
 
 	struct Point {
@@ -62,13 +63,15 @@ namespace nsvg {
 		int x,dx;
 		float ey;
 		int dir;
-		struct ActiveEdge *next;
+
+		ActiveEdge *next;
 	};
 
 	struct MemPage {
 		unsigned char mem[MEMPAGE_SIZE];
 		int size;
-		struct MemPage* next;
+
+		MemPage* next;
 	};
 
 	struct CachedPaint {
