@@ -160,8 +160,9 @@ namespace cstyle {
 		FillRule fillRule;				// Fill rule, see NSVGfillRule.
 		Flags flags;		// Logical or of NSVG_FLAGS_* flags
 		float bounds[4];			// Tight bounding box of the shape [minx,miny,maxx,maxy].
+
 		Path* paths;			// Linked list of paths in the image.
-		struct Shape* next;		// Pointer to next shape, or NULL if last element.
+		Shape* next;		// Pointer to next shape, or NULL if last element.
 	};
 
 	struct ImageStruct
