@@ -88,7 +88,8 @@ namespace cstyle {
 		int npts;					// Total number of bezier points.
 		char closed;				// Flag indicating if shapes should be treated as closed.
 		float bounds[4];			// Tight bounding box of the shape [minx,miny,maxx,maxy].
-		struct PathStruct* next;		// Pointer to next path, or NULL if last element.
+
+		PathStruct* next;		// Pointer to next path, or NULL if last element.
 	};
 
 	struct ShapeStruct
