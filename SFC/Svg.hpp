@@ -88,6 +88,9 @@ namespace sfc {
 		//! \param [in] vec – vector by which image will be translated
 		void move(sf::Vector2f vec);
 
+		//! \brief Scale image
+		//!
+		//! \param [in] factor – scale to apply
 		void scale(const float factor);
 
 		//! \brief Returns size of image
