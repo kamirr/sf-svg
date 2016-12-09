@@ -93,7 +93,7 @@ namespace nsvg {
 		//! \brief Get paths
 		//!
 		//! \return const cstyle::Path pointer to path
-		const cstyle::PathStruct* getPaths() const;
+		const cstyle::PathStruct* getFirstPath() const;
 
 		//! \brief Get next shape
 		//!

@@ -12,6 +12,7 @@
 #ifndef NSVGPP_H
 #define NSVGPP_H
 
+#include "Path.hpp"
 #include "Shape.hpp"
 #include "Image.hpp"
 

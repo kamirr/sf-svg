@@ -25,20 +25,22 @@ namespace sfc {
 
 		nsvg::Shape shape(this->image.getFirstShape());
 		while(shape.good()) {
-			for(auto path = shape.getPaths(); path != NULL; path = path->next) {
-				for(auto i = 0; i < path->npts - 1; i += 3) {
-					float* p = &path->pts[i * 2];
+			nsvg::Path path = shape.getFirstPath();
+			while(path.good()) {
+				for(const auto& points: path.getPointsSets()) {
+					this->curves.push_back(std::make_shared<BezierCubicCurve>(
+						points.begin,
+						points.end,
+						points.control1,
+						points.control2
+					));
 
-					sf::Vector2f begin    = { p[0], p[1] };
-					sf::Vector2f ctrl1    = { p[2], p[3] };
-					sf::Vector2f ctrl2    = { p[4], p[5] };
-					sf::Vector2f end     = { p[6], p[7] };
-
-					this->curves.push_back(std::make_shared<BezierCubicCurve>(begin, end, ctrl1, ctrl2));
 					(*this->curves.back()).setNormalizedLengthLimit(1.f);
 					(*this->curves.back()).setPointCount(1024);
 					(*this->curves.back()).update();
 				}
+
+				path = path.getNextPath();
 			}
 
 			shape = shape.getNextShape();
