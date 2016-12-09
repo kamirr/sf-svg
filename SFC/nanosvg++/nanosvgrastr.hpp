@@ -38,6 +38,7 @@
 #include "nanosvg.hpp"
 
 namespace nsvg {
+namespace cstyle {
 	#define SUBSAMPLES   5
 	#define FIXSHIFT     10
 	#define FIX	         (1 << FIXSHIFT)
@@ -129,6 +130,7 @@ namespace nsvg {
 
 	// Deletes rasterizer context.
 	void deleteRasterizer(Rasterizer*);
+}
 }
 
 #endif // NANOSVGRASTR_HPP

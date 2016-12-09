@@ -22,7 +22,7 @@ namespace nsvg {
 	//!
 	//! Provides object orientated interface for C-style nsvg::ImageStruct.
 	class Image {
-		ImageStruct* internal = nullptr;
+		cstyle::ImageStruct* internal = nullptr;
 
 	public:
 		//! \brief Parses SVG from file
@@ -34,9 +34,9 @@ namespace nsvg {
 		//! \return True if ok, False otherwise
 		bool loadFromFile(const std::string& filename, const std::string& units, const float dpi = 96.f) {
 			if(internal)
-				nsvg::deleteImage(internal);
+				cstyle::deleteImage(internal);
 
-			internal = parseFromFile(filename.c_str(), units.c_str(), dpi);
+			internal = cstyle::parseFromFile(filename.c_str(), units.c_str(), dpi);
 
 			if(!this->internal) {
 				std::cout << "Couldn't parse SVG image!" << std::endl;
@@ -56,9 +56,9 @@ namespace nsvg {
 		//! \return True if ok, False otherwise
 		bool loadFromMemory(std::string input, const std::string& units, const float dpi = 96.f) {
 			if(internal)
-				nsvg::deleteImage(internal);
+				cstyle::deleteImage(internal);
 
-			internal = parse(&input[0], units.c_str(), dpi);
+			internal = cstyle::parse(&input[0], units.c_str(), dpi);
 
 			if(!this->internal) {
 				std::cout << "Couldn't parse SVG image!" << std::endl;
@@ -72,14 +72,14 @@ namespace nsvg {
 		//! \brief Get internal image
 		//!
 		//! \return C-styled nsvg::ImageStruct
-		ImageStruct* getInternalImage() {
+		cstyle::ImageStruct* getInternalImage() {
 			return this->internal;
 		}
 
 		//! \brief Get shapes
 		//!
 		//! \return Shapes to process
-		Shape* getShapes() {
+		cstyle::Shape* getShapes() {
 			return this->internal->shapes;
 		}
 
@@ -98,7 +98,7 @@ namespace nsvg {
 		//! Releases resources if any were allocated
 		~Image() {
 			if(internal)
-				nsvg::deleteImage(internal);
+				cstyle::deleteImage(internal);
 		}
 	};
 }

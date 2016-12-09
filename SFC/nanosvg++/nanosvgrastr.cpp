@@ -12,6 +12,7 @@
 #include "nanosvgrastr.hpp"
 
 namespace nsvg {
+namespace cstyle {
 	Rasterizer* createRasterizer()
 	{
 		Rasterizer* r = (Rasterizer*)malloc(sizeof(Rasterizer));
@@ -1312,4 +1313,5 @@ namespace nsvg {
 		r->height = 0;
 		r->stride = 0;
 	}
+}
 }

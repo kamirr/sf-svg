@@ -49,6 +49,7 @@
 //!
 //! \brief Nanosvg++ namespace
 namespace nsvg {
+namespace cstyle {
 	/*
 	 *	Definitions
 	*/
@@ -256,5 +257,6 @@ namespace nsvg {
 
 	// Deletes list of paths.
 	void deleteImage(ImageStruct* image);
+}
 }
 #endif // NANOSVG_H
