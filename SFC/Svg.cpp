@@ -23,7 +23,7 @@ namespace sfc {
 	void SVGImage::update() {
 		this->curves.clear();
 
-		for(auto shape = this->image->shapes; shape != NULL; shape = shape->next) {
+		for(auto shape = this->image.internal->shapes; shape != NULL; shape = shape->next) {
 			for(auto path = shape->paths; path != NULL; path = path->next) {
 				for(auto i = 0; i < path->npts - 1; i += 3) {
 					float* p = &path->pts[i * 2];
@@ -46,7 +46,6 @@ namespace sfc {
 		Public
 	*/
 	SVGImage::SVGImage()
-		: image { nullptr }
 	{ }
 
 	SVGImage::SVGImage(const std::string &file, const float dpi) {
@@ -54,76 +53,42 @@ namespace sfc {
 	}
 
 	bool SVGImage::loadFromFile(const std::string &file, const float dpi) {
-		if(this->image)
-			nsvgDelete(this->image);
-
-		this->image = nsvg::nsvgParseFromFile(file.c_str(), "px", dpi);
-
-		if(!this->image) {
-			std::cout << "Couldn't parse SVG image!" << std::endl;
-			this->image = nullptr;
+		if(!this->image.loadFromFile(file.c_str(), "px", dpi))
 			return false;
-		}
 
 		this->update();
-
 		return true;
 	}
 
 	bool SVGImage::loadFromMemory(const void *data, size_t size, const float dpi) {
-		if(this->image)
-			nsvgDelete(this->image);
-
 		if(static_cast<const sf::Uint8*>(data)[size - 1] != '\0') {
 			std::cout << "SVG file in memory has to be null-terminated!" << std::endl;
 			return false;
 		}
 
-		{
-			char* copy = new char[size];
-			std::strcpy(copy, static_cast<const char*>(data));
-
-			this->image = nsvg::nsvgParse(copy, "px", dpi);
-
-			delete[] copy;
-		}
-
-		if(!this->image) {
-			std::cout << "Couldn't parse SVG image!" << std::endl;
-			this->image = nullptr;
+		std::string copy = static_cast<const char*>(data);
+		if(!this->image.loadFromMemory(copy, "px", dpi))
 			return false;
-		}
 
 		this->update();
-
 		return true;
 	}
 
 	bool SVGImage::loadFromStream(sf::InputStream& stream, const float dpi) {
-		if(this->image)
-			nsvgDelete(this->image);
+		char* copy = new char[stream.getSize() + 1];
+		stream.read(copy, stream.getSize());
 
-		{
-			char* copy = new char[stream.getSize() + 1];
-			stream.read(copy, stream.getSize());
-
-			if(copy[stream.getSize() - 1] != '\0') {
-				copy[stream.getSize()] = '\0';
-			}
-
-			this->image = nsvg::nsvgParse(copy, "px", dpi);
-
-			delete[] copy;
+		if(copy[stream.getSize() - 1] != '\0') {
+			copy[stream.getSize()] = '\0';
 		}
 
-		if(!this->image) {
-			std::cout << "Couldn't parse SVG image!" << std::endl;
-			this->image = nullptr;
+		bool ok = this->image.loadFromMemory(copy, "px", dpi);
+		delete[] copy;
+
+		if(!ok)
 			return false;
-		}
 
 		this->update();
-
 		return true;
 	}
 
@@ -131,10 +96,10 @@ namespace sfc {
 		nsvg::NSVGrasterizer* rasterizer = nsvg::nsvgCreateRasterizer();
 		sf::Image img;
 
-		sf::Uint8* pixels = new sf::Uint8[int(this->image->height * scale) * int(this->image->width * scale) * 4];
-		nsvg::nsvgRasterize(rasterizer, this->image, 0, 0, scale, pixels, this->image->width * scale, this->image->height * scale, this->image->width * scale * 4);
+		sf::Uint8* pixels = new sf::Uint8[int(this->image.internal->height * scale) * int(this->image.internal->width * scale) * 4];
+		nsvg::nsvgRasterize(rasterizer, this->image.internal, 0, 0, scale, pixels, this->image.internal->width * scale, this->image.internal->height * scale, this->image.internal->width * scale * 4);
 
-		img.create(this->image->width * scale, this->image->height * scale, pixels);
+		img.create(this->image.internal->width * scale, this->image.internal->height * scale, pixels);
 
 		nsvg::nsvgDeleteRasterizer(rasterizer);
 		return img;
@@ -154,13 +119,8 @@ namespace sfc {
 
 	sf::Vector2f SVGImage::getSize() const {
 		return {
-			this->image->width,
-			this->image->height
+			this->image.internal->width,
+			this->image.internal->height
 		};
-	}
-
-	SVGImage::~SVGImage() {
-		if(this->image)
-			nsvgDelete(this->image);
 	}
 }

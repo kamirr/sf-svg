@@ -24,4 +24,5 @@ HEADERS += \
     SFC/nanosvg.hpp \
     SFC/Svg.hpp \
     SFC/debug.hpp \
-    SFC/nanosvgrastr.hpp
+    SFC/nanosvgrastr.hpp \
+    SFC/nsvgpp.hpp

@@ -141,13 +141,13 @@ namespace nsvg {
 	};
 
 	// Parses SVG file from a file, returns SVG image as paths.
-	Image* nsvgParseFromFile(const char* filename, const char* units, float dpi);
+	Image* parseFromFile(const char* filename, const char* units, float dpi);
 
 	// Parses SVG file from a null terminated string, returns SVG image as paths.
 	// Important note: changes the string.
-	Image* nsvgParse(char* input, const char* units, float dpi);
+	Image* parse(char* input, const char* units, float dpi);
 
 	// Deletes list of paths.
-	void nsvgDelete(Image* image);
+	void deleteImage(Image* image);
 }
 #endif // NANOSVG_H

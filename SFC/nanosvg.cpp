@@ -498,7 +498,7 @@ namespace nsvg {
 		if (p != NULL) {
 			nsvg__deletePaths(p->plist);
 			nsvg__deleteGradientData(p->gradients);
-			nsvgDelete(p->image);
+			delete(p->image);
 			free(p->pts);
 			free(p);
 		}
@@ -2606,7 +2606,7 @@ namespace nsvg {
 		}
 	}
 
-	Image* nsvgParse(char* input, const char* units, float dpi)
+	Image* parse(char* input, const char* units, float dpi)
 	{
 		NSVGparser* p;
 		Image* ret = 0;
@@ -2630,7 +2630,7 @@ namespace nsvg {
 		return ret;
 	}
 
-	Image* nsvgParseFromFile(const char* filename, const char* units, float dpi)
+	Image* parseFromFile(const char* filename, const char* units, float dpi)
 	{
 		FILE* fp = NULL;
 		size_t size;
@@ -2647,7 +2647,7 @@ namespace nsvg {
 		if (fread(data, 1, size, fp) != size) goto error;
 		data[size] = '\0';	// Must be null terminated.
 		fclose(fp);
-		image = nsvgParse(data, units, dpi);
+		image = parse(data, units, dpi);
 		free(data);
 
 		return image;
@@ -2655,11 +2655,11 @@ namespace nsvg {
 	error:
 		if (fp) fclose(fp);
 		if (data) free(data);
-		if (image) nsvgDelete(image);
+		if (image) delete(image);
 		return NULL;
 	}
 
-	void nsvgDelete(Image* image)
+	void deleteImage(Image* image)
 	{
 		Shape *snext, *shape;
 		if (image == NULL) return;

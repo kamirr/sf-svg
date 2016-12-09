@@ -23,6 +23,7 @@
 
 #include "BezierCubicCurve.hpp"
 #include "nanosvgrastr.hpp"
+#include "nsvgpp.hpp"
 
 namespace sfc {
 	//! \class SVGImage
@@ -33,7 +34,7 @@ namespace sfc {
 	class SVGImage
 	: public sf::Drawable {
 		std::vector<std::shared_ptr<BezierCubicCurve>> curves;
-		nsvg::Image* image;
+		nsvg::ImageC image;
 
 		virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
 		void update();
@@ -93,11 +94,6 @@ namespace sfc {
 		//!
 		//! \returns sf::Vector2f (size)
 		sf::Vector2f getSize() const;
-
-		//! \brief Destructors
-		//!
-		//! Releases resources (taken by nanosvg) if any image was loaded.
-		~SVGImage();
 	};
 }
 
