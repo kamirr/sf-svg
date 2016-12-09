@@ -49,37 +49,37 @@
 //!
 //! \brief Nanosvg++ namespace
 namespace nsvg {
-	enum class NSVGpaintType {
+	enum class PaintType {
 		NONE = 0,
 		COLOR = 1,
 		LINEAR_GRADIENT = 2,
 		RADIAL_GRADIENT = 3,
 	};
 
-	enum class NSVGspreadType {
+	enum class SpreadType {
 		PAD = 0,
 		REFLECT = 1,
 		REPEAT = 2,
 	};
 
-	enum class NSVGlineJoin {
+	enum class LineJoin {
 		MITER = 0,
 		ROUND = 1,
 		BEVEL = 2,
 	};
 
-	enum class NSVGlineCap {
+	enum class LineCap {
 		BUTT = 0,
 		ROUND = 1,
 		SQUARE = 2,
 	};
 
-	enum class NSVGfillRule {
+	enum class FillRule {
 		NONZERO = 0,
 		EVENODD = 1,
 	};
 
-	enum class NSVGflags {
+	enum class Flags {
 		NSVG_FLAGS_VISIBLE = 0x01,
 		INVISIBLE = 0x00
 	};
@@ -91,14 +91,14 @@ namespace nsvg {
 
 	struct NSVGgradient {
 		float xform[6];
-		NSVGspreadType spread;
+		SpreadType spread;
 		float fx, fy;
 		int nstops;
 		NSVGgradientStop stops[1];
 	};
 
 	struct NSVGpaint {
-		NSVGpaintType type;
+		PaintType type;
 		union {
 			unsigned int color;
 			NSVGgradient* gradient;
@@ -124,10 +124,10 @@ namespace nsvg {
 		float strokeDashOffset;		// Stroke dash offset (scaled).
 		float strokeDashArray[8];			// Stroke dash array (scaled).
 		char strokeDashCount;				// Number of dash values in dash array.
-		NSVGlineJoin strokeLineJoin;		// Stroke join type.
-		NSVGlineCap strokeLineCap;			// Stroke cap type.
-		NSVGfillRule fillRule;				// Fill rule, see NSVGfillRule.
-		NSVGflags flags;		// Logical or of NSVG_FLAGS_* flags
+		LineJoin strokeLineJoin;		// Stroke join type.
+		LineCap strokeLineCap;			// Stroke cap type.
+		FillRule fillRule;				// Fill rule, see NSVGfillRule.
+		Flags flags;		// Logical or of NSVG_FLAGS_* flags
 		float bounds[4];			// Tight bounding box of the shape [minx,miny,maxx,maxy].
 		NSVGpath* paths;			// Linked list of paths in the image.
 		struct NSVGshape* next;		// Pointer to next shape, or NULL if last element.

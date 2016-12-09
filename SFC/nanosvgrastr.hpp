@@ -74,8 +74,8 @@ namespace nsvg {
 	} NSVGmemPage;
 
 	typedef struct NSVGcachedPaint {
-		NSVGpaintType type;
-		NSVGspreadType spread;
+		PaintType type;
+		SpreadType spread;
 		float xform[6];
 		unsigned int colors[256];
 	} NSVGcachedPaint;

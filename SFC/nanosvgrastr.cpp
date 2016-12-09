@@ -468,7 +468,7 @@ namespace nsvg {
 		return divs;
 	}
 
-	static void nsvg__expandStroke(NSVGrasterizer* r, NSVGpoint* points, int npoints, int closed, NSVGlineJoin lineJoin, NSVGlineCap lineCap, float lineWidth)
+	static void nsvg__expandStroke(NSVGrasterizer* r, NSVGpoint* points, int npoints, int closed, LineJoin lineJoin, LineCap lineCap, float lineWidth)
 	{
 		int ncap = nsvg__curveDivs(lineWidth*0.5f, NSVG_PI, r->tessTol);	// Calculate divisions per half circle.
 		NSVGpoint left = {0,0,0,0,0,0,0,0}, right = {0,0,0,0,0,0,0,0}, firstLeft = {0,0,0,0,0,0,0,0}, firstRight = {0,0,0,0,0,0,0,0};
@@ -499,19 +499,19 @@ namespace nsvg {
 			float dx = p1->x - p0->x;
 			float dy = p1->y - p0->y;
 			nsvg__normalize(&dx, &dy);
-			if (lineCap == NSVGlineCap::BUTT)
+			if (lineCap == LineCap::BUTT)
 				nsvg__buttCap(r, &left, &right, p0, dx, dy, lineWidth, 0);
-			else if (lineCap == NSVGlineCap::SQUARE)
+			else if (lineCap == LineCap::SQUARE)
 				nsvg__squareCap(r, &left, &right, p0, dx, dy, lineWidth, 0);
-			else if (lineCap == NSVGlineCap::ROUND)
+			else if (lineCap == LineCap::ROUND)
 				nsvg__roundCap(r, &left, &right, p0, dx, dy, lineWidth, ncap, 0);
 		}
 
 		for (j = s; j < e; ++j) {
 			if (p1->flags & NSVG_PT_CORNER) {
-				if (lineJoin == NSVGlineJoin::ROUND)
+				if (lineJoin == LineJoin::ROUND)
 					nsvg__roundJoin(r, &left, &right, p0, p1, lineWidth, ncap);
-				else if (lineJoin == NSVGlineJoin::BEVEL || (p1->flags & NSVG_PT_BEVEL))
+				else if (lineJoin == LineJoin::BEVEL || (p1->flags & NSVG_PT_BEVEL))
 					nsvg__bevelJoin(r, &left, &right, p0, p1, lineWidth);
 				else
 					nsvg__miterJoin(r, &left, &right, p0, p1, lineWidth);
@@ -530,16 +530,16 @@ namespace nsvg {
 			float dx = p1->x - p0->x;
 			float dy = p1->y - p0->y;
 			nsvg__normalize(&dx, &dy);
-			if (lineCap == NSVGlineCap::BUTT)
+			if (lineCap == LineCap::BUTT)
 				nsvg__buttCap(r, &right, &left, p1, -dx, -dy, lineWidth, 1);
-			else if (lineCap == NSVGlineCap::SQUARE)
+			else if (lineCap == LineCap::SQUARE)
 				nsvg__squareCap(r, &right, &left, p1, -dx, -dy, lineWidth, 1);
-			else if (lineCap == NSVGlineCap::ROUND)
+			else if (lineCap == LineCap::ROUND)
 				nsvg__roundCap(r, &right, &left, p1, -dx, -dy, lineWidth, ncap, 1);
 		}
 	}
 
-	static void nsvg__prepareStroke(NSVGrasterizer* r, float miterLimit, NSVGlineJoin lineJoin)
+	static void nsvg__prepareStroke(NSVGrasterizer* r, float miterLimit, LineJoin lineJoin)
 	{
 		int i, j;
 		NSVGpoint* p0, *p1;
@@ -587,7 +587,7 @@ namespace nsvg {
 
 			// Check to see if the corner needs to be beveled.
 			if (p1->flags & NSVG_PT_CORNER) {
-				if ((dmr2 * miterLimit*miterLimit) < 1.0f || lineJoin == NSVGlineJoin::BEVEL || lineJoin == NSVGlineJoin::ROUND) {
+				if ((dmr2 * miterLimit*miterLimit) < 1.0f || lineJoin == LineJoin::BEVEL || lineJoin == LineJoin::ROUND) {
 					p1->flags |= NSVG_PT_BEVEL;
 				}
 			}
@@ -602,8 +602,8 @@ namespace nsvg {
 		NSVGpath* path;
 		NSVGpoint* p0, *p1;
 		float miterLimit = 4;
-		NSVGlineJoin lineJoin = shape->strokeLineJoin;
-		NSVGlineCap lineCap = shape->strokeLineCap;
+		LineJoin lineJoin = shape->strokeLineJoin;
+		LineCap lineCap = shape->strokeLineCap;
 		float lineWidth = shape->strokeWidth * scale;
 
 		for (path = shape->paths; path != NULL; path = path->next) {
@@ -782,12 +782,12 @@ namespace nsvg {
 	// note: this routine clips fills that extend off the edges... ideally this
 	// wouldn't happen, but it could happen if the truetype glyph bounding boxes
 	// are wrong, or if the user supplies a too-small bitmap
-	static void nsvg__fillActiveEdges(unsigned char* scanline, int len, NSVGactiveEdge* e, int maxWeight, int* xmin, int* xmax, NSVGfillRule fillRule)
+	static void nsvg__fillActiveEdges(unsigned char* scanline, int len, NSVGactiveEdge* e, int maxWeight, int* xmin, int* xmax, FillRule fillRule)
 	{
 		// non-zero winding fill
 		int x0 = 0, w = 0;
 
-		if (fillRule == NSVGfillRule::NONZERO) {
+		if (fillRule == FillRule::NONZERO) {
 			// Non-zero
 			while (e != NULL) {
 				if (w == 0) {
@@ -801,7 +801,7 @@ namespace nsvg {
 				}
 				e = e->next;
 			}
-		} else if (fillRule == NSVGfillRule::EVENODD) {
+		} else if (fillRule == FillRule::EVENODD) {
 			// Even-odd
 			while (e != NULL) {
 				if (w == 0) {
@@ -852,7 +852,7 @@ namespace nsvg {
 									float tx, float ty, float scale, NSVGcachedPaint* cache)
 	{
 
-		if (cache->type == NSVGpaintType::COLOR) {
+		if (cache->type == PaintType::COLOR) {
 			int i, cr, cg, cb, ca;
 			cr = cache->colors[0] & 0xff;
 			cg = (cache->colors[0] >> 8) & 0xff;
@@ -882,7 +882,7 @@ namespace nsvg {
 				cover++;
 				dst += 4;
 			}
-		} else if (cache->type == NSVGpaintType::LINEAR_GRADIENT) {
+		} else if (cache->type == PaintType::LINEAR_GRADIENT) {
 			// TODO: spread modes.
 			// TODO: plenty of opportunities to optimize.
 			float fx, fy, dx, gy;
@@ -926,7 +926,7 @@ namespace nsvg {
 				dst += 4;
 				fx += dx;
 			}
-		} else if (cache->type == NSVGpaintType::RADIAL_GRADIENT) {
+		} else if (cache->type == PaintType::RADIAL_GRADIENT) {
 			// TODO: spread modes.
 			// TODO: plenty of opportunities to optimize.
 			// TODO: focus (fx,fy)
@@ -976,7 +976,7 @@ namespace nsvg {
 		}
 	}
 
-	static void nsvg__rasterizeSortedEdges(NSVGrasterizer *r, float tx, float ty, float scale, NSVGcachedPaint* cache, NSVGfillRule fillRule)
+	static void nsvg__rasterizeSortedEdges(NSVGrasterizer *r, float tx, float ty, float scale, NSVGcachedPaint* cache, FillRule fillRule)
 	{
 		NSVGactiveEdge *active = NULL;
 		int y, s;
@@ -1131,7 +1131,7 @@ namespace nsvg {
 
 		cache->type = paint->type;
 
-		if (paint->type == NSVGpaintType::COLOR) {
+		if (paint->type == PaintType::COLOR) {
 			cache->colors[0] = nsvg__applyOpacity(paint->color, opacity);
 			return;
 		}
@@ -1250,10 +1250,10 @@ namespace nsvg {
 			memset(&dst[i*stride], 0, w*4);
 
 		for (shape = image->shapes; shape != NULL; shape = shape->next) {
-			if (!(static_cast<unsigned>(shape->flags) & static_cast<unsigned>(NSVGflags::NSVG_FLAGS_VISIBLE)))
+			if (!(static_cast<unsigned>(shape->flags) & static_cast<unsigned>(Flags::NSVG_FLAGS_VISIBLE)))
 				continue;
 
-			if (shape->fill.type != NSVGpaintType::NONE) {
+			if (shape->fill.type != PaintType::NONE) {
 				nsvg__resetPool(r);
 				r->freelist = NULL;
 				r->nedges = 0;
@@ -1277,7 +1277,7 @@ namespace nsvg {
 
 				nsvg__rasterizeSortedEdges(r, tx,ty,scale, &cache, shape->fillRule);
 			}
-			if (shape->stroke.type != NSVGpaintType::NONE && (shape->strokeWidth * scale) > 0.01f) {
+			if (shape->stroke.type != PaintType::NONE && (shape->strokeWidth * scale) > 0.01f) {
 				nsvg__resetPool(r);
 				r->freelist = NULL;
 				r->nedges = 0;
@@ -1301,7 +1301,7 @@ namespace nsvg {
 				// now, traverse the scanlines and find the intersections on each scanline, use non-zero rule
 				nsvg__initPaint(&cache, &shape->stroke, shape->opacity);
 
-				nsvg__rasterizeSortedEdges(r, tx,ty,scale, &cache, NSVGfillRule::NONZERO);
+				nsvg__rasterizeSortedEdges(r, tx,ty,scale, &cache, FillRule::NONZERO);
 			}
 		}
 
