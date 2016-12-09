@@ -1227,7 +1227,7 @@ namespace nsvg {
 	*/
 
 	void nsvgRasterize(NSVGrasterizer* r,
-					   Image* image, float tx, float ty, float scale,
+					   ImageStruct* image, float tx, float ty, float scale,
 					   unsigned char* dst, int w, int h, int stride)
 	{
 		Shape *shape = NULL;

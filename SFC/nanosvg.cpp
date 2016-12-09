@@ -262,7 +262,7 @@ namespace nsvg {
 		int npts;
 		int cpts;
 		Path* plist;
-		Image* image;
+		ImageStruct* image;
 		NSVGgradientData* gradients;
 		float viewMinx, viewMiny, viewWidth, viewHeight;
 		int alignX, alignY, alignType;
@@ -435,9 +435,9 @@ namespace nsvg {
 		if (p == NULL) goto error;
 		memset(p, 0, sizeof(NSVGparser));
 
-		p->image = (Image*)malloc(sizeof(Image));
+		p->image = (ImageStruct*)malloc(sizeof(ImageStruct));
 		if (p->image == NULL) goto error;
-		memset(p->image, 0, sizeof(Image));
+		memset(p->image, 0, sizeof(ImageStruct));
 
 		// Init style
 		nsvg__xformIdentity(p->attr[0].xform);
@@ -2606,10 +2606,10 @@ namespace nsvg {
 		}
 	}
 
-	Image* parse(char* input, const char* units, float dpi)
+	ImageStruct* parse(char* input, const char* units, float dpi)
 	{
 		NSVGparser* p;
-		Image* ret = 0;
+		ImageStruct* ret = 0;
 
 		p = nsvg__createParser();
 		if (p == NULL) {
@@ -2630,12 +2630,12 @@ namespace nsvg {
 		return ret;
 	}
 
-	Image* parseFromFile(const char* filename, const char* units, float dpi)
+	ImageStruct* parseFromFile(const char* filename, const char* units, float dpi)
 	{
 		FILE* fp = NULL;
 		size_t size;
 		char* data = NULL;
-		Image* image = NULL;
+		ImageStruct* image = NULL;
 
 		fp = fopen(filename, "rb");
 		if (!fp) goto error;
@@ -2659,7 +2659,7 @@ namespace nsvg {
 		return NULL;
 	}
 
-	void deleteImage(Image* image)
+	void deleteImage(ImageStruct* image)
 	{
 		Shape *snext, *shape;
 		if (image == NULL) return;

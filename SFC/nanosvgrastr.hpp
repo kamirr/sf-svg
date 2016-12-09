@@ -135,7 +135,7 @@ namespace nsvg {
 	//   h - height of the image to render
 	//   stride - number of bytes per scaleline in the destination buffer
 	void nsvgRasterize(NSVGrasterizer* r,
-					   Image* image, float tx, float ty, float scale,
+					   ImageStruct* image, float tx, float ty, float scale,
 					   unsigned char* dst, int w, int h, int stride);
 
 	// Deletes rasterizer context.

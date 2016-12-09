@@ -133,7 +133,7 @@ namespace nsvg {
 		struct Shape* next;		// Pointer to next shape, or NULL if last element.
 	};
 
-	struct Image
+	struct ImageStruct
 	{
 		float width;				// Width of the image.
 		float height;				// Height of the image.
@@ -141,13 +141,13 @@ namespace nsvg {
 	};
 
 	// Parses SVG file from a file, returns SVG image as paths.
-	Image* parseFromFile(const char* filename, const char* units, float dpi);
+	ImageStruct* parseFromFile(const char* filename, const char* units, float dpi);
 
 	// Parses SVG file from a null terminated string, returns SVG image as paths.
 	// Important note: changes the string.
-	Image* parse(char* input, const char* units, float dpi);
+	ImageStruct* parse(char* input, const char* units, float dpi);
 
 	// Deletes list of paths.
-	void deleteImage(Image* image);
+	void deleteImage(ImageStruct* image);
 }
 #endif // NANOSVG_H

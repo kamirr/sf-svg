@@ -7,11 +7,11 @@
 #include "nanosvg.hpp"
 
 namespace nsvg {
-	class ImageC {
-		Image* internal = nullptr;
+	class Image {
+		ImageStruct* internal = nullptr;
 
 	public:
-		~ImageC() {
+		~Image() {
 			if(internal)
 				nsvg::deleteImage(internal);
 		}
@@ -46,7 +46,7 @@ namespace nsvg {
 			return true;
 		}
 
-		Image* getInternalImage() {
+		ImageStruct* getInternalImage() {
 			return this->internal;
 		}
 
