@@ -9,7 +9,7 @@
 //!
 //! \brief
 //! Nanosvg++ rasterizer implementation
-#include "nanosvgrastr.hpp"
+#include "Nanosvgrastr.hpp"
 
 namespace nsvg {
 namespace cstyle {

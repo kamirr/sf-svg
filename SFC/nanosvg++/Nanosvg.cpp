@@ -9,7 +9,7 @@
 //!
 //! \brief
 //! Nanosvg++ implementation
-#include "nanosvg.hpp"
+#include "Nanosvg.hpp"
 
 namespace nsvg {
 namespace cstyle {

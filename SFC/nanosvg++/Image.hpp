@@ -5,15 +5,15 @@
 //! @file
 //!
 //! \brief
-//! Nanosvg++ additional classes
+//! Nanosvg++ Image class declaration
 
-#ifndef NSVGPP_H
-#define NSVGPP_H
+#ifndef IMAGE_HPP
+#define IMAGE_HPP
 
 #include <SFML/System/Vector2.hpp>
 #include <string>
 
-#include "nanosvg.hpp"
+#include "Nanosvg.hpp"
 
 namespace nsvg {
 	//! \class Image
@@ -103,4 +103,4 @@ namespace nsvg {
 	};
 }
 
-#endif // NSVGPP_H
+#endif // IMAGE_HPP

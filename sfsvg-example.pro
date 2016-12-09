@@ -11,8 +11,8 @@ SOURCES += example.cpp \
 	SFC/BezierCubicCurve.cpp \
 	SFC/BezierSquareCurve.cpp \
     SFC/Svg.cpp \
-    SFC/nanosvg++/nanosvgrastr.cpp \
-    SFC/nanosvg++/nanosvg.cpp
+    SFC/nanosvg++/Nanosvg.cpp \
+    SFC/nanosvg++/Nanosvgrastr.cpp
 
 HEADERS += \
 	SFC/BezierAbstractCurve.hpp \
@@ -23,6 +23,7 @@ HEADERS += \
     SFC/Base.hpp \
     SFC/Svg.hpp \
     SFC/debug.hpp \
-    SFC/nanosvg++/nsvgpp.hpp \
-    SFC/nanosvg++/nanosvgrastr.hpp \
-    SFC/nanosvg++/nanosvg.hpp
+    SFC/nanosvg++/Image.hpp \
+    SFC/nanosvg++/Nanosvg.hpp \
+    SFC/nanosvg++/Nanosvgrastr.hpp \
+    SFC/nanosvg++/Nsvgpp.hpp
