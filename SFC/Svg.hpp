@@ -32,9 +32,9 @@ namespace sfc {
 	//! Class uses Cubic Bezier Curves to draw SVG graphics, can be drawn as set of curves or rasterized to create normal sf::Image.
 	class SVGImage
 	: public sf::Drawable {
-		std::vector<std::shared_ptr<BezierCubicCurve>> curves;
-		DrawMode mode = DrawMode::NORMAL;
-		nsvg::Image image;
+		std::vector<std::shared_ptr<BezierCubicCurve>> m_curves;
+		DrawMode m_mode = DrawMode::NORMAL;
+		nsvg::Image m_image;
 
 		virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
 		void update();
@@ -58,7 +58,8 @@ namespace sfc {
 		//! \param [in] mode – Drawing mode (normal / debug)
 		//!
 		//! If DrawMode::DEBUG parameter is given, non-rasterized image shows points used to create curves.
-		void setMode(const DrawMode mode);
+		//! Remember, new mode is applied only after re-loading SVG image!
+		void setMode(const DrawMode m_mode);
 
 		//! \brief Opens .svg file
 		//!
