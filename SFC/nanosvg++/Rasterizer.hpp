@@ -45,7 +45,7 @@ namespace nsvg {
 		//! \param [in] scale – Raster scale
 		//!
 		//! \return Rasterized image
-		sf::Image rasterize(Image& image, float tx, float ty, float scale);
+		sf::Image rasterize(Image& image, float tx = .0f, float ty = .0f, float scale = 1.f);
 	};
 }
 
