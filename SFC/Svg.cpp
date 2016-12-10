@@ -98,7 +98,7 @@ namespace sfc {
 	}
 
 	sf::Image SVGImage::rasterize(const float scale) {
-		nsvg::cstyle::Rasterizer* rasterizer = nsvg::cstyle::createRasterizer();
+		nsvg::cstyle::RasterizerStruct* rasterizer = nsvg::cstyle::createRasterizer();
 		sf::Image img;
 
 		sf::Uint8* pixels = new sf::Uint8[int(this->image.getSize().x * scale) * int(this->image.getSize().y * scale) * 4];
@@ -117,6 +117,8 @@ namespace sfc {
 		img.create(this->image.getSize().x * scale, this->image.getSize().y * scale, pixels);
 
 		nsvg::cstyle::deleteRasterizer(rasterizer);
+		delete[] pixels;
+
 		return img;
 	}
 
