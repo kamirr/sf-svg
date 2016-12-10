@@ -20,13 +20,31 @@
 #include "Image.hpp"
 
 namespace nsvg {
+	//! \class Rasterizer
+	//!
+	//! \brief C++-styled cstyle::RasterizerStruct wrapper
 	class Rasterizer {
 		cstyle::RasterizerStruct* internal;
 
 	public:
+		//! \brief Default constructor
+		//!
+		//! Initializes internal cstyle::RasterizerStruct pointer.
 		Rasterizer();
+
+		//! \brief Destructor
+		//!
+		//! Deletes internal cstyle::RasterizerStruct pointer.
 		~Rasterizer();
 
+		//! \brief Rasterizes given Image.
+		//!
+		//! \param [in] image – Reference to SVG image
+		//! \param [in] tx – X offset
+		//! \param [in] ty – Y offset
+		//! \param [in] scale – Raster scale
+		//!
+		//! \return Rasterized image
 		sf::Image rasterize(Image& image, float tx, float ty, float scale);
 	};
 }
