@@ -15,36 +15,36 @@ namespace sfc {
 		Private
 	*/
 	void SVGImage::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-		if(this->mode == DrawMode::NONE)
+		if(this->m_mode == DrawMode::NONE)
 			return;
 
-		for(const auto& curve: this->curves) {
+		for(const auto& curve: this->m_curves) {
 			target.draw(*curve, states);
 		}
 	}
 
 	void SVGImage::update() {
-		this->curves.clear();
+		this->m_curves.clear();
 
-		if(this->mode == DrawMode::NONE)
+		if(this->m_mode == DrawMode::NONE)
 			return;
 
-		nsvg::Shape shape(this->image.getFirstShape());
+		nsvg::Shape shape(this->m_image.getFirstShape());
 		while(shape) {
 			nsvg::Path path = shape.getFirstPath();
 			while(path) {
 				for(const auto& points: path.getPointsSets()) {
-					this->curves.push_back(std::make_shared<BezierCubicCurve>(
+					this->m_curves.push_back(std::make_shared<BezierCubicCurve>(
 						points.begin,
 						points.end,
 						points.control1,
 						points.control2,
-						this->mode
+						this->m_mode
 					));
 
-					(*this->curves.back()).setNormalizedLengthLimit(1.f);
-					(*this->curves.back()).setPointCount(1024);
-					(*this->curves.back()).update();
+					(*this->m_curves.back()).setNormalizedLengthLimit(1.f);
+					(*this->m_curves.back()).setPointCount(1024);
+					(*this->m_curves.back()).update();
 				}
 
 				++path;
@@ -65,11 +65,11 @@ namespace sfc {
 	}
 
 	void SVGImage::setMode(const DrawMode mode) {
-		this->mode = mode;
+		this->m_mode = mode;
 	}
 
 	bool SVGImage::loadFromFile(const std::string &file, const float dpi) {
-		if(!this->image.loadFromFile(file.c_str(), "px", dpi))
+		if(!this->m_image.loadFromFile(file.c_str(), "px", dpi))
 			return false;
 
 		this->update();
@@ -83,7 +83,7 @@ namespace sfc {
 		}
 
 		std::string copy = static_cast<const char*>(data);
-		if(!this->image.loadFromMemory(copy, "px", dpi))
+		if(!this->m_image.loadFromMemory(copy, "px", dpi))
 			return false;
 
 		this->update();
@@ -98,7 +98,7 @@ namespace sfc {
 			copy[stream.getSize()] = '\0';
 		}
 
-		bool ok = this->image.loadFromMemory(&copy[0], "px", dpi);
+		bool ok = this->m_image.loadFromMemory(&copy[0], "px", dpi);
 
 		if(!ok)
 			return false;
@@ -109,22 +109,22 @@ namespace sfc {
 
 	sf::Image SVGImage::rasterize(const float scale) {
 		nsvg::Rasterizer rasterizer;
-		return rasterizer.rasterize(this->image, 0, 0, scale);
+		return rasterizer.rasterize(this->m_image, 0, 0, scale);
 	}
 
 	void SVGImage::move(sf::Vector2f vec) {
-		for(auto& curve: this->curves) {
+		for(auto& curve: this->m_curves) {
 			(*curve).move(vec);
 		}
 	}
 
 	void SVGImage::scale(const float factor) {
-		for(auto& curve: this->curves) {
+		for(auto& curve: this->m_curves) {
 			(*curve).scale({factor, factor});
 		}
 	}
 
 	sf::Vector2f SVGImage::getSize() const {
-		return this->image.getSize();
+		return this->m_image.getSize();
 	}
 }
