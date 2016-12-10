@@ -32,7 +32,8 @@ namespace sfc {
 						points.begin,
 						points.end,
 						points.control1,
-						points.control2
+						points.control2,
+						this->mode
 					));
 
 					(*this->curves.back()).setNormalizedLengthLimit(1.f);
@@ -55,6 +56,10 @@ namespace sfc {
 
 	SVGImage::SVGImage(const std::string &file, const float dpi) {
 		this->loadFromFile(file, dpi);
+	}
+
+	void SVGImage::setMode(const DrawMode mode) {
+		this->mode = mode;
 	}
 
 	bool SVGImage::loadFromFile(const std::string &file, const float dpi) {

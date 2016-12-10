@@ -33,6 +33,7 @@ namespace sfc {
 	class SVGImage
 	: public sf::Drawable {
 		std::vector<std::shared_ptr<BezierCubicCurve>> curves;
+		DrawMode mode = DrawMode::NORMAL;
 		nsvg::Image image;
 
 		virtual void draw(sf::RenderTarget&, sf::RenderStates) const;
@@ -51,6 +52,8 @@ namespace sfc {
 		//!
 		//! Calls loadFromFile with given params
 		SVGImage(const std::string& file, const float dpi = 96.f);
+
+		void setMode(const DrawMode mode);
 
 		//! \brief Opens .svg file
 		//!
