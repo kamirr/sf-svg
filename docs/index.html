@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>SF-Curves: sf-svg</title>
+<title>sf-svg: sf-svg</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">SF-Curves
+   <div id="projectname">sf-svg
    </div>
   </td>
  </tr>
@@ -81,18 +81,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="About"></a>
 About</h1>
-<p>SFML-related library adding Bezier curves (Cubic and Square) and API allowing writing new compatibile classes.</p>
+<p>SFML-based library to draw .svg files and Bézier Curves.</p>
 <h1><a class="anchor" id="Installation"></a>
 Installation</h1>
-<p>Copy SFC directory (separated compilation will be available… soon).</p>
+<h2><a class="anchor" id="Compilation"></a>
+Compilation</h2>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;$ git clone https://github.com/KoczurekK/sf-svg.git</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;$ cd sf-svg</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;$ qmake curves-shared.pro</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;$ make</div></div><!-- fragment --><p> Now copy SFC headers to /usr/include/SFC or to any other path supported on your OS. Then copy .so/.dll files wherever you want to.</p>
+<h3><a class="anchor" id="Binary"></a>
+builds</h3>
+<p>Download leatest binary build from releases on github.</p>
 <h1><a class="anchor" id="Usage"></a>
 Usage</h1>
-<p>Add all files to project and include needed headers.</p>
+<p>Include useful files &amp; remember to pass linker option -lsfsvg.</p>
 <h1><a class="anchor" id="Features"></a>
 Features</h1>
 <ul>
-<li>Classes inherit sf::Shape;</li>
-<li>Implements Square- and Cubic curves;</li>
+<li>SVG images drawing;</li>
+<li>Loading SVG from files / memory / stream;</li>
+<li>SVG rasterization;</li>
+<li>Implements Square- and Cubic Bézier curves;</li>
+<li>Curves inherit sf::Shape;</li>
 <li>Provides interface for Bézier curves;</li>
 <li>Provides debug-friendly features like "helper lines" etc. </li>
 </ul>
