@@ -56,16 +56,46 @@ namespace nsvg {
 		OBJECT_SPACE = 1,
 	};
 
+	//! \brief Available units
 	enum class Units {
+		//! \brief
+		//! Unknown unit
 		UNITS_USER,
+
+		//! \brief
+		//! Pixels (Relative to the viewing device)
 		UNITS_PX,
+
+		//! \brief
+		//! Point (1/72th of an inch).
 		UNITS_PT,
+
+		//! \brief
+		//! Pica (12 points).
 		UNITS_PC,
+
+		//! \brief
+		//! Milimetre
 		UNITS_MM,
+
+		//! \brief
+		//! Centimetre
 		UNITS_CM,
+
+		//! \brief
+		//! Inch
 		UNITS_IN,
+
+		//! \brief
+		//! Percent
 		UNITS_PERCENT,
+
+		//! \brief
+		//! Used for fonts
 		UNITS_EM,
+
+		//! \brief
+		//! X-height of the element
 		UNITS_EX,
 	};
 }
