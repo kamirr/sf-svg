@@ -20,7 +20,7 @@
 namespace sfc {
 
 	//! \brief Way to draw curves.
-	enum DrawMode {
+	enum class DrawMode {
 		//! \brief Just draw the curve
 		NORMAL,
 

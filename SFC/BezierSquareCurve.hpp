@@ -60,7 +60,7 @@ namespace sfc {
 		//!
 		//! Sets point count to 32 and color to white.
 		//! Calls calculateCubic with proper args.
-		BezierSquareCurve(const sf::Vector2f&, const sf::Vector2f&, const sf::Vector2f&, DrawMode = NORMAL);
+		BezierSquareCurve(const sf::Vector2f&, const sf::Vector2f&, const sf::Vector2f&, DrawMode = DrawMode::NORMAL);
 
 		/* Commented in base class */
 		virtual Line2<float> getHelperLine(const float) const;

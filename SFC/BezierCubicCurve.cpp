@@ -15,7 +15,7 @@ namespace sfc {
 		Private
 	*/
 	void BezierCubicCurve::draw(sf::RenderTarget &target, sf::RenderStates states) const {
-		if(this->m_mode == DEBUG)
+		if(this->m_mode == DrawMode::DEBUG)
 			target.draw(this->debugLines, 6, sf::Lines, states);
 
 		target.draw(this->m_vertices, states);
@@ -92,7 +92,7 @@ namespace sfc {
 		calculateVeritces(
 		points,
 		this->m_limitCurve,
-		this->m_mode == DEBUG ? debugLines : nullptr);
+		this->m_mode == DrawMode::DEBUG ? debugLines : nullptr);
 
 		this->m_vertices.clear();
 		for (auto& point: points)
