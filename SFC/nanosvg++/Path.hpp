@@ -88,6 +88,9 @@ namespace nsvg {
 		//! \endcode
 		Path& operator ++();
 
+		//! \brief Cast nsvg::Path → bool
+		//!
+		//! Implicitly cast *this to bool, equivalent to nsvg::Path::good() method.
 		operator bool() const;
 	};
 }

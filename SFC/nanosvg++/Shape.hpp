@@ -115,6 +115,9 @@ namespace nsvg {
 		//! \endcode
 		Shape& operator ++();
 
+		//! \brief Cast nsvg::Shape → bool
+		//!
+		//! Implicitly cast *this to bool, equivalent to nsvg::Shape::good() method.
 		operator bool() const;
 	};
 }
