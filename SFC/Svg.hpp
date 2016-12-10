@@ -53,6 +53,11 @@ namespace sfc {
 		//! Calls loadFromFile with given params
 		SVGImage(const std::string& file, const float dpi = 96.f);
 
+		//! \brief Set curve drawing mode
+		//!
+		//! \param [in] mode – Drawing mode (normal / debug)
+		//!
+		//! If DrawMode::DEBUG parameter is given, non-rasterized image shows points used to create curves.
 		void setMode(const DrawMode mode);
 
 		//! \brief Opens .svg file
