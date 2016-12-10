@@ -1,3 +1,14 @@
+/* ====================================================== *
+ * nanosvg++                                              *
+ * This software is a fork of nanosvg (nanosvgrastr.hpp). *
+ * No license-related aspects are affected.               *
+ * Kamil Koczurek | koczurekk@gmail.com                   *
+ * ====================================================== */
+//! @file
+//!
+//! \brief
+//! Rasterizer class declaration
+
 #ifndef RASTERIZER_HPP
 #define RASTERIZER_HPP
 
