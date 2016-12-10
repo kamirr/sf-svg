@@ -114,6 +114,8 @@ namespace nsvg {
 		//! sampleShape = sampleShape.getNextShape();
 		//! \endcode
 		Shape& operator ++();
+
+		operator bool() const;
 	};
 }
 

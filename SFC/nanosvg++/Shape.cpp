@@ -79,4 +79,8 @@ namespace nsvg {
 	Shape& Shape::operator++() {
 		return (*this = this->getNextShape());
 	}
+
+	Shape::operator bool() const {
+		return this->good();
+	}
 }

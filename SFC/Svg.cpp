@@ -24,7 +24,7 @@ namespace sfc {
 		this->curves.clear();
 
 		nsvg::Shape shape(this->image.getFirstShape());
-		while(shape.good()) {
+		while(shape) {
 			nsvg::Path path = shape.getFirstPath();
 			while(path) {
 				for(const auto& points: path.getPointsSets()) {
