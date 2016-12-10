@@ -12,17 +12,30 @@
 /*! \mainpage sf-svg
  *
  * \section About
- * SFML-related library adding Bezier curves (Cubic and Square) and API allowing writing new compatibile classes.
+ * SFML-based library to draw .svg files and Bézier Curves.
  *
  * \section Installation
- * Copy SFC directory (separated compilation will be available… soon).
+ * \subsection Compilation
+ * \code{.sh}
+ * $ git clone https://github.com/KoczurekK/sf-svg.git
+ * $ cd sf-svg
+ * $ qmake curves-shared.pro
+ * $ make
+ * \endcode
+ * Now copy SFC headers to /usr/include/SFC or to any other path supported on your OS. Then copy .so/.dll files wherever you want to.
+ *
+ * \subsubsection Binary builds
+ * Download leatest binary build from releases on github.
  *
  * \section Usage
- * Add all files to project and include needed headers.
+ * Include useful files & remember to pass linker option -lsfsvg.
  *
  * \section Features
- * - Classes inherit sf::Shape;
- * - Implements Square- and Cubic curves;
+ * - SVG images drawing;
+ * - Loading SVG from files / memory / stream;
+ * - SVG rasterization;
+ * - Implements Square- and Cubic Bézier curves;
+ * - Curves inherit sf::Shape;
  * - Provides interface for Bézier curves;
  * - Provides debug-friendly features like "helper lines" etc.
  */
