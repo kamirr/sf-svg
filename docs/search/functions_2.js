@@ -1,14 +1,29 @@
 var searchData=
 [
+  ['getbounds',['getBounds',['../classnsvg_1_1Shape.html#af9f1ab86feb1cdef22835a9cce2079f6',1,'nsvg::Shape']]],
   ['getcolor',['getColor',['../classsfc_1_1BezierAbstractCurve.html#a15242fac18eba1a0c3e8d9f9921c843f',1,'sfc::BezierAbstractCurve']]],
   ['getcubichelperline1',['getCubicHelperLine1',['../classsfc_1_1BezierCubicCurve.html#a5268a2b3e16905374a9e3b6d726317d5',1,'sfc::BezierCubicCurve']]],
   ['getcubichelperline2',['getCubicHelperLine2',['../classsfc_1_1BezierCubicCurve.html#a645ebd0403ab83f33777295902a91e65',1,'sfc::BezierCubicCurve']]],
+  ['getfill',['getFill',['../classnsvg_1_1Shape.html#a36988c5ae7f62375df9d3b356d0bbddc',1,'nsvg::Shape']]],
+  ['getfirstpath',['getFirstPath',['../classnsvg_1_1Shape.html#abe667a510fe08ace34b00e23cc739148',1,'nsvg::Shape']]],
+  ['getfirstshape',['getFirstShape',['../classnsvg_1_1Image.html#af55b256fa6acfbfce161fd8ccac6b606',1,'nsvg::Image']]],
+  ['getflags',['getFlags',['../classnsvg_1_1Shape.html#a02680d10a7734e6aeb43068bb1671cc6',1,'nsvg::Shape']]],
   ['gethelperline',['getHelperLine',['../classsfc_1_1BezierAbstractCurve.html#a6fa435aff9329d9017aa67c1d001e08f',1,'sfc::BezierAbstractCurve::getHelperLine()'],['../classsfc_1_1BezierCubicCurve.html#a6839d04b57323c6ba5fc9d69a4861d94',1,'sfc::BezierCubicCurve::getHelperLine()'],['../classsfc_1_1BezierSquareCurve.html#a4b7a8f387a2abd62501e7a367bc8e553',1,'sfc::BezierSquareCurve::getHelperLine()']]],
-  ['getinternalimage',['getInternalImage',['../classnsvg_1_1Image.html#a6c087b81c646691de001a133bddad0d6',1,'nsvg::Image']]],
+  ['getid',['getId',['../classnsvg_1_1Shape.html#ae8a95b30337ad96679f233ddbbbf4e2e',1,'nsvg::Shape']]],
+  ['getinternalimage',['getInternalImage',['../classnsvg_1_1Image.html#a018370cb87d208bc92c790c3e38f5ef9',1,'nsvg::Image']]],
+  ['getnextshape',['getNextShape',['../classnsvg_1_1Shape.html#ae9657f8e74a0e0f39cf58ec4d4a947c7',1,'nsvg::Shape']]],
   ['getnormalizedlengthlimit',['getNormalizedLengthLimit',['../classsfc_1_1BezierAbstractCurve.html#a5c9bfee506f8b99624c5b95490f79c71',1,'sfc::BezierAbstractCurve']]],
+  ['getopacity',['getOpacity',['../classnsvg_1_1Shape.html#ab78949c77345d5b510afb6c003fbe463',1,'nsvg::Shape']]],
   ['getpoint',['getPoint',['../classsfc_1_1BezierAbstractCurve.html#abe2070cd97405130dafd1aa9b94fe058',1,'sfc::BezierAbstractCurve::getPoint()'],['../classsfc_1_1BezierCubicCurve.html#a5f9e6e9f4b4849c1d864ba7db93a7927',1,'sfc::BezierCubicCurve::getPoint()'],['../classsfc_1_1BezierSquareCurve.html#a0e6c3e046ce802c7aa2570a76b8d5f36',1,'sfc::BezierSquareCurve::getPoint()']]],
   ['getpointcount',['getPointCount',['../classsfc_1_1BezierAbstractCurve.html#a0b0989b2587daf77d1029bf9f5b1224d',1,'sfc::BezierAbstractCurve']]],
   ['getpointposition',['getPointPosition',['../classsfc_1_1BezierCubicCurve.html#aa82ec0b275c1e198edce5962d598d21e',1,'sfc::BezierCubicCurve::getPointPosition()'],['../classsfc_1_1BezierSquareCurve.html#ac70ee96185d3e34d113d0ac501c33ab7',1,'sfc::BezierSquareCurve::getPointPosition()']]],
-  ['getshapes',['getShapes',['../classnsvg_1_1Image.html#a97e3618e7239dec1da0fb0d33428a77f',1,'nsvg::Image']]],
-  ['getsize',['getSize',['../classnsvg_1_1Image.html#aa25e51b7cbf1906d4c6c6cd35122a368',1,'nsvg::Image::getSize()'],['../classsfc_1_1SVGImage.html#ab376a34d85df391990fad282e20ed952',1,'sfc::SVGImage::getSize()']]]
+  ['getsize',['getSize',['../classnsvg_1_1Image.html#aa25e51b7cbf1906d4c6c6cd35122a368',1,'nsvg::Image::getSize()'],['../classsfc_1_1SVGImage.html#ab376a34d85df391990fad282e20ed952',1,'sfc::SVGImage::getSize()']]],
+  ['getstroke',['getStroke',['../classnsvg_1_1Shape.html#a4f113cc14f27491bb28d1c3bf2cfbd6f',1,'nsvg::Shape']]],
+  ['getstrokedasharray',['getStrokeDashArray',['../classnsvg_1_1Shape.html#a50adf2ef49a99171840506ed26b37635',1,'nsvg::Shape']]],
+  ['getstrokedashcount',['getStrokeDashCount',['../classnsvg_1_1Shape.html#ab162a165973901cd1c31c4a8019b769e',1,'nsvg::Shape']]],
+  ['getstrokedashoffset',['getStrokeDashOffset',['../classnsvg_1_1Shape.html#a9e51e186fdb31c2e5dcf63a1c8f06584',1,'nsvg::Shape']]],
+  ['getstrokelinecap',['getStrokeLineCap',['../classnsvg_1_1Shape.html#a667286615f19c94a77f3e23fb367ffba',1,'nsvg::Shape']]],
+  ['getstrokelinejoin',['getStrokeLineJoin',['../classnsvg_1_1Shape.html#aa55cbfb3bc5b1d5020319772d70df4df',1,'nsvg::Shape']]],
+  ['getstrokewidth',['getStrokeWidth',['../classnsvg_1_1Shape.html#ae40cacc9939e02155e892eb0024b6f7d',1,'nsvg::Shape']]],
+  ['good',['good',['../classnsvg_1_1Shape.html#a935afcd01ef24a8d37fb98cbcf5b6290',1,'nsvg::Shape']]]
 ];

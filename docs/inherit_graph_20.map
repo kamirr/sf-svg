@@ -1,5 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classsfc_1_1BezierAbstractCurve.html" title="Abstract Bezier curve class. " alt="" coords="112,31,281,57"/>
-<area shape="rect" id="node3" href="$classsfc_1_1BezierCubicCurve.html" title="Bezier cubic curve representation. " alt="" coords="333,5,487,32"/>
-<area shape="rect" id="node4" href="$classsfc_1_1BezierSquareCurve.html" title="Bezier square curve representation. " alt="" coords="329,56,491,83"/>
+<area shape="rect" id="node1" href="$classnsvg_1_1Image.html" title="C++&#45;styled cstyle::ImageStruct wrapper. " alt="" coords="5,5,100,32"/>
 </map>

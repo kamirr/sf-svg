@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['point',['point',['../structsfc_1_1Line2.html#a79ebf2448d91beef4b0a3271e450ad6e',1,'sfc::Line2']]]
+  ['end',['end',['../structnsvg_1_1CubicPointSet.html#a91b35006616285fd0840ab162796bab9',1,'nsvg::CubicPointSet']]]
 ];

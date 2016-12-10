@@ -7,6 +7,6 @@ var searchData=
   ['m_5fmode',['m_mode',['../classsfc_1_1BezierAbstractCurve.html#aa07b07718b562d2fa32baad97bf01a3e',1,'sfc::BezierAbstractCurve']]],
   ['m_5fpointcount',['m_pointCount',['../classsfc_1_1BezierAbstractCurve.html#abc507e10a6d0e2284382f76af0208420',1,'sfc::BezierAbstractCurve']]],
   ['m_5fvertices',['m_vertices',['../classsfc_1_1BezierAbstractCurve.html#af88d5feb8cf3fdcab16e2a6484853dd9',1,'sfc::BezierAbstractCurve']]],
-  ['mempage',['MemPage',['../structnsvg_1_1MemPage.html',1,'nsvg']]],
+  ['mempage',['MemPage',['../structnsvg_1_1cstyle_1_1MemPage.html',1,'nsvg::cstyle']]],
   ['move',['move',['../classsfc_1_1BezierAbstractCurve.html#aecbb3728b66088bb1f19597fa407d5fe',1,'sfc::BezierAbstractCurve::move()'],['../classsfc_1_1SVGImage.html#a543207757372b3d75a98261a57774884',1,'sfc::SVGImage::move()']]]
 ];

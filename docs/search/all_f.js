@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['_7ebezierabstractcurve',['~BezierAbstractCurve',['../classsfc_1_1BezierAbstractCurve.html#a58850e4b8631a64e95b0df46766e6c05',1,'sfc::BezierAbstractCurve']]],
-  ['_7eimage',['~Image',['../classnsvg_1_1Image.html#a89a41f6b203c7f71f17a00fd97a3cd7c',1,'nsvg::Image']]]
+  ['vector',['vector',['../structsfc_1_1Line2.html#ac9f661de0454820661bcfaa1f46855bd',1,'sfc::Line2']]],
+  ['vertexvector',['VertexVector',['../structsfc_1_1VertexVector.html',1,'sfc']]],
+  ['vertexvector_2ehpp',['VertexVector.hpp',['../VertexVector_8hpp.html',1,'']]],
+  ['vertexvector_3c_20sf_3a_3alinesstrip_20_3e',['VertexVector&lt; sf::LinesStrip &gt;',['../structsfc_1_1VertexVector.html',1,'sfc']]]
 ];

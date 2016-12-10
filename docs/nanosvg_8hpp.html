@@ -84,7 +84,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">nanosvg.hpp File Reference</div>  </div>
@@ -97,22 +96,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="enums_8hpp_source.html">enums.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for nanosvg.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="nanosvg_8hpp__incl.png" border="0" usemap="#nanosvg_8hpp" alt=""/></div>
+<map name="nanosvg_8hpp" id="nanosvg_8hpp">
+<area shape="rect" id="node6" href="enums_8hpp.html" title="Enums definitions. " alt="" coords="356,80,443,107"/>
+</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="nanosvg_8hpp__dep__incl.png" border="0" usemap="#nanosvg_8hppdep" alt=""/></div>
 <map name="nanosvg_8hppdep" id="nanosvg_8hppdep">
-<area shape="rect" id="node2" href="nanosvg_8cpp.html" title="Nanosvg++ implementation. " alt="" coords="5,80,101,107"/>
-<area shape="rect" id="node3" href="nanosvgrastr_8hpp.html" title="Nanosvg++ rasterizer declaration. " alt="" coords="125,80,248,107"/>
-<area shape="rect" id="node7" href="nsvgpp_8hpp.html" title="Nanosvg++ additional classes. " alt="" coords="273,80,362,107"/>
-<area shape="rect" id="node4" href="nanosvgrastr_8cpp.html" title="Nanosvg++ rasterizer implementation. " alt="" coords="125,155,248,181"/>
-<area shape="rect" id="node5" href="Svg_8hpp.html" title="SVGImage class declaration. " alt="" coords="277,155,347,181"/>
-<area shape="rect" id="node6" href="Svg_8cpp.html" title="SVGImage implementation. " alt="" coords="277,229,347,256"/>
+<area shape="rect" id="node2" href="Image_8hpp.html" title="Nanosvg++ Image class declaration. " alt="" coords="325,80,408,107"/>
+<area shape="rect" id="node5" href="Rasterizer_8hpp.html" title="Rasterizer class declaration. " alt="" coords="155,155,261,181"/>
+<area shape="rect" id="node7" href="Nanosvg_8cpp.html" title="Nanosvg++ implementation. " alt="" coords="680,80,779,107"/>
+<area shape="rect" id="node8" href="nanosvgrastr_8hpp.html" title="Nanosvg++ rasterizer declaration. " alt="" coords="128,80,251,107"/>
+<area shape="rect" id="node10" href="Path_8hpp.html" title="Path class declaration. " alt="" coords="581,80,656,107"/>
+<area shape="rect" id="node12" href="Shape_8hpp.html" title="Shape class declaration. " alt="" coords="433,80,517,107"/>
+<area shape="rect" id="node3" href="Image_8cpp.html" title="Image class implementation. " alt="" coords="285,155,368,181"/>
+<area shape="rect" id="node4" href="nsvgpp_8hpp.html" title="Nanosvg++ additional classes. " alt="" coords="386,229,475,256"/>
+<area shape="rect" id="node6" href="Rasterizer_8cpp.html" title="Rasterizer class implementation. " alt="" coords="155,229,261,256"/>
+<area shape="rect" id="node9" href="Nanosvgrastr_8cpp.html" title="Nanosvg++ rasterizer implementation. " alt="" coords="5,155,131,181"/>
+<area shape="rect" id="node11" href="Path_8cpp.html" title="Path class implementation. " alt="" coords="603,155,677,181"/>
+<area shape="rect" id="node13" href="Shape_8cpp.html" title="Shape class implementation. " alt="" coords="494,155,578,181"/>
 </map>
 </div>
 </div>
@@ -120,35 +129,38 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1GradientStop.html">nsvg::GradientStop</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1cstyle_1_1GradientStop.html">nsvg::cstyle::GradientStop</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1Gradient.html">nsvg::Gradient</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1cstyle_1_1Gradient.html">nsvg::cstyle::Gradient</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1Paint.html">nsvg::Paint</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1cstyle_1_1Paint.html">nsvg::cstyle::Paint</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1Path.html">nsvg::Path</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1cstyle_1_1PathStruct.html">nsvg::cstyle::PathStruct</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1Shape.html">nsvg::Shape</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1cstyle_1_1ShapeStruct.html">nsvg::cstyle::ShapeStruct</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1ImageStruct.html">nsvg::ImageStruct</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1cstyle_1_1ImageStruct.html">nsvg::cstyle::ImageStruct</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1Coordinate.html">nsvg::Coordinate</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1cstyle_1_1Coordinate.html">nsvg::cstyle::Coordinate</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1LinearData.html">nsvg::LinearData</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1cstyle_1_1LinearData.html">nsvg::cstyle::LinearData</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1RadialData.html">nsvg::RadialData</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1cstyle_1_1RadialData.html">nsvg::cstyle::RadialData</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1GradientData.html">nsvg::GradientData</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1cstyle_1_1GradientData.html">nsvg::cstyle::GradientData</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1Attrib.html">nsvg::Attrib</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1cstyle_1_1Attrib.html">nsvg::cstyle::Attrib</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1Parser.html">nsvg::Parser</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsvg_1_1cstyle_1_1Parser.html">nsvg::cstyle::Parser</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacensvg"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacensvg.html">nsvg</a></td></tr>
 <tr class="memdesc:namespacensvg"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nanosvg++ namespace. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacensvg_1_1cstyle"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacensvg_1_1cstyle.html">nsvg::cstyle</a></td></tr>
+<tr class="memdesc:namespacensvg_1_1cstyle"><td class="mdescLeft">&#160;</td><td class="mdescRight">Completly or partially C-styled code. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -160,69 +172,17 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>NSVG_MAX_DASHES</b>&#160;&#160;&#160;8</td></tr>
 <tr class="separator:a783ca5914b312a9494521d0bb15b0ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a963387351b37b7dec4de95b81d2a91e7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a963387351b37b7dec4de95b81d2a91e7"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>PaintType</b> { <b>NONE</b> = 0, 
-<b>COLOR</b> = 1, 
-<b>LINEAR_GRADIENT</b> = 2, 
-<b>RADIAL_GRADIENT</b> = 3
- }</td></tr>
-<tr class="separator:a963387351b37b7dec4de95b81d2a91e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a9845db54b24698c62dfce9a352dc63"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9a9845db54b24698c62dfce9a352dc63"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>SpreadType</b> { <b>PAD</b> = 0, 
-<b>REFLECT</b> = 1, 
-<b>REPEAT</b> = 2
- }</td></tr>
-<tr class="separator:a9a9845db54b24698c62dfce9a352dc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bfff0eccc2c400e6bff7290aa5b9cb6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2bfff0eccc2c400e6bff7290aa5b9cb6"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>LineJoin</b> { <b>MITER</b> = 0, 
-<b>ROUND</b> = 1, 
-<b>BEVEL</b> = 2
- }</td></tr>
-<tr class="separator:a2bfff0eccc2c400e6bff7290aa5b9cb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a976e1eb427899b3acb9d1d719af808c1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a976e1eb427899b3acb9d1d719af808c1"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>LineCap</b> { <b>BUTT</b> = 0, 
-<b>ROUND</b> = 1, 
-<b>SQUARE</b> = 2
- }</td></tr>
-<tr class="separator:a976e1eb427899b3acb9d1d719af808c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39f33686463056a00424118f6fe5b004"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a39f33686463056a00424118f6fe5b004"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>FillRule</b> { <b>NONZERO</b> = 0, 
-<b>EVENODD</b> = 1
- }</td></tr>
-<tr class="separator:a39f33686463056a00424118f6fe5b004"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2f5c4e7d7edb6111235f5cd24637743"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2f5c4e7d7edb6111235f5cd24637743"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Flags</b> { <b>NSVG_FLAGS_VISIBLE</b> = 0x01, 
-<b>INVISIBLE</b> = 0x00
- }</td></tr>
-<tr class="separator:ab2f5c4e7d7edb6111235f5cd24637743"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa39bc7ad326c5f54359b1cc3ea8bf18b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa39bc7ad326c5f54359b1cc3ea8bf18b"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>GradientUnits</b> { <b>USER_SPACE</b> = 0, 
-<b>OBJECT_SPACE</b> = 1
- }</td></tr>
-<tr class="separator:aa39bc7ad326c5f54359b1cc3ea8bf18b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aead94da5610373308544039a8389d4b9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aead94da5610373308544039a8389d4b9"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>Units</b> { <br />
-&#160;&#160;<b>UNITS_USER</b>, 
-<b>UNITS_PX</b>, 
-<b>UNITS_PT</b>, 
-<b>UNITS_PC</b>, 
-<br />
-&#160;&#160;<b>UNITS_MM</b>, 
-<b>UNITS_CM</b>, 
-<b>UNITS_IN</b>, 
-<b>UNITS_PERCENT</b>, 
-<br />
-&#160;&#160;<b>UNITS_EM</b>, 
-<b>UNITS_EX</b>
-<br />
- }</td></tr>
-<tr class="separator:aead94da5610373308544039a8389d4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ada312c01dbf62455f50d38e9821fdb6d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ada312c01dbf62455f50d38e9821fdb6d"></a>
-ImageStruct *&#160;</td><td class="memItemRight" valign="bottom"><b>nsvg::parseFromFile</b> (const char *filename, const char *units, float dpi)</td></tr>
-<tr class="separator:ada312c01dbf62455f50d38e9821fdb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7f8eb000ccc4d9d34a51b2b0e0e7677"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7f8eb000ccc4d9d34a51b2b0e0e7677"></a>
-ImageStruct *&#160;</td><td class="memItemRight" valign="bottom"><b>nsvg::parse</b> (char *input, const char *units, float dpi)</td></tr>
-<tr class="separator:ad7f8eb000ccc4d9d34a51b2b0e0e7677"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb7a4532c31cadbf09eddffbf8f9eba3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abb7a4532c31cadbf09eddffbf8f9eba3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>nsvg::deleteImage</b> (ImageStruct *image)</td></tr>
-<tr class="separator:abb7a4532c31cadbf09eddffbf8f9eba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6eac3cfe3258edcda609bf4726d6532"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6eac3cfe3258edcda609bf4726d6532"></a>
+ImageStruct *&#160;</td><td class="memItemRight" valign="bottom"><b>nsvg::cstyle::parseFromFile</b> (const char *filename, const char *units, float dpi)</td></tr>
+<tr class="separator:ab6eac3cfe3258edcda609bf4726d6532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a272ec2c83c897882edbc62edd6889525"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a272ec2c83c897882edbc62edd6889525"></a>
+ImageStruct *&#160;</td><td class="memItemRight" valign="bottom"><b>nsvg::cstyle::parse</b> (char *input, const char *units, float dpi)</td></tr>
+<tr class="separator:a272ec2c83c897882edbc62edd6889525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd2db3257ccd15280d21efde89c512d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cd2db3257ccd15280d21efde89c512d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>nsvg::cstyle::deleteImage</b> (ImageStruct *image)</td></tr>
+<tr class="separator:a8cd2db3257ccd15280d21efde89c512d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Nanosvg++ declarations. </p>

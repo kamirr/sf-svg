@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['color',['color',['../structsfc_1_1Line2.html#a04296e7b0df6dd9eb873b52a16f4ed9f',1,'sfc::Line2']]]
+  ['begin',['begin',['../structnsvg_1_1CubicPointSet.html#aa725350219cb2f1938466ef800df831b',1,'nsvg::CubicPointSet']]]
 ];

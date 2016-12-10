@@ -113,6 +113,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a48ce497fb6fb06b094375b548f071457"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1SVGImage.html#a48ce497fb6fb06b094375b548f071457">SVGImage</a> (const std::string &amp;file, const float dpi=96.f)</td></tr>
 <tr class="memdesc:a48ce497fb6fb06b094375b548f071457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor loading from file.  <a href="#a48ce497fb6fb06b094375b548f071457">More...</a><br /></td></tr>
 <tr class="separator:a48ce497fb6fb06b094375b548f071457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade8ad09b4beda37561efe5ad37ef9428"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1SVGImage.html#ade8ad09b4beda37561efe5ad37ef9428">setMode</a> (const <a class="el" href="namespacesfc.html#a8b65f97d17101a451f7e02f9abf35593">DrawMode</a> mode)</td></tr>
+<tr class="memdesc:ade8ad09b4beda37561efe5ad37ef9428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set curve drawing mode.  <a href="#ade8ad09b4beda37561efe5ad37ef9428">More...</a><br /></td></tr>
+<tr class="separator:ade8ad09b4beda37561efe5ad37ef9428"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b886a34aa4c5f4ccbc4e3f29494de7e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsfc_1_1SVGImage.html#a3b886a34aa4c5f4ccbc4e3f29494de7e">loadFromFile</a> (const std::string &amp;file, const float dpi=96.f)</td></tr>
 <tr class="memdesc:a3b886a34aa4c5f4ccbc4e3f29494de7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens .svg file.  <a href="#a3b886a34aa4c5f4ccbc4e3f29494de7e">More...</a><br /></td></tr>
 <tr class="separator:a3b886a34aa4c5f4ccbc4e3f29494de7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -400,6 +403,31 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="ade8ad09b4beda37561efe5ad37ef9428"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sfc::SVGImage::setMode </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacesfc.html#a8b65f97d17101a451f7e02f9abf35593">DrawMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set curve drawing mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>– Drawing mode (normal / debug)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If <a class="el" href="namespacesfc.html#a8b65f97d17101a451f7e02f9abf35593adc30ec20708ef7b0f641ef78b7880a15" title="Draw also helper lines etc. ">DrawMode::DEBUG</a> parameter is given, non-rasterized image shows points used to create curves. </p>
 
 </div>
 </div>
