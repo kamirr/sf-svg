@@ -15,5 +15,6 @@
 #include "Path.hpp"
 #include "Shape.hpp"
 #include "Image.hpp"
+#include "Rasterizer.hpp"
 
 #endif // NSVGPP_H

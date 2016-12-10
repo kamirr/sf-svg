@@ -20,7 +20,6 @@
 #include <vector>
 #include <memory>
 
-#include "nanosvg++/nanosvgrastr.hpp"
 #include "nanosvg++/nsvgpp.hpp"
 
 #include "BezierCubicCurve.hpp"

@@ -15,7 +15,8 @@ SOURCES += example.cpp \
     SFC/nanosvg++/Nanosvgrastr.cpp \
     SFC/nanosvg++/Image.cpp \
     SFC/nanosvg++/Shape.cpp \
-    SFC/nanosvg++/Path.cpp
+    SFC/nanosvg++/Path.cpp \
+    SFC/nanosvg++/Rasterizer.cpp
 
 HEADERS += \
 	SFC/BezierAbstractCurve.hpp \
@@ -32,4 +33,5 @@ HEADERS += \
     SFC/nanosvg++/nanosvgrastr.hpp \
     SFC/nanosvg++/nsvgpp.hpp \
     SFC/nanosvg++/enums.hpp \
-    SFC/nanosvg++/Path.hpp
+    SFC/nanosvg++/Path.hpp \
+    SFC/nanosvg++/Rasterizer.hpp
