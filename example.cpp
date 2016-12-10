@@ -8,7 +8,7 @@ int main() {
 	sfc::SVGImage img;
 
 	/* Don't show debug lines */
-	img.setMode(sfc::DrawMode::NORMAL);
+	img.setMode(sfc::DrawMode::NONE);
 
 	/* Load SVG image from file */
 	img.loadFromFile("media/car.svg");
@@ -22,14 +22,11 @@ int main() {
 	/* Create window */
 	sf::RenderWindow app(sf::VideoMode((img.getSize().x + 20) * 1, (img.getSize().y + 20) * 1), "sf-svg");
 
-	auto i = 0u;
 	while(app.isOpen()) {
 		/* Handle events */
 		for(sf::Event ev; app.pollEvent(ev);) {
 			if(ev.type == sf::Event::Closed) {
 				app.close();
-			} else if(ev.type == sf::Event::MouseButtonPressed) {
-				++i;
 			}
 		}
 

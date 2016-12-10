@@ -15,6 +15,9 @@ namespace sfc {
 		Private
 	*/
 	void SVGImage::draw(sf::RenderTarget& target, sf::RenderStates states) const {
+		if(this->mode == DrawMode::NONE)
+			return;
+
 		for(const auto& curve: this->curves) {
 			target.draw(*curve, states);
 		}
@@ -22,6 +25,9 @@ namespace sfc {
 
 	void SVGImage::update() {
 		this->curves.clear();
+
+		if(this->mode == DrawMode::NONE)
+			return;
 
 		nsvg::Shape shape(this->image.getFirstShape());
 		while(shape) {

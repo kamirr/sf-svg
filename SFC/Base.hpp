@@ -25,7 +25,10 @@ namespace sfc {
 		NORMAL,
 
 		//! \brief Draw also helper lines etc.
-		DEBUG
+		DEBUG,
+
+		//! \brief Don't draw curve
+		NONE
 	};
 
 	//! \class Line2

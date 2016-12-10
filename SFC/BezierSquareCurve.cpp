@@ -15,6 +15,9 @@ namespace sfc {
 		Private
 	*/
 	void BezierSquareCurve::draw(sf::RenderTarget &target, sf::RenderStates states) const {
+		if(this->m_mode == DrawMode::NONE)
+			return;
+
 		if(this->m_mode == DrawMode::DEBUG)
 			target.draw(this->m_debugLines, 4, sf::LinesStrip);
 
