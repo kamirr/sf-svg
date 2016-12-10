@@ -87,6 +87,8 @@ namespace nsvg {
 		//! samplePath = samplePath.getNextPath();
 		//! \endcode
 		Path& operator ++();
+
+		operator bool() const;
 	};
 }
 

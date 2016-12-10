@@ -44,4 +44,8 @@ namespace nsvg {
 	Path& Path::operator ++() {
 		return (*this = this->getNextPath());
 	}
+
+	Path::operator bool() const {
+		return this->good();
+	}
 }

@@ -26,7 +26,7 @@ namespace sfc {
 		nsvg::Shape shape(this->image.getFirstShape());
 		while(shape.good()) {
 			nsvg::Path path = shape.getFirstPath();
-			while(path.good()) {
+			while(path) {
 				for(const auto& points: path.getPointsSets()) {
 					this->curves.push_back(std::make_shared<BezierCubicCurve>(
 						points.begin,
