@@ -80,15 +80,14 @@ namespace sfc {
 	}
 
 	bool SVGImage::loadFromStream(sf::InputStream& stream, const float dpi) {
-		char* copy = new char[stream.getSize() + 1];
-		stream.read(copy, stream.getSize());
+		std::vector<char> copy(stream.getSize() + 1);
+		stream.read(&copy[0], stream.getSize());
 
 		if(copy[stream.getSize() - 1] != '\0') {
 			copy[stream.getSize()] = '\0';
 		}
 
-		bool ok = this->image.loadFromMemory(copy, "px", dpi);
-		delete[] copy;
+		bool ok = this->image.loadFromMemory(&copy[0], "px", dpi);
 
 		if(!ok)
 			return false;

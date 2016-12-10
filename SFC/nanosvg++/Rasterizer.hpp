@@ -2,6 +2,7 @@
 #define RASTERIZER_HPP
 
 #include <SFML/Graphics/Image.hpp>
+#include <vector>
 
 #include "nanosvgrastr.hpp"
 #include "nanosvg.hpp"

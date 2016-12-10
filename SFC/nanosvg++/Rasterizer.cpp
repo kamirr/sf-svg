@@ -10,23 +10,22 @@ namespace nsvg {
 	}
 
 	sf::Image Rasterizer::rasterize(Image& image, float tx, float ty, float scale) {
+		std::vector<sf::Uint8> pixels(int(image.getSize().x * scale) * int(image.getSize().y * scale) * 4);
 		sf::Image img;
 
-		sf::Uint8* pixels = new sf::Uint8[int(image.getSize().x * scale) * int(image.getSize().y * scale) * 4];
 		nsvg::cstyle::rasterize(
 			this->internal,
 			image.getInternalImage(),
 			tx,
 			ty,
 			scale,
-			pixels,
+			&pixels[0],
 			image.getSize().x * scale,
 			image.getSize().y * scale,
 			image.getSize().x * scale * 4
 		);
 
-		img.create(image.getSize().x * scale, image.getSize().y * scale, pixels);
-		delete[] pixels;
+		img.create(image.getSize().x * scale, image.getSize().y * scale, &pixels[0]);
 
 		return img;
 	}
