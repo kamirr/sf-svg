@@ -82,7 +82,7 @@ namespace cstyle {
 		unsigned int colors[256];
 	};
 
-	struct Rasterizer
+	struct RasterizerStruct
 	{
 		float px, py;
 
@@ -113,7 +113,7 @@ namespace cstyle {
 	};
 
 	// Allocated rasterizer context.
-	Rasterizer* createRasterizer();
+	RasterizerStruct* createRasterizer();
 
 	// Rasterizes SVG image, returns RGBA image (non-premultiplied alpha)
 	//   r - pointer to rasterizer context
@@ -124,12 +124,12 @@ namespace cstyle {
 	//   w - width of the image to render
 	//   h - height of the image to render
 	//   stride - number of bytes per scaleline in the destination buffer
-	void rasterize(Rasterizer* r,
+	void rasterize(RasterizerStruct* r,
 					   ImageStruct* image, float tx, float ty, float scale,
 					   unsigned char* dst, int w, int h, int stride);
 
 	// Deletes rasterizer context.
-	void deleteRasterizer(Rasterizer*);
+	void deleteRasterizer(RasterizerStruct*);
 }
 }
 

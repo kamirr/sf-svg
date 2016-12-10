@@ -12,11 +12,11 @@
 
 namespace nsvg {
 namespace cstyle {
-	Rasterizer* createRasterizer()
+	RasterizerStruct* createRasterizer()
 	{
-		Rasterizer* r = (Rasterizer*)malloc(sizeof(Rasterizer));
+		RasterizerStruct* r = (RasterizerStruct*)malloc(sizeof(RasterizerStruct));
 		if (r == NULL) goto error;
-		memset(r, 0, sizeof(Rasterizer));
+		memset(r, 0, sizeof(RasterizerStruct));
 
 		r->tessTol = 0.25f;
 		r->distTol = 0.01f;
@@ -28,7 +28,7 @@ namespace cstyle {
 		return NULL;
 	}
 
-	void deleteRasterizer(Rasterizer* r)
+	void deleteRasterizer(RasterizerStruct* r)
 	{
 		MemPage* p;
 
@@ -49,7 +49,7 @@ namespace cstyle {
 		free(r);
 	}
 
-	static MemPage* nsvg__nextPage(Rasterizer* r, MemPage* cur)
+	static MemPage* nsvg__nextPage(RasterizerStruct* r, MemPage* cur)
 	{
 		MemPage *newp;
 
@@ -72,7 +72,7 @@ namespace cstyle {
 		return newp;
 	}
 
-	static void nsvg__resetPool(Rasterizer* r)
+	static void nsvg__resetPool(RasterizerStruct* r)
 	{
 		MemPage* p = r->pages;
 		while (p != NULL) {
@@ -82,7 +82,7 @@ namespace cstyle {
 		r->curpage = r->pages;
 	}
 
-	static unsigned char* nsvg__alloc(Rasterizer* r, int size)
+	static unsigned char* nsvg__alloc(RasterizerStruct* r, int size)
 	{
 		unsigned char* buf;
 		if (size > MEMPAGE_SIZE) return NULL;
@@ -101,7 +101,7 @@ namespace cstyle {
 		return dx*dx + dy*dy < tol*tol;
 	}
 
-	static void nsvg__addPathPoint(Rasterizer* r, float x, float y, int flags)
+	static void nsvg__addPathPoint(RasterizerStruct* r, float x, float y, int flags)
 	{
 		Point* pt;
 
@@ -126,7 +126,7 @@ namespace cstyle {
 		r->npoints++;
 	}
 
-	static void nsvg__appendPathPoint(Rasterizer* r, Point pt)
+	static void nsvg__appendPathPoint(RasterizerStruct* r, Point pt)
 	{
 		if (r->npoints+1 > r->cpoints) {
 			r->cpoints = r->cpoints > 0 ? r->cpoints * 2 : 64;
@@ -137,7 +137,7 @@ namespace cstyle {
 		r->npoints++;
 	}
 
-	static void nsvg__duplicatePoints(Rasterizer* r)
+	static void nsvg__duplicatePoints(RasterizerStruct* r)
 	{
 		if (r->npoints > r->cpoints2) {
 			r->cpoints2 = r->npoints;
@@ -149,7 +149,7 @@ namespace cstyle {
 		r->npoints2 = r->npoints;
 	}
 
-	static void nsvg__addEdge(Rasterizer* r, float x0, float y0, float x1, float y1)
+	static void nsvg__addEdge(RasterizerStruct* r, float x0, float y0, float x1, float y1)
 	{
 		Edge* e;
 
@@ -194,7 +194,7 @@ namespace cstyle {
 
 	static float nsvg__absf(float x) { return x < 0 ? -x : x; }
 
-	static void nsvg__flattenCubicBez(Rasterizer* r,
+	static void nsvg__flattenCubicBez(RasterizerStruct* r,
 									  float x1, float y1, float x2, float y2,
 									  float x3, float y3, float x4, float y4,
 									  int level, int type)
@@ -232,7 +232,7 @@ namespace cstyle {
 		nsvg__flattenCubicBez(r, x1234,y1234, x234,y234, x34,y34, x4,y4, level+1, type);
 	}
 
-	static void nsvg__flattenShape(Rasterizer* r, ShapeStruct* shape, float scale)
+	static void nsvg__flattenShape(RasterizerStruct* r, ShapeStruct* shape, float scale)
 	{
 		int i, j;
 		PathStruct* path;
@@ -274,7 +274,7 @@ namespace cstyle {
 		right->x = rx; right->y = ry;
 	}
 
-	static void nsvg__buttCap(Rasterizer* r, Point* left, Point* right, Point* p, float dx, float dy, float lineWidth, int connect)
+	static void nsvg__buttCap(RasterizerStruct* r, Point* left, Point* right, Point* p, float dx, float dy, float lineWidth, int connect)
 	{
 		float w = lineWidth * 0.5f;
 		float px = p->x, py = p->y;
@@ -292,7 +292,7 @@ namespace cstyle {
 		right->x = rx; right->y = ry;
 	}
 
-	static void nsvg__squareCap(Rasterizer* r, Point* left, Point* right, Point* p, float dx, float dy, float lineWidth, int connect)
+	static void nsvg__squareCap(RasterizerStruct* r, Point* left, Point* right, Point* p, float dx, float dy, float lineWidth, int connect)
 	{
 		float w = lineWidth * 0.5f;
 		float px = p->x - dx*w, py = p->y - dy*w;
@@ -314,7 +314,7 @@ namespace cstyle {
 	#define NSVG_PI (3.14159265358979323846264338327f)
 	#endif
 
-	static void nsvg__roundCap(Rasterizer* r, Point* left, Point* right, Point* p, float dx, float dy, float lineWidth, int ncap, int connect)
+	static void nsvg__roundCap(RasterizerStruct* r, Point* left, Point* right, Point* p, float dx, float dy, float lineWidth, int ncap, int connect)
 	{
 		int i;
 		float w = lineWidth * 0.5f;
@@ -350,7 +350,7 @@ namespace cstyle {
 		right->x = rx; right->y = ry;
 	}
 
-	static void nsvg__bevelJoin(Rasterizer* r, Point* left, Point* right, Point* p0, Point* p1, float lineWidth)
+	static void nsvg__bevelJoin(RasterizerStruct* r, Point* left, Point* right, Point* p0, Point* p1, float lineWidth)
 	{
 		float w = lineWidth * 0.5f;
 		float dlx0 = p0->dy, dly0 = -p0->dx;
@@ -370,7 +370,7 @@ namespace cstyle {
 		right->x = rx1; right->y = ry1;
 	}
 
-	static void nsvg__miterJoin(Rasterizer* r, Point* left, Point* right, Point* p0, Point* p1, float lineWidth)
+	static void nsvg__miterJoin(RasterizerStruct* r, Point* left, Point* right, Point* p0, Point* p1, float lineWidth)
 	{
 		float w = lineWidth * 0.5f;
 		float dlx0 = p0->dy, dly0 = -p0->dx;
@@ -406,7 +406,7 @@ namespace cstyle {
 		right->x = rx1; right->y = ry1;
 	}
 
-	static void nsvg__roundJoin(Rasterizer* r, Point* left, Point* right, Point* p0, Point* p1, float lineWidth, int ncap)
+	static void nsvg__roundJoin(RasterizerStruct* r, Point* left, Point* right, Point* p0, Point* p1, float lineWidth, int ncap)
 	{
 		int i, n;
 		float w = lineWidth * 0.5f;
@@ -447,7 +447,7 @@ namespace cstyle {
 		right->x = rx; right->y = ry;
 	}
 
-	static void nsvg__straightJoin(Rasterizer* r, Point* left, Point* right, Point* p1, float lineWidth)
+	static void nsvg__straightJoin(RasterizerStruct* r, Point* left, Point* right, Point* p1, float lineWidth)
 	{
 		float w = lineWidth * 0.5f;
 		float lx = p1->x - (p1->dmx * w), ly = p1->y - (p1->dmy * w);
@@ -468,7 +468,7 @@ namespace cstyle {
 		return divs;
 	}
 
-	static void nsvg__expandStroke(Rasterizer* r, Point* points, int npoints, int closed, LineJoin lineJoin, LineCap lineCap, float lineWidth)
+	static void nsvg__expandStroke(RasterizerStruct* r, Point* points, int npoints, int closed, LineJoin lineJoin, LineCap lineCap, float lineWidth)
 	{
 		int ncap = nsvg__curveDivs(lineWidth*0.5f, NSVG_PI, r->tessTol);	// Calculate divisions per half circle.
 		Point left = {0,0,0,0,0,0,0,0}, right = {0,0,0,0,0,0,0,0}, firstLeft = {0,0,0,0,0,0,0,0}, firstRight = {0,0,0,0,0,0,0,0};
@@ -539,7 +539,7 @@ namespace cstyle {
 		}
 	}
 
-	static void nsvg__prepareStroke(Rasterizer* r, float miterLimit, LineJoin lineJoin)
+	static void nsvg__prepareStroke(RasterizerStruct* r, float miterLimit, LineJoin lineJoin)
 	{
 		int i, j;
 		Point* p0, *p1;
@@ -596,7 +596,7 @@ namespace cstyle {
 		}
 	}
 
-	static void nsvg__flattenShapeStroke(Rasterizer* r, ShapeStruct* shape, float scale)
+	static void nsvg__flattenShapeStroke(RasterizerStruct* r, ShapeStruct* shape, float scale)
 	{
 		int i, j, closed;
 		PathStruct* path;
@@ -716,7 +716,7 @@ namespace cstyle {
 	}
 
 
-	static ActiveEdge* nsvg__addActive(Rasterizer* r, Edge* e, float startPoint)
+	static ActiveEdge* nsvg__addActive(RasterizerStruct* r, Edge* e, float startPoint)
 	{
 		 ActiveEdge* z;
 
@@ -746,7 +746,7 @@ namespace cstyle {
 		return z;
 	}
 
-	static void nsvg__freeActive(Rasterizer* r, ActiveEdge* z)
+	static void nsvg__freeActive(RasterizerStruct* r, ActiveEdge* z)
 	{
 		z->next = r->freelist;
 		r->freelist = z;
@@ -976,7 +976,7 @@ namespace cstyle {
 		}
 	}
 
-	static void nsvg__rasterizeSortedEdges(Rasterizer *r, float tx, float ty, float scale, CachedPaint* cache, FillRule fillRule)
+	static void nsvg__rasterizeSortedEdges(RasterizerStruct *r, float tx, float ty, float scale, CachedPaint* cache, FillRule fillRule)
 	{
 		ActiveEdge *active = NULL;
 		int y, s;
@@ -1226,7 +1226,7 @@ namespace cstyle {
 	}
 	*/
 
-	void rasterize(Rasterizer* r,
+	void rasterize(RasterizerStruct* r,
 					   ImageStruct* image, float tx, float ty, float scale,
 					   unsigned char* dst, int w, int h, int stride)
 	{
