@@ -17,6 +17,7 @@
 #include <string>
 
 #include "nanosvg.hpp"
+#include "Shape.hpp"
 
 namespace nsvg {
 	//! \class Image
@@ -51,10 +52,10 @@ namespace nsvg {
 		//! \return C-styled nsvg::ImageStruct
 		cstyle::ImageStruct* getInternalImage();
 
-		//! \brief Get shapes
+		//! \brief Get shape vector
 		//!
-		//! \return Shapes to process
-		cstyle::ShapeStruct* getFirstShape();
+		//! \return ShapeVector instance
+		ShapeVector getShapes();
 
 		//! \brief Get size
 		//!

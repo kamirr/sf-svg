@@ -8,7 +8,7 @@ int main() {
 	sfc::SVGImage img;
 
 	/* Don't show debug lines */
-	img.setMode(sfc::DrawMode::NONE);
+	img.setMode(sfc::DrawMode::NORMAL);
 
 	/* Load SVG image from file */
 	img.loadFromFile("media/car.svg");

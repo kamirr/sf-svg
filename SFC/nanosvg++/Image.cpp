@@ -46,8 +46,8 @@ namespace nsvg {
 		return this->internal;
 	}
 
-	cstyle::ShapeStruct* Image::getFirstShape() {
-		return this->internal->shapes;
+	ShapeVector Image::getShapes() {
+		return ShapeVector(this->internal->shapes);
 	}
 
 	sf::Vector2f Image::getSize() const {

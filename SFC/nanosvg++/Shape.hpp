@@ -13,6 +13,9 @@
 #define SHAPE_HPP
 
 #include <string>
+#include <vector>
+
+#include "Path.hpp"
 #include "nanosvg.hpp"
 
 namespace nsvg {
@@ -93,7 +96,7 @@ namespace nsvg {
 		//! \brief Get paths
 		//!
 		//! \return const cstyle::Path pointer to path
-		const cstyle::PathStruct* getFirstPath() const;
+		const Path getFirstPath() const;
 
 		//! \brief Get next shape
 		//!
@@ -119,6 +122,17 @@ namespace nsvg {
 		//!
 		//! Implicitly cast *this to bool, equivalent to nsvg::Shape::good() method.
 		operator bool() const;
+	};
+
+	class ShapeVector
+		: public std::vector<Shape> {
+	public:
+		ShapeVector(cstyle::ShapeStruct* shape_ptr) {
+			while(shape_ptr) {
+				emplace_back(shape_ptr);
+				shape_ptr = shape_ptr->next;
+			}
+		}
 	};
 }
 

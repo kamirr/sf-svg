@@ -29,10 +29,8 @@ namespace sfc {
 		if(this->m_mode == DrawMode::NONE)
 			return;
 
-		nsvg::Shape shape(this->m_image.getFirstShape());
-		while(shape) {
-			nsvg::Path path = shape.getFirstPath();
-			while(path) {
+		for(auto shape: this->m_image.getShapes()) {
+			for(auto path = shape.getFirstPath(); path; ++path) {
 				for(const auto& points: path.getPointsSets()) {
 					this->m_curves.push_back(std::make_shared<BezierCubicCurve>(
 						points.begin,
@@ -46,11 +44,7 @@ namespace sfc {
 					(*this->m_curves.back()).setPointCount(1024);
 					(*this->m_curves.back()).update();
 				}
-
-				++path;
 			}
-
-			++shape;
 		}
 	}
 
@@ -92,13 +86,13 @@ namespace sfc {
 
 	bool SVGImage::loadFromStream(sf::InputStream& stream, const float dpi) {
 		std::vector<char> copy(stream.getSize() + 1);
-		stream.read(&copy[0], stream.getSize());
+		stream.read(copy.data(), stream.getSize());
 
 		if(copy[stream.getSize() - 1] != '\0') {
 			copy[stream.getSize()] = '\0';
 		}
 
-		bool ok = this->m_image.loadFromMemory(&copy[0], "px", dpi);
+		bool ok = this->m_image.loadFromMemory(copy.data(), "px", dpi);
 
 		if(!ok)
 			return false;
