@@ -32,7 +32,7 @@ namespace sfc {
 		for(const nsvg::Shape& shape: this->m_image.getShapes()) {
 			for(const nsvg::Path& path: shape.getPaths()) {
 				for(const auto& points: path.getPointsSets()) {
-					this->m_curves.push_back(std::make_shared<BezierCubicCurve>(
+					this->m_curves.emplace_back(new BezierCubicCurve(
 						points.begin,
 						points.end,
 						points.control1,
@@ -103,7 +103,8 @@ namespace sfc {
 
 	sf::Image SVGImage::rasterize(const float scale) {
 		nsvg::Rasterizer rasterizer;
-		return rasterizer.rasterize(this->m_image, 0, 0, scale);
+		auto img = rasterizer.rasterize(this->m_image, 0, 0, scale);
+		return img;
 	}
 
 	void SVGImage::move(sf::Vector2f vec) {

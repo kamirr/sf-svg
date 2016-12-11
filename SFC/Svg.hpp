@@ -32,7 +32,7 @@ namespace sfc {
 	//! Class uses Cubic Bezier Curves to draw SVG graphics, can be drawn as set of curves or rasterized to create normal sf::Image.
 	class SVGImage
 	: public sf::Drawable {
-		std::vector<std::shared_ptr<BezierCubicCurve>> m_curves;
+		std::vector<std::unique_ptr<BezierCubicCurve>> m_curves;
 		DrawMode m_mode = DrawMode::NORMAL;
 		nsvg::Image m_image;
 

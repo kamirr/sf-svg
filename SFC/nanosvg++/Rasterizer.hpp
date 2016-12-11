@@ -32,10 +32,20 @@ namespace nsvg {
 		//! Initializes internal cstyle::RasterizerStruct pointer.
 		Rasterizer();
 
+		//! \brief Copy constructor
+		//!
+		//! Doesn't really copy anything, does exactly what default constructor;
+		Rasterizer (const Rasterizer& rasterizer);
+
 		//! \brief Destructor
 		//!
 		//! Deletes internal cstyle::RasterizerStruct pointer.
 		~Rasterizer();
+
+		//! \brief Copy-assignment operator
+		//!
+		//! Doesn't really copy anything yet, exists to avoid assigning 'internal' pointer.
+		Rasterizer& operator= (const Rasterizer& rasterizer);
 
 		//! \brief Rasterizes given Image.
 		//!

@@ -16,8 +16,18 @@ namespace nsvg {
 		: internal { cstyle::createRasterizer() }
 	{ }
 
+	Rasterizer::Rasterizer (const Rasterizer& rasterizer)
+		: internal { cstyle::createRasterizer() } {
+		rasterizer;
+	}
+
 	Rasterizer::~Rasterizer() {
 		cstyle::deleteRasterizer(this->internal);
+	}
+
+	Rasterizer& Rasterizer::operator= (const Rasterizer& rasterizer) {
+		rasterizer;
+		return *this;
 	}
 
 	sf::Image Rasterizer::rasterize(Image& image, float tx, float ty, float scale) {

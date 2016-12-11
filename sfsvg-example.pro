@@ -3,7 +3,7 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
-QMAKE_CXXFLAGS += -std=c++11 -Wno-narrowing
+QMAKE_CXXFLAGS += -std=c++11 -Wno-narrowing -Wno-unused-value
 LIBS += -lsfml-graphics -lsfml-window -lsfml-system
 
 SOURCES += example.cpp \
