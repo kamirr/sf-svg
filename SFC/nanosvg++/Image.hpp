@@ -29,6 +29,12 @@ namespace nsvg {
 		cstyle::ImageStruct* internal = nullptr;
 
 	public:
+		Image();
+
+		Image(const Image& image);
+
+		Image& operator =(const Image& image);
+
 		//! \brief Parses SVG from file
 		//!
 		//! \param [in] filename – path to file

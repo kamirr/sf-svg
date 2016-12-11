@@ -12,6 +12,18 @@
 #include "Image.hpp"
 
 namespace nsvg {
+	Image::Image()
+	{ }
+
+	Image::Image(const Image& image) {
+		image;
+	}
+
+	Image& Image::operator =(const Image& image) {
+		image;
+		return *this;
+	}
+
 	bool Image::loadFromFile(const std::string& filename, const std::string& units, const float dpi) {
 		if(internal)
 			cstyle::deleteImage(internal);
