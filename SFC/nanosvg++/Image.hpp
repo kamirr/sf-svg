@@ -29,10 +29,19 @@ namespace nsvg {
 		cstyle::ImageStruct* internal = nullptr;
 
 	public:
+		//! \brief Default constructor
+		//!
+		//! Does nothing;
 		Image();
 
+		//! \brief Copy constructor
+		//!
+		//! Protects from double-free error afrer assigning.
 		Image(const Image& image);
 
+		//! \brief Assignment operator
+		//!
+		//! Protects from double-free error afrer assigning.
 		Image& operator =(const Image& image);
 
 		//! \brief Parses SVG from file
