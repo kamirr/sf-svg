@@ -124,9 +124,15 @@ namespace nsvg {
 		operator bool() const;
 	};
 
+	//! \brief Vector of shapes
+	//!
+	//! Basically normal vector of shapes, but constructor takes cstyle::ShapeStruct pointer to initialize
 	class ShapeVector
 		: public std::vector<Shape> {
 	public:
+		//! \brief Constructor
+		//!
+		//! \param [in] shape_ptr – pointer to first cstyle::ShapeStruct
 		ShapeVector(cstyle::ShapeStruct* shape_ptr) {
 			while(shape_ptr) {
 				emplace_back(shape_ptr);
