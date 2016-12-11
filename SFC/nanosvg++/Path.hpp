@@ -93,6 +93,23 @@ namespace nsvg {
 		//! Implicitly cast *this to bool, equivalent to nsvg::Path::good() method.
 		operator bool() const;
 	};
+
+	//! \brief Vector of paths
+	//!
+	//! Basically normal vector of paths, but constructor takes cstyle::PathStruct pointer to initialize
+	class PathVector
+		: public std::vector<Path> {
+	public:
+		//! \brief Constructor
+		//!
+		//! \param [in] path_ptr – pointer to first cstyle::PathStruct
+		PathVector(cstyle::PathStruct* path_ptr) {
+			while(path_ptr) {
+				emplace_back(path_ptr);
+				path_ptr = path_ptr->next;
+			}
+		}
+	};
 }
 
 #endif // PATH_HPP

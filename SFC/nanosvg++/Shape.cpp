@@ -64,8 +64,8 @@ namespace nsvg {
 		return this->internal->bounds;
 	}
 
-	const Path Shape::getFirstPath() const {
-		return Path(this->internal->paths);
+	PathVector Shape::getPaths() const {
+		return PathVector(this->internal->paths);
 	}
 
 	Shape Shape::getNextShape() const {

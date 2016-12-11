@@ -29,8 +29,8 @@ namespace sfc {
 		if(this->m_mode == DrawMode::NONE)
 			return;
 
-		for(auto shape: this->m_image.getShapes()) {
-			for(auto path = shape.getFirstPath(); path; ++path) {
+		for(const nsvg::Shape& shape: this->m_image.getShapes()) {
+			for(const nsvg::Path& path: shape.getPaths()) {
 				for(const auto& points: path.getPointsSets()) {
 					this->m_curves.push_back(std::make_shared<BezierCubicCurve>(
 						points.begin,
