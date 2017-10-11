@@ -1,4 +1,4 @@
-<map id="BezierAbstractCurve.hpp" name="BezierAbstractCurve.hpp">
-<area shape="rect" id="node3" href="$VertexVector_8hpp.html" title="VertexVector (drawable std::vector&lt;sf::Vertex&gt;) implementation. " alt="" coords="291,80,413,107"/>
-<area shape="rect" id="node7" href="$Base_8hpp.html" title="Base header used by (probably) all sf&#45;svg classes. " alt="" coords="759,80,836,107"/>
+<map id="SFC/BezierAbstractCurve.hpp" name="SFC/BezierAbstractCurve.hpp">
+<area shape="rect" id="node3" href="$VertexVector_8hpp.html" title="VertexVector (drawable std::vector&lt;sf::Vertex&gt;) implementation. " alt="" coords="307,80,442,107"/>
+<area shape="rect" id="node7" href="$Base_8hpp.html" title="Base header used by (probably) all sf&#45;svg classes. " alt="" coords="801,80,884,107"/>
 </map>

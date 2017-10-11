@@ -1,6 +1,6 @@
-<map id="BezierCubicCurve.hpp" name="BezierCubicCurve.hpp">
-<area shape="rect" id="node2" href="$BezierCubicCurve_8cpp.html" title="BezierCubicCurve implementation. " alt="" coords="5,80,159,107"/>
-<area shape="rect" id="node3" href="$BezierCurve_8hpp.html" title="Single file to include all curve&#45;related header files. " alt="" coords="183,80,301,107"/>
-<area shape="rect" id="node4" href="$Svg_8hpp.html" title="SVGImage class declaration. " alt="" coords="325,80,396,107"/>
-<area shape="rect" id="node5" href="$Svg_8cpp.html" title="SVGImage implementation. " alt="" coords="325,155,396,181"/>
+<map id="SFC/BezierCubicCurve.hpp" name="SFC/BezierCubicCurve.hpp">
+<area shape="rect" id="node2" href="$Svg_8hpp.html" title="SVGImage class declaration. " alt="" coords="5,80,108,107"/>
+<area shape="rect" id="node4" href="$BezierCubicCurve_8cpp.html" title="BezierCubicCurve implementation. " alt="" coords="133,80,325,107"/>
+<area shape="rect" id="node5" href="$BezierCurve_8hpp.html" title="Single file to include all curve&#45;related header files. " alt="" coords="349,80,506,107"/>
+<area shape="rect" id="node3" href="$Svg_8cpp.html" title="SVGImage implementation. " alt="" coords="6,155,107,181"/>
 </map>

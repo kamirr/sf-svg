@@ -1,4 +1,6 @@
-<map id="Rasterizer.hpp" name="Rasterizer.hpp">
-<area shape="rect" id="node2" href="$nsvgpp_8hpp.html" title="Nanosvg++ additional classes. " alt="" coords="5,80,95,107"/>
-<area shape="rect" id="node3" href="$Rasterizer_8cpp.html" title="Rasterizer class implementation. " alt="" coords="119,80,226,107"/>
+<map id="SFC/nanosvg++/Rasterizer.hpp" name="SFC/nanosvg++/Rasterizer.hpp">
+<area shape="rect" id="node2" href="$nsvgpp_8hpp.html" title="Nanosvg++ additional classes. " alt="" coords="5,80,212,107"/>
+<area shape="rect" id="node5" href="$Rasterizer_8cpp.html" title="Rasterizer class implementation. " alt="" coords="237,80,461,107"/>
+<area shape="rect" id="node3" href="$Svg_8hpp.html" title="SVGImage class declaration. " alt="" coords="57,155,160,181"/>
+<area shape="rect" id="node4" href="$Svg_8cpp.html" title="SVGImage implementation. " alt="" coords="58,229,159,256"/>
 </map>

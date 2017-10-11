@@ -1,6 +1,8 @@
-<map id="Rasterizer.hpp" name="Rasterizer.hpp">
-<area shape="rect" id="node4" href="$nanosvgrastr_8hpp.html" title="Nanosvg++ rasterizer declaration. " alt="" coords="291,80,413,107"/>
-<area shape="rect" id="node5" href="$nanosvg_8hpp.html" title="Nanosvg++ declarations. " alt="" coords="311,155,407,181"/>
-<area shape="rect" id="node11" href="$Image_8hpp.html" title="Nanosvg++ Image class declaration. " alt="" coords="488,80,571,107"/>
-<area shape="rect" id="node10" href="$enums_8hpp.html" title="Enums definitions. " alt="" coords="501,229,587,256"/>
+<map id="SFC/nanosvg++/Rasterizer.hpp" name="SFC/nanosvg++/Rasterizer.hpp">
+<area shape="rect" id="node4" href="$nanosvgrastr_8hpp.html" title="Nanosvg++ rasterizer declaration. " alt="" coords="110,155,245,181"/>
+<area shape="rect" id="node5" href="$nanosvg_8hpp.html" title="Nanosvg++ declarations. " alt="" coords="255,304,361,331"/>
+<area shape="rect" id="node11" href="$Image_8hpp.html" title="Nanosvg++ Image class declaration. " alt="" coords="377,80,468,107"/>
+<area shape="rect" id="node10" href="$enums_8hpp.html" title="Enums definitions. " alt="" coords="458,379,553,405"/>
+<area shape="rect" id="node15" href="$Shape_8hpp.html" title="Shape class declaration. " alt="" coords="525,155,616,181"/>
+<area shape="rect" id="node16" href="$Path_8hpp.html" title="Path class declaration. " alt="" coords="473,229,551,256"/>
 </map>

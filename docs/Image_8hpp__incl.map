@@ -1,4 +1,6 @@
-<map id="Image.hpp" name="Image.hpp">
-<area shape="rect" id="node5" href="$nanosvg_8hpp.html" title="Nanosvg++ declarations. " alt="" coords="386,80,482,107"/>
-<area shape="rect" id="node10" href="$enums_8hpp.html" title="Enums definitions. " alt="" coords="576,155,663,181"/>
+<map id="SFC/nanosvg++/Image.hpp" name="SFC/nanosvg++/Image.hpp">
+<area shape="rect" id="node5" href="$nanosvg_8hpp.html" title="Nanosvg++ declarations. " alt="" coords="220,229,325,256"/>
+<area shape="rect" id="node11" href="$Shape_8hpp.html" title="Shape class declaration. " alt="" coords="285,80,375,107"/>
+<area shape="rect" id="node10" href="$enums_8hpp.html" title="Enums definitions. " alt="" coords="423,304,517,331"/>
+<area shape="rect" id="node13" href="$Path_8hpp.html" title="Path class declaration. " alt="" coords="213,155,292,181"/>
 </map>

@@ -1,4 +1,4 @@
 <map id="sfc::BezierAbstractCurve" name="sfc::BezierAbstractCurve">
-<area shape="rect" id="node3" href="$classsfc_1_1BezierCubicCurve.html" title="Bezier cubic curve representation. " alt="" coords="5,155,160,181"/>
-<area shape="rect" id="node4" href="$classsfc_1_1BezierSquareCurve.html" title="Bezier square curve representation. " alt="" coords="185,155,346,181"/>
+<area shape="rect" id="node3" href="$classsfc_1_1BezierCubicCurve.html" title="Bezier cubic curve representation. " alt="" coords="5,155,169,181"/>
+<area shape="rect" id="node4" href="$classsfc_1_1BezierSquareCurve.html" title="Bezier square curve representation. " alt="" coords="194,155,367,181"/>
 </map>

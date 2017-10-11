@@ -6,13 +6,11 @@ var searchData=
   ['bezierabstractcurve',['BezierAbstractCurve',['../classsfc_1_1BezierAbstractCurve.html',1,'sfc']]],
   ['bezierabstractcurve_2ecpp',['BezierAbstractCurve.cpp',['../BezierAbstractCurve_8cpp.html',1,'']]],
   ['bezierabstractcurve_2ehpp',['BezierAbstractCurve.hpp',['../BezierAbstractCurve_8hpp.html',1,'']]],
-  ['beziercubiccurve',['BezierCubicCurve',['../classsfc_1_1BezierCubicCurve.html',1,'sfc']]],
-  ['beziercubiccurve',['BezierCubicCurve',['../classsfc_1_1BezierCubicCurve.html#a1ce0079b3431e3cb05032c37445e228c',1,'sfc::BezierCubicCurve::BezierCubicCurve()'],['../classsfc_1_1BezierCubicCurve.html#aa4ab6ecbfe509524760b724f6e2dfcd3',1,'sfc::BezierCubicCurve::BezierCubicCurve(const sf::Vector2f &amp;, const sf::Vector2f &amp;, const sf::Vector2f &amp;, const sf::Vector2f &amp;, DrawMode=DrawMode::NORMAL)']]],
+  ['beziercubiccurve',['BezierCubicCurve',['../classsfc_1_1BezierCubicCurve.html',1,'sfc::BezierCubicCurve'],['../classsfc_1_1BezierCubicCurve.html#a1ce0079b3431e3cb05032c37445e228c',1,'sfc::BezierCubicCurve::BezierCubicCurve()'],['../classsfc_1_1BezierCubicCurve.html#aa4ab6ecbfe509524760b724f6e2dfcd3',1,'sfc::BezierCubicCurve::BezierCubicCurve(const sf::Vector2f &amp;, const sf::Vector2f &amp;, const sf::Vector2f &amp;, const sf::Vector2f &amp;, DrawMode=DrawMode::NORMAL)']]],
   ['beziercubiccurve_2ecpp',['BezierCubicCurve.cpp',['../BezierCubicCurve_8cpp.html',1,'']]],
   ['beziercubiccurve_2ehpp',['BezierCubicCurve.hpp',['../BezierCubicCurve_8hpp.html',1,'']]],
   ['beziercurve_2ehpp',['BezierCurve.hpp',['../BezierCurve_8hpp.html',1,'']]],
-  ['beziersquarecurve',['BezierSquareCurve',['../classsfc_1_1BezierSquareCurve.html#a2c024b16e473eb56d5161dbaa502cb2b',1,'sfc::BezierSquareCurve::BezierSquareCurve()'],['../classsfc_1_1BezierSquareCurve.html#a77ee087083f1f06437d89a4b1aaae71b',1,'sfc::BezierSquareCurve::BezierSquareCurve(const sf::Vector2f &amp;, const sf::Vector2f &amp;, const sf::Vector2f &amp;, DrawMode=DrawMode::NORMAL)']]],
-  ['beziersquarecurve',['BezierSquareCurve',['../classsfc_1_1BezierSquareCurve.html',1,'sfc']]],
+  ['beziersquarecurve',['BezierSquareCurve',['../classsfc_1_1BezierSquareCurve.html',1,'sfc::BezierSquareCurve'],['../classsfc_1_1BezierSquareCurve.html#a2c024b16e473eb56d5161dbaa502cb2b',1,'sfc::BezierSquareCurve::BezierSquareCurve()'],['../classsfc_1_1BezierSquareCurve.html#a77ee087083f1f06437d89a4b1aaae71b',1,'sfc::BezierSquareCurve::BezierSquareCurve(const sf::Vector2f &amp;, const sf::Vector2f &amp;, const sf::Vector2f &amp;, DrawMode=DrawMode::NORMAL)']]],
   ['beziersquarecurve_2ecpp',['BezierSquareCurve.cpp',['../BezierSquareCurve_8cpp.html',1,'']]],
   ['beziersquarecurve_2ehpp',['BezierSquareCurve.hpp',['../BezierSquareCurve_8hpp.html',1,'']]]
 ];
