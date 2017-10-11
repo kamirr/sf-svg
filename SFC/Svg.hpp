@@ -48,7 +48,7 @@ namespace sfc {
 		//! \brief Constructor loading from file
 		//!
 		//! \param [in] file – path to .svg file
-		//! \param [in] dpi – passed do nanosvg
+		//! \param [in] dpi – dots per inch/passed to nanosvg
 		//!
 		//! Calls loadFromFile with given params
 		SVGImage(const std::string& file, const float dpi = 96.f);
@@ -64,7 +64,7 @@ namespace sfc {
 		//! \brief Opens .svg file
 		//!
 		//! \param [in] file – path to .svg file
-		//! \param [in] dpi – passed do nanosvg
+		//! \param [in] dpi – dots per inch/passed to nanosvg
 		//!
 		//! \returns True if ok, False otherwise
 		//!
@@ -75,7 +75,7 @@ namespace sfc {
 		//!
 		//! \param [in] data – pointer to null-terminated data
 		//! \param [in] size – data count
-		//! \param [in] dpi – passed to nanosvg
+		//! \param [in] dpi – dots per inch/passed to nanosvg
 		//!
 		//! \return True if ok, False otherwise
 		//!
@@ -85,7 +85,7 @@ namespace sfc {
 		//! \brief Loads SVG image from stream
 		//!
 		//! \param [in] stream – SFML input stream instance
-		//! \param [in] dpi – passed to nanosvg
+		//! \param [in] dpi – dots per inch/passed to nanosvg
 		//!
 		//! \return True if ok, False otherwise
 		//!
@@ -94,7 +94,7 @@ namespace sfc {
 
 		//! \brief Rasterizes SVG
 		//!
-		//! \param [in] scale – passed to nanosvg
+		//! \param [in] scale – factor to scale the image by/passed to nanosvg
 		//!
 		//! \returns Rasterized sf::Image
 		sf::Image rasterize(const float scale = 1.f);

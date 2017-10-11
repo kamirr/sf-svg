@@ -29,10 +29,6 @@ namespace sfc {
 	//! <td>List of individual points</td>
 	//! </tr>
 	//! <tr>
-	//! <td>Points</td>
-	//! <td>List of individual points</td>
-	//! </tr>
-	//! <tr>
 	//! <td>Lines</td>
 	//! <td>List of individual lines</td>
 	//! </tr>
