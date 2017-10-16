@@ -31,7 +31,10 @@ namespace nsvg {
 	}
 
 	sf::Image Rasterizer::rasterize(Image& image, float tx, float ty, float scale) {
-		std::vector<sf::Uint8> pixels(int(image.getSize().x * scale) * int(image.getSize().y * scale) * 4);
+		sf::Vector2f size_f{image.getSize().x * scale, image.getSize().y * scale};
+		sf::Vector2i size = static_cast<sf::Vector2i>(size_f);
+
+		std::vector<sf::Uint8> pixels(static_cast<size_t>(size.x * size.y) * 4ul);
 		sf::Image img;
 
 		nsvg::cstyle::rasterize(
@@ -41,12 +44,12 @@ namespace nsvg {
 			ty,
 			scale,
 			&pixels[0],
-			image.getSize().x * scale,
-			image.getSize().y * scale,
-			image.getSize().x * scale * 4
+			size.x,
+			size.y,
+			size.x * 4
 		);
 
-		img.create(image.getSize().x * scale, image.getSize().y * scale, &pixels[0]);
+		img.create(static_cast<unsigned>(size.x), static_cast<unsigned>(size.y), &pixels[0]);
 
 		return img;
 	}
