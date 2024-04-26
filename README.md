@@ -15,7 +15,7 @@ SFML-based library to draw .svg files and Bézier Curves.
  - Better rasterizer.
 
 ## Documentation
-You can find docs [here](https://koczurekk.github.io/sf-svg/).<br />
+You can find docs [here](https://kamirr.github.io/sf-svg/).<br />
 Generated using doxygen, It's not good-looking, but I don't have time to change doxygen's .css files.
 
 ## Usage:
